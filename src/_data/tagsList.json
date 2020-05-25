@@ -1,0 +1,22 @@
+{
+  "accessibility": {
+    "en": "Accessibility",
+    "ja": "アクセシビリティ"
+  },
+  "best-practice": {
+    "en": "Best practice",
+    "ja": "ベストプラクティス"
+  },
+  "font": {
+    "en": "Font",
+    "ja": "フォント"
+  },
+  "security": {
+    "en": "Security",
+    "ja": "セキュリティ"
+  },
+  "web": {
+    "en": "Web",
+    "ja": "ウェブ"
+  }
+}

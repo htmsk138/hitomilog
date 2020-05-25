@@ -1,0 +1,25 @@
+<% include /parts/head %>
+<body>
+  <header>
+    <h1>
+      <%= metadata.title %>
+    </h1>
+    <nav>
+      <% Object.keys(i18n).forEach(key => { if (key !== lang) { %>
+      <a href="<%= i18n[key].homeUrl %>"><%= i18n[key].language %></a>
+      <% }}); %>&nbsp;
+    </nav>
+  </header>
+  <main role="main">
+    <%- content %>
+  </main>
+  <hr>
+  <footer>
+    <p>&copy; 2020 
+      <a href="<%= metadata.author.url %>"><%= metadata.author.name %></a>
+    </p>
+  </footer>
+  <% include /parts/scripts %>
+</body>
+
+</html>

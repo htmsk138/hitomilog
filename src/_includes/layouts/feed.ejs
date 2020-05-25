@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title><%= metadata.title %></title>
+    <link><%= metadata.url %></link>
+    <description><%= metadata.description %></description>
+    <% if (collections.hasOwnProperty('post')) { %>
+    <%
+      collections.post.filter(post => {
+        return post.data.lang === lang;
+      }).sort((a, b) => {
+        return b.date - a.date;
+      }).forEach(post => {
+    %>
+    <item>
+      <title><%= post.data.title %></title>
+      <link><%= metadata.url + post.url %></link>
+      <description><%= post.data.content %></description>
+    </item>
+    <% });} %>
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+{
+  "en": {
+    "language": "English",
+    "homeUrl": "/",
+    "darkMode": "Dark",
+    "share": "Share this post on: ",
+    "tag": "Tag: ",
+    "posted": "Posted on ",
+    "tagged": "tagged in ",
+    "backToHome": "Back to home"
+  },
+  "ja": {
+    "language": "日本語",
+    "homeUrl": "/ja/",
+    "darkMode": "ダークモード",
+    "share": "この記事をシェアする： ",
+    "tag": "タグ： ",
+    "posted": "投稿日： ",
+    "tagged": "タグ： ",
+    "backToHome": "トップページへ"
+  }
+}

@@ -1,0 +1,18 @@
+<% if (collections.hasOwnProperty('post')) { %>
+<ul>
+  <%
+  collections.post.filter(post => {
+      let result = post.data.lang === lang;
+      result &= post.data.tags.indexOf(tag) !== -1;
+      return result;
+    }).sort((a, b) => {
+      return b.date - a.date;
+    }).forEach(post => {
+  %>
+  <li>
+    <a href="<%= post.url %>"><%= post.data.title %></a>
+    &nbsp;(<%- include('/parts/date', { date: post.date }) %>)
+  </li>
+  <% }); %>
+</ul>
+<% } %>

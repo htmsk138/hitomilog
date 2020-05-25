@@ -1,0 +1,14 @@
+<p>
+  <%= i18n[lang].share %>
+  <a href="https://twitter.com/intent/tweet?text=<%= title %>&url=<%= metadata.url + page.url %>" onclick="tweet(this.href); return false;" title="Tweet">Twitter</a>&nbsp;
+  <script>
+  function tweet(url) {
+    window.open(
+      encodeURI(decodeURI(url)),
+      'window',
+      'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'
+    );
+  }
+  </script>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=<%= metadata.url + page.url  %>" onclick="window.open(encodeURI(decodeURI(this.href)), 'FBwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" title="Share on Facebook">Facebook</a>
+</p>

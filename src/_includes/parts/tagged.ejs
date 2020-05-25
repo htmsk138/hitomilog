@@ -1,0 +1,6 @@
+<%
+tags = tags.filter(tag => { return tag !== 'post'; });
+if (tags.length) {
+for (let i = 0; i < tags.length; i++) { let tag = tags[i];
+%><a href="<%= i18n[lang].homeUrl %>tags/<%= tag %>/"><%= tagsList[tag][lang] %></a><%- i === tags.length - 1 ? '' : ', ' %>
+<% }} %>

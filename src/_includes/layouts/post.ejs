@@ -1,0 +1,21 @@
+<% include /parts/head %>
+<body>
+  <main role="main">
+    <h1>
+      <%- title %>
+    </h1>
+    <p>
+      <%- i18n[lang].posted %><%- include('/parts/date', { date: page.date }) %>,&nbsp;<%- i18n[lang].tagged %><% include /parts/tagged %>
+    </p>
+    <%- content %>
+    <% include /parts/sharer %>
+  </main>
+  <hr>
+  <footer>
+    <a href="<%= i18n[lang].homeUrl %>"><%= i18n[lang].backToHome %></a>
+  </footer>
+  <% include /parts/scripts %>
+</body>
+
+</html>
+

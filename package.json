@@ -1,0 +1,18 @@
+{
+  "name": "hitomilog-eleventy",
+  "version": "1.0.0",
+  "description": "Hitomi Seki's blog.",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@11ty/eleventy-plugin-inclusive-language": "^1.0.0",
+    "@11ty/eleventy": "^0.11.0",
+    "html-minifier": "^4.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "author": "Hitomi Seki (https://hitomiseki.com)"
+}
