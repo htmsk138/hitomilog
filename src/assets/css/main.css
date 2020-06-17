@@ -6,13 +6,8 @@ body {
   font-family: verdana, sans-serif;
   line-height: 1.8;
   margin: 0 auto;
-  max-width: 33em;
+  max-width: 40em;
   padding: 1em;
-}
-
-.dark {
-  background: #111;
-  color: rgba(255,255,255,.8);
 }
 
 img {
@@ -30,6 +25,58 @@ a:focus {
   outline-offset: 2px;
 }
 
+code {
+  font-family: courier;
+}
+
 pre {
-  white-space: pre-wrap;
+  border: 1px dashed;
+  overflow: auto;
+  padding: 1em;
+}
+
+pre code::before {
+  content: 'JS:';
+  display: block;
+  font-weight: bold;
+  margin: 0 0 1em;
+}
+
+.language-javascript::before {
+  content: 'JS:';
+}
+
+.language-html::before {
+  content: 'HTML:';
+}
+
+.language-css::before {
+  content: 'CSS:';
+}
+
+/**
+ * Japanese
+ */
+html[lang="ja"] body {
+  font-family: verdana, 'Noto Sans JP';
+}
+
+html[lang="ja"] code {
+  font-family: courier, 'Noto Sans JP';
+}
+
+/**
+ * Print
+ */
+@media not print {
+  .dark body {
+    background: #111;
+    color: rgba(255,255,255,.8);
+  }
+}
+
+@media print {
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
 }

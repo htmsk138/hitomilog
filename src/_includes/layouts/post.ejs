@@ -5,16 +5,17 @@
       <%- title %>
     </h1>
     <p>
-      <%- i18n[lang].posted %><%- include('/parts/date', { date: page.date }) %>,&nbsp;<%- i18n[lang].tagged %><% include /parts/tagged %>
+      <%- include('/parts/date', { date: page.date }) %>
+      <% if ('undefined' !== typeof(updated)) { %>
+      <%- `${i18n[lang].updatedStart}${include('/parts/date', { date: updated })}${i18n[lang].updatedEnd}` %>
+      <% } %>
     </p>
     <%- content %>
-    <% include /parts/sharer %>
+    <% include /parts/disqus %>
   </main>
   <hr>
-  <footer>
-    <a href="<%= i18n[lang].homeUrl %>"><%= i18n[lang].backToHome %></a>
-  </footer>
-  <% include /parts/scripts %>
+  <% include /parts/footer %>
+  <% include /parts/ga %>
 </body>
 
 </html>

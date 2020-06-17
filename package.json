@@ -2,17 +2,16 @@
   "name": "hitomilog-eleventy",
   "version": "1.0.0",
   "description": "Hitomi Seki's blog.",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@11ty/eleventy-plugin-inclusive-language": "^1.0.0",
     "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy-plugin-inclusive-language": "^1.0.0",
     "html-minifier": "^4.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "eleventy --serve",
-    "build": "eleventy"
+    "serve": "ELEVENTY_ENV=development eleventy --serve",
+    "build": "ELEVENTY_ENV=production eleventy"
   },
   "author": "Hitomi Seki (https://hitomiseki.com)"
 }

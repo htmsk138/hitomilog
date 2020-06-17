@@ -3,13 +3,29 @@
     "en": "Accessibility",
     "ja": "アクセシビリティ"
   },
-  "best-practice": {
-    "en": "Best practice",
-    "ja": "ベストプラクティス"
+  "css": {
+    "en": "CSS",
+    "ja": "CSS"
   },
   "font": {
     "en": "Font",
     "ja": "フォント"
+  },
+  "html": {
+    "en": "HTML",
+    "ja": "HTML"
+  },
+  "javascript": {
+    "en": "JavaScript",
+    "ja": "JavaScript"
+  },
+  "jquery": {
+    "en": "jQuery",
+    "ja": "jQuery"
+  },
+  "responsive": {
+    "en": "Responsive",
+    "ja": "レスポンシブ"
   },
   "security": {
     "en": "Security",

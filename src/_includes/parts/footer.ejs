@@ -1,0 +1,7 @@
+<footer>
+  <% if ('/' !== page.url && '/ja/' !== page.url) { %>
+  <a href="<%= i18n[lang].homeUrl %>"><%= i18n[lang].backToHome %></a>
+  <br>
+  <% } %>
+  &copy; 2020 <a href="<%= metadata.author.url %>"><%= metadata.author.name %></a>
+</footer>

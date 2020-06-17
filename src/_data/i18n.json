@@ -1,22 +1,24 @@
 {
   "en": {
-    "language": "English",
-    "homeUrl": "/",
+    "backToHome": "Back to home",
     "darkMode": "Dark",
+    "homeUrl": "/",
+    "language": "English",
     "share": "Share this post on: ",
-    "tag": "Tag: ",
-    "posted": "Posted on ",
+    "tagTitlePrefix": "Tag: ",
     "tagged": "tagged in ",
-    "backToHome": "Back to home"
+    "updatedStart": "&nbsp;(updated on&nbsp;",
+    "updatedEnd": ")"
   },
   "ja": {
-    "language": "日本語",
-    "homeUrl": "/ja/",
+    "backToHome": "トップページへ",
     "darkMode": "ダークモード",
+    "homeUrl": "/ja/",
+    "language": "日本語",
     "share": "この記事をシェアする： ",
-    "tag": "タグ： ",
-    "posted": "投稿日： ",
+    "tagTitlePrefix": "タグ： ",
     "tagged": "タグ： ",
-    "backToHome": "トップページへ"
+    "updatedStart": "（",
+    "updatedEnd": "更新）"
   }
 }

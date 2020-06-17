@@ -1,1 +1,17 @@
-<time datetime="<%= date.toISOString().split('T')[0] %>"><%- date.toISOString().split('T')[0] %></time>
+<%
+  var dateString;
+  switch (lang) {
+    case 'ja':
+      dateString = `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
+      break;
+
+    default:
+      var dateOptions = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      };
+      dateString = date.toLocaleString('en-GB', dateOptions);
+      break;
+  }
+%><time datetime="<%= date.toISOString().split('T')[0] %>"><%= dateString %></time>

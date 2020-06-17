@@ -6,20 +6,19 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
     if( outputPath.endsWith(".html") ) {
-      let minified = htmlmin.minify(content, {
+      return htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
         collapseWhitespace: true
       });
-      return minified;
     }
 
     return content;
   });
  
-  eleventyConfig.addPassthroughCopy('src/assets');
+  eleventyConfig.addPassthroughCopy('src/assets/**/*.min.*');
   eleventyConfig.addPassthroughCopy('src/favicon.ico');
-  eleventyConfig.addPassthroughCopy('src/**/*.jpg');
+  eleventyConfig.addPassthroughCopy('src/**/*.(jpg|png|gif)');
 
   eleventyConfig.setDataDeepMerge(true);
 

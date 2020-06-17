@@ -1,14 +1,12 @@
 <% include /parts/head %>
 <body>
   <main role="main">
-    <h1><%= i18n[lang].tag + tagsList[tag][lang] %></h1>
+    <h1><%= i18n[lang].tagTitlePrefix + tagsList[tag][lang] %></h1>
     <%- include('/parts/archive', { tag: tag }) %>
   </main>
   <hr>
-  <footer>
-    <a href="<%= i18n[lang].homeUrl %>"><%= i18n[lang].backToHome %></a>
-  </footer>
-  <% include /parts/scripts %>
+  <% include /parts/footer %>
+  <% include /parts/ga %>
 </body>
 
 </html>
