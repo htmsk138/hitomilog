@@ -55,6 +55,22 @@ pre code::before {
 }
 
 /**
+ * Heading anchors
+ */
+h2 a,
+h3 a,
+h4 a {
+  margin-left: .2em;
+}
+
+h2 a::before,
+h3 a::before,
+h4 a::before {
+  content: '#';
+  font-size: 1rem;
+}
+
+/**
  * Japanese
  */
 html[lang="ja"] body {
