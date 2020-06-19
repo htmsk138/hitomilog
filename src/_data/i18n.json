@@ -1,6 +1,7 @@
 {
   "en": {
     "backToHome": "Back to home",
+    "commentHeading": "Comments",
     "darkMode": "Dark",
     "homeUrl": "/",
     "language": "English",
@@ -12,6 +13,7 @@
   },
   "ja": {
     "backToHome": "トップページへ",
+    "commentHeading": "コメント",
     "darkMode": "ダークモード",
     "homeUrl": "/ja/",
     "language": "日本語",
