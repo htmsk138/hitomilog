@@ -25,6 +25,9 @@ a:focus {
   outline-offset: 2px;
 }
 
+/**
+ * Code
+ */
 code {
   font-family: courier;
 }
@@ -52,6 +55,12 @@ pre code::before {
 
 .language-css::before {
   content: 'CSS:';
+}
+
+@media (min-width: 768px) {
+  pre {
+    white-space: pre-wrap;
+  }
 }
 
 /**
