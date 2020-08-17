@@ -23,6 +23,10 @@
     "en": "jQuery",
     "ja": "jQuery"
   },
+  "php": {
+    "en": "PHP",
+    "ja": "PHP"
+  },
   "responsive": {
     "en": "Responsive",
     "ja": "レスポンシブ"
@@ -34,5 +38,9 @@
   "web": {
     "en": "Web",
     "ja": "ウェブ"
+  },
+  "wordpress": {
+    "en": "WordPress",
+    "ja": "WordPress"
   }
 }

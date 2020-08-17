@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="<%= lang %>">
 <head>
-  <script src="/assets/js/head.min.js"></script>
+  <script src="/assets/js/head.min.js" async></script>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title><%= title %> | <%= metadata.title %></title>
@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="alternate" type="application/rss+xml" href="<%= metadata.url + i18n[lang].homeUrl %>feed.xml" />
   <% if ('ja' === lang) { %>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
   <% } %>
   <link rel="stylesheet" href="/assets/css/main.min.css">
 </head>

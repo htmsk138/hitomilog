@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "ELEVENTY_ENV=development eleventy --serve",
+    "serve": "ELEVENTY_ENV=development eleventy --serve --port=138",
     "build": "ELEVENTY_ENV=production eleventy"
   },
   "author": "Hitomi Seki (https://hitomiseki.com)"

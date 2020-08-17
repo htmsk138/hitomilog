@@ -15,6 +15,7 @@
     <item>
       <title><%= post.data.title %></title>
       <link><%= metadata.url + post.url %></link>
+      <pubDate><%= post.date.toString() %></pubDate>
       <description><%= post.data.content %></description>
     </item>
     <% });} %>

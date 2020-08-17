@@ -57,6 +57,10 @@ pre code::before {
   content: 'CSS:';
 }
 
+.language-php::before {
+  content: 'PHP:';
+}
+
 @media (min-width: 768px) {
   pre {
     white-space: pre-wrap;
@@ -76,7 +80,6 @@ h2 a::before,
 h3 a::before,
 h4 a::before {
   content: '#';
-  font-size: 1rem;
 }
 
 /**

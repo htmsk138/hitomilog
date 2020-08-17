@@ -1,0 +1,17 @@
+<label for="darkmode">
+  <input type="checkbox" id="darkmode" onchange="toggleTheme(this.checked)" />
+  <%= i18n[lang].darkMode %>
+</label>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Change to dark mode if saved
+    var isDark = localStorage.isDark === 'true';
+    document.getElementById('darkmode').checked = isDark;
+    toggleTheme(isDark);
+  });
+  
+  function toggleTheme(isDark) {
+    document.body.classList.toggle('dark', isDark);
+    localStorage.isDark = isDark;
+  }
+</script>
