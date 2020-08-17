@@ -19,6 +19,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/assets/**/*.min.*');
   eleventyConfig.addPassthroughCopy('src/favicon.ico');
   eleventyConfig.addPassthroughCopy('src/**/*.(jpg|png|gif)');
+  eleventyConfig.addPassthroughCopy('src/_redirects');
 
   eleventyConfig.setDataDeepMerge(true);
 
