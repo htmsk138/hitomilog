@@ -98,7 +98,7 @@ html[lang="ja"] code {
  */
 @media not print {
   .dark body {
-    background: #111;
+    background: #121212;
     color: rgba(255,255,255,.8);
   }
 }
