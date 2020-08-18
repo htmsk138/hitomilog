@@ -9,7 +9,8 @@ module.exports = function (eleventyConfig) {
       return htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
-        collapseWhitespace: true
+        collapseWhitespace: true,
+        minifyJS: true
       });
     }
 
