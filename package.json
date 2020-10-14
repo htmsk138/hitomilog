@@ -6,12 +6,13 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
     "@11ty/eleventy-plugin-inclusive-language": "^1.0.0",
+    "cross-env": "^7.0.2",
     "html-minifier": "^4.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "ELEVENTY_ENV=development eleventy --serve --port=138",
-    "build": "ELEVENTY_ENV=production eleventy"
+    "serve": "cross-env ELEVENTY_ENV=development eleventy --serve --port=138",
+    "build": "cross-env ELEVENTY_ENV=production eleventy"
   },
   "author": "Hitomi Seki (https://hitomiseki.com)"
 }
