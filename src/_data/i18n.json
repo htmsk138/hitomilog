@@ -8,8 +8,8 @@
     "share": "Share this post on: ",
     "tagTitlePrefix": "Tag: ",
     "tagged": "tagged in ",
-    "updatedStart": "&nbsp;(updated on&nbsp;",
-    "updatedEnd": ")"
+    "updatedStart": "Last updated on ",
+    "updatedEnd": ""
   },
   "ja": {
     "backToHome": "トップページへ",
@@ -20,7 +20,7 @@
     "share": "この記事をシェアする： ",
     "tagTitlePrefix": "タグ： ",
     "tagged": "タグ： ",
-    "updatedStart": "（",
-    "updatedEnd": "更新）"
+    "updatedStart": "",
+    "updatedEnd": "更新"
   }
 }

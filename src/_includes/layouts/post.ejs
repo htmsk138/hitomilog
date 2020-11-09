@@ -5,10 +5,8 @@
       <header>
         <h1><%- title %></h1>
         <p>
-          <%- include('/parts/date', { date: page.date }) %>
-          <% if ('undefined' !== typeof(updated)) { %>
-          <%- `${i18n[lang].updatedStart}${include('/parts/date', { date: updated })}${i18n[lang].updatedEnd}` %>
-          <% } %>
+          <% var lastUpdated = 'undefined' !== typeof(updated) ? updated : page.date; %>
+          <%- `${i18n[lang].updatedStart}${include('/parts/date', { date: lastUpdated })}${i18n[lang].updatedEnd}` %>
         </p>
       </header>
       <hr>
