@@ -1,6 +1,7 @@
 ---
 title: スムーススクロールの実装
 date: 2020-06-21
+updated: 2020-11-08
 tags:
   - post
   - accessibility
@@ -94,8 +95,24 @@ CSSの `scroll-behavior` と同じくサポート外のブラウザがあるの�
 
 オプションの `updateURL` で、遷移後のハッシュ付きURLを有効にするかどうかを選べます。
 
+## 固定ヘッダー対応
+
+ヘッダーが固定表示されていると、アンカーリンクでジャンプした先の上部がヘッダーに隠れてしまうことがあるので、次のCSSで対策します。
+
+```css
+:target::before {
+  content: '';
+  display: block;
+  height: 200px;
+  margin-top: -200px;
+}
+```
+
+`:target` はリンク先の要素を指すので、クラスがなくても自動的に適用されます。 `height` の値をヘッダーの高さに応じて変更してください。 `margin-top` は `height` の値をマイナスにしたものを指定します。
+
 ## 参考リンク
 
 - [CSS Tricks: Smooth Scrolling and Accessibility](https://css-tricks.com/smooth-scrolling-accessibility/)
 - [W3Schools: How TO - Smooth Scroll](https://www.w3schools.com/howto/howto_css_smooth_scroll.asp)
 - [MDN: Element.scrollIntoView()](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView)
+- [StackOverflow: Fixed page header overlaps in-page anchors](https://stackoverflow.com/a/28824157)
