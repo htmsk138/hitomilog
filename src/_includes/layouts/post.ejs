@@ -19,7 +19,11 @@
   <hr>
   <% include /parts/footer %>
   <% include /parts/ga %>
+  <% if ('production' === app.env) { %>
   <script src="/assets/js/anchors.min.js" defer></script>
+  <% } else { %>
+  <script src="/assets/js/anchors.js" defer></script>
+  <% } %>
 </body>
 
 </html>
