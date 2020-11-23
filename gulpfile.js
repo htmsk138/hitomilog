@@ -3,6 +3,14 @@ const uglify = require('gulp-uglify');
 const cleanCss = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const del = require('del');
+const path = require('path');
+
+/**
+ * Delete _site folder before build.
+ */
+function clearBuildFolder() {
+  return del('_site');
+}
 
 /**
  * Minify JS files.
@@ -30,4 +38,20 @@ function minifyCss(cb) {
   cb();
 }
 
-exports.default = gulp.series(minifyJs, minifyCss);
+/**
+ * Copy images for posts.
+ */
+function copyPostImages(cb) {
+  gulp
+    .src('src/posts/**/*.{png,jpg,gif,svg}')
+    .pipe(gulp.dest('_site'));
+
+  gulp
+    .src('src/ja/posts/**/*.{png,jpg,gif,svg}')
+    .pipe(gulp.dest('_site/ja'));
+
+  cb();
+}
+
+exports.prod = gulp.series(clearBuildFolder, minifyJs, minifyCss, copyPostImages);
+exports.dev = gulp.series(clearBuildFolder, copyPostImages);

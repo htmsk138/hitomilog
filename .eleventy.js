@@ -1,12 +1,9 @@
 const inclusiveLangPlugin = require("@11ty/eleventy-plugin-inclusive-language");
 const htmlmin = require("html-minifier");
-const del = require('del');
 
 const isProduction = 'production' === process.env.ELEVENTY_ENV;
 
 module.exports = function (eleventyConfig) {
-  del('_site');
- 
   eleventyConfig.addPlugin(inclusiveLangPlugin);
 
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
@@ -26,7 +23,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy('src/assets');
   }
   eleventyConfig.addPassthroughCopy('src/favicon.ico');
-  eleventyConfig.addPassthroughCopy('src/**/*.(jpg|png|gif)');
   eleventyConfig.addPassthroughCopy('src/_redirects');
 
   eleventyConfig.setDataDeepMerge(true);

@@ -16,8 +16,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "cross-env ELEVENTY_ENV=development eleventy --serve --port=138",
-    "build": "cross-env ELEVENTY_ENV=production eleventy && gulp"
+    "serve": "gulp dev && cross-env ELEVENTY_ENV=development eleventy --serve --port=138",
+    "build": "gulp prod && cross-env ELEVENTY_ENV=production eleventy"
   },
   "author": "Hitomi Seki (https://hitomiseki.com)"
 }
