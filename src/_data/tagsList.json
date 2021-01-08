@@ -3,13 +3,29 @@
     "en": "Accessibility",
     "ja": "アクセシビリティ"
   },
+  "bootstrap": {
+    "en": "Twitter Bootstrap",
+    "ja": "Twitter Bootstrap"
+  },
+  "command-line": {
+    "en": "Command-line tool",
+    "ja": "コマンドライン"
+  },
   "css": {
     "en": "CSS",
     "ja": "CSS"
   },
+  "docker": {
+    "en": "Docker",
+    "ja": "Docker"
+  },
   "font": {
     "en": "Font",
     "ja": "フォント"
+  },
+  "git": {
+    "en": "Git",
+    "ja": "Git"
   },
   "html": {
     "en": "HTML",
@@ -22,6 +38,14 @@
   "jquery": {
     "en": "jQuery",
     "ja": "jQuery"
+  },
+  "lifehack": {
+    "en": "Lifehack",
+    "ja": "ライフハック"
+  },
+  "mac": {
+    "en": "Mac",
+    "ja": "Mac"
   },
   "php": {
     "en": "PHP",
@@ -42,5 +66,9 @@
   "wordpress": {
     "en": "WordPress",
     "ja": "WordPress"
+  },
+  "windows": {
+    "en": "Windows",
+    "ja": "Windows"
   }
 }

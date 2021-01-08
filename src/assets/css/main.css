@@ -39,7 +39,6 @@ pre {
 }
 
 pre code::before {
-  content: 'JS:';
   display: block;
   font-weight: bold;
   margin: 0 0 1em;
