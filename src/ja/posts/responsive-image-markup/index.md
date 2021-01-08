@@ -2,7 +2,6 @@
 title: 画像のレスポンシブ対応
 date: 2020-05-24
 tags:
-  - post
   - css
   - html
   - responsive

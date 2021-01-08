@@ -2,7 +2,6 @@
 title: Japanese Google Fonts
 date: 2020-05-04
 tags:
-  - post
   - font
 ---
 

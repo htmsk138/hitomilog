@@ -2,7 +2,6 @@
 title: WordPressで、特定の投稿タイプに使われているタームのリストを取得する
 date: 2020-08-15
 tags:
-  - post
   - php
   - wordpress
 ---

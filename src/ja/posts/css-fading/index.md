@@ -2,7 +2,6 @@
 title: CSSとJavaScriptによるフェード効果
 date: 2020-06-14
 tags:
-  - post
   - css
   - javascript
 ---

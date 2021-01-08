@@ -3,7 +3,6 @@ title: スムーススクロールの実装
 date: 2020-06-21
 updated: 2020-11-08
 tags:
-  - post
   - accessibility
   - css
   - javascript

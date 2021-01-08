@@ -2,7 +2,6 @@
 title: How To Implement Dark Theme
 date: 2020-08-23
 tags:
-  - post
   - css
   - javascript
 ---

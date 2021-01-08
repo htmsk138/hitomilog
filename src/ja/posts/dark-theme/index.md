@@ -2,7 +2,6 @@
 title: ダークモードの実装
 date: 2020-08-23
 tags:
-  - post
   - css
   - javascript
 ---

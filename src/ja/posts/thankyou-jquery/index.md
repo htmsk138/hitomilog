@@ -2,7 +2,6 @@
 title: jQueryは必要なのか
 date: 2020-06-14
 tags:
-  - post
   - javascript
   - jquery
 ---
