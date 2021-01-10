@@ -8,6 +8,7 @@ body {
   margin: 0 auto;
   max-width: 40em;
   padding: 1em;
+  word-break: break-word;
 }
 
 img {
