@@ -5,11 +5,3 @@ title: Home
 ---
 
 <%- include('/parts/archive', { tag: 'post' }) %>
-<script>
-  if (document.referrer.indexOf(window.location.hostname) < 0) {
-    var language = navigator.language || navigator.userLanguage;
-    if (language.indexOf('ja') > -1) {
-      window.location.href = '/ja';
-    }
-  }
-</script>
