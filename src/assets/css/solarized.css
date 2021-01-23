@@ -1,0 +1,20 @@
+@media not print {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #cb4b16;
+  }
+
+  body {
+    background: #fdf6e3;
+    color: #657b83;
+  }
+
+  .dark body {
+    background: #002b36;
+    color: #93a1a1;
+  }
+}
