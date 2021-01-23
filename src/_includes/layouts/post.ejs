@@ -19,8 +19,10 @@
   <% include /parts/ga %>
   <% if ('production' === app.env) { %>
   <script src="/assets/js/anchors.min.js" defer></script>
+  <script src="/assets/js/toc.min.js" defer></script>
   <% } else { %>
   <script src="/assets/js/anchors.js" defer></script>
+  <script src="/assets/js/toc.js" defer></script>
   <% } %>
 </body>
 
