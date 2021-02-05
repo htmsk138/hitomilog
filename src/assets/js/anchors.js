@@ -30,6 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
       var link = document.createElement('a');
       link.href = window.location.href.split('#')[0] + '#' + headingId;
+      link.title = 'ja' == document.documentElement.lang ?
+        'このセクションへのリンク' : 'Link to this section';
       headings[i].appendChild(link);
     }
   }
