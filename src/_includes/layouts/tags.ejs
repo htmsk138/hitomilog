@@ -1,6 +1,6 @@
 <% include /parts/head %>
 <body>
-  <main role="main">
+  <main>
     <h1><%= i18n[lang].tagTitlePrefix + tagsList[tag][lang] %></h1>
     <%- include('/parts/archive', { tag: tag }) %>
   </main>
