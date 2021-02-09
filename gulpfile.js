@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const uglify = require('gulp-uglify');
+const terser = require('gulp-terser');
 const cleanCss = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const del = require('del');
@@ -18,7 +18,7 @@ function clearBuildFolder() {
 function minifyJs(cb) {
   gulp
     .src('src/assets/js/*.js')
-    .pipe(uglify())
+    .pipe(terser())
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('_site/assets/js/'));
 
