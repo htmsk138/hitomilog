@@ -1,0 +1,55 @@
+<!doctype html><html lang="ja"><head><script>window.matchMedia("(prefers-color-scheme: dark)").matches&&document.documentElement.classList.add("dark"),document.referrer.indexOf(window.location.hostname)<0&&"/"===window.location.pathname&&-1<(navigator.language||navigator.userLanguage).indexOf("ja")&&(window.location.href="/ja")</script><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><title>Bootstrap カルーセルのカスタマイズ | Hitomilog</title><meta name="description" content="Hitomi Seki&#39;s blog"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="alternate" type="application/rss+xml" href="https://blog.hitomiseki.com/ja/feed.xml"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/css/main.min.css"><link rel="stylesheet" href="/assets/css/solarized.min.css"></head><body><header><h1>Bootstrap カルーセルのカスタマイズ</h1><p><time datetime="2021-01-10">2021年1月10日</time>更新</p><p>タグ： <a href="/ja/tags/bootstrap/">Twitter Bootstrap</a>, <a href="/ja/tags/javascript/">JavaScript</a>, <a href="/ja/tags/jquery/">jQuery</a></p></header><hr><main><article><p>最近 Bootstrap のカルーセルを使う機会があったのですが、意外と基本的なカスタマイズ機能がなく、自前で調整する必要がありました。そのときに使用したJSコードを紹介します。</p><p>この記事のコードの動作サンプルは<a href="https://codepen.io/htmsk138/pen/XWjqLBZ">こちら</a>です。</p><h2>各スライドの高さを揃える</h2><p>カルーセル全体の高さは一番高さのあるスライドに合わせられるものの、それぞれのスライドを同じ高さにして表示することができないようでした。</p><pre><code class="language-javascript">// カルーセルが複数あればそれぞれに対して実行
+$('.carousel').each(function() {
+  var maxHeight = 0;
+
+  // スライドのリストを取得
+  var items = $(this).find('.carousel-item');
+
+  // 各スライドがコンテンツに合わせた高さになるようにする
+  items.css('height', '');
+
+  // スライドを順番に確認し、高さの最大値を控える
+  items.each(function() {
+    maxHeight = Math.max(maxHeight, $(this).height());
+  });
+
+  // 全てのスライド高さを最大値に指定
+  items.css('height', maxHeight + 'px');
+});
+</code></pre><h2>一番最初と最後のスライドを表示中は、矢印ボタンを隠す</h2><p>カルーセルをループモードにしていないとき、端のスライドを表示中は片方の矢印ボタンを無効にすべきではないかと思うのですが、そういう仕様ではないようです。</p><pre><code class="language-javascript">// カルーセルが複数あればそれぞれに対して実行
+$('.carousel').each(function() {
+  // ループモードオフの場合のみ実行
+  if ($(this).data('wrap') === false) {
+    var first = $(this).find('.carousel-item').first();
+    var last = $(this).find('.carousel-item').last();
+    var prev = $(this).find('.carousel-control-prev');
+    var next = $(this).find('.carousel-control-next');
+
+    // まず最初に、先頭のスライドが表示されていたら左矢印を非表示にする
+    prev.toggle(!first.hasClass('active'));
+
+    // スライド完了イベント（カルーセルがスライドされるたびに実行）
+    $(this).on('slid.bs.carousel', function() {
+      // 先頭のスライドが表示されていたら左矢印を非表示にする
+      prev.toggle(!first.hasClass('active'));
+
+      // 末尾のスライドが表示されていたら右矢印を非表示にする
+      next.toggle(!last.hasClass('active'));
+    });
+  }
+});
+</code></pre></article><hr><section><h1>コメント</h1><div id="disqus_thread"></div><script>var disqus_config=function(){this.language="ja"};!function(){var t=document,e=t.createElement("script");e.src="https://hitomilog.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><script id="dsq-count-scr" src="//hitomilog.disqus.com/count.js" async></script></section></main><hr><footer><p><a href="/ja/">トップページへ</a></p><p>Built with <a href="https://www.11ty.dev/">Eleventy</a>, coloured with <a href="https://ethanschoonover.com/solarized/">Solarized</a> palette.</p><p>&copy; 2020 <a href="https://hitomiseki.com">Hitomi Seki</a></p></footer><script src="/assets/js/anchors.min.js" defer="defer"></script><script src="/assets/js/toc.min.js" defer="defer"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-16106862-4"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-16106862-4")</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.hitomiseki.com/ja/customising-bootstrap-carousel/"
+  },
+  "headline": "Bootstrap カルーセルのカスタマイズ",
+  "author": {
+    "@type": "Person",
+    "name": "Hitomi Seki"
+  },
+  "datePublished": "Sun Jan 10 2021 09:00:00 GMT+0900 (Japan Standard Time)",
+  "dateModified": "Sun Jan 10 2021 09:00:00 GMT+0900 (Japan Standard Time)"
+}</script></body></html>

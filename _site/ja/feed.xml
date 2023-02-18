@@ -1,0 +1,843 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Hitomilog</title>
+    <link>https://blog.hitomiseki.com</link>
+    <description>Hitomi Seki&#39;s blog</description>
+    
+    
+    <item>
+      <title>HTML検証ツールいろいろ</title>
+      <link>https://blog.hitomiseki.com/ja/html-validation-tools/</link>
+      <pubDate>Sat Feb 06 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <description>&lt;p&gt;HTMLは作成後、ブラウザで確認したときにパッと見では問題なく表示できていても、記述ミスが隠れていることがあります。そういった見た目には分かりにくい不具合を検出するには、ツールが必要になります。&lt;/p&gt;
+&lt;p&gt;目に見えない部分にもこだわることで、SEOやアクセシビリティの対策にもつながります。&lt;/p&gt;
+&lt;h2&gt;W3Cチェッカー&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://validator.w3.org/&#34;&gt;HTML検証ツール&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jigsaw.w3.org/css-validator/&#34;&gt;CSS検証ツール&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;W3Cが提供しているHTMLとCSSの文法チェッカーです。HTMLはタグの閉じ忘れ、不正な入れ子構造、属性の不足や重複を、CSSはスペルミスやカッコの閉じ忘れなど、基本的な記述ミスを検出してくれます。&lt;/p&gt;
+&lt;p&gt;公開済みのサイトであればURLを指定してチェックすることができます。公開前のサイトは、「Validate by File Upload」からHTMLファイルをアップロードするか、「Validate by direct input」タブにHTMLのソースコードをコピペして検証します。&lt;/p&gt;
+&lt;p&gt;この後に紹介する&lt;a href=&#34;#section3&#34;&gt;Web Developerブラウザ拡張&lt;/a&gt;を使うと、ツールを簡単に呼び出すことができるようになります。&lt;/p&gt;
+&lt;h2&gt;WAVE&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;wave.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh&#34;&gt;Chrome用ブラウザ拡張&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/wave-accessibility-tool/&#34;&gt;FireFox用ブラウザ拡張&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://wave.webaim.org/&#34;&gt;公式サイト&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;アクセシビリティ対応が適切にできているかのチェックを行うブラウザ拡張機能です。&lt;/p&gt;
+&lt;p&gt;インストール後、ブラウザで対象のページを開いた状態でツールバーのアイコンをクリックすると、ページ構造や画像の &lt;code&gt;alt&lt;/code&gt; 属性値などを見やすく表示してくれます。そのうえで、色のコントラストや画像の代替テキストなどに問題があれば、エラーや警告を表示します。&lt;/p&gt;
+&lt;p&gt;表示をもとに戻すには、アイコンをもう一度クリックするか、ページをロードし直します。&lt;/p&gt;
+&lt;h2&gt;Web Developer&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;./web_developer.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm&#34;&gt;Chrome用ブラウザ拡張&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://addons.mozilla.org/en-GB/firefox/addon/web-developer/&#34;&gt;FireFox用ブラウザ拡張&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://chrispederick.com/work/web-developer/&#34;&gt;公式サイト&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ウェブ開発に欠かせない検証ツールを集めた、ブラウザ拡張機能です。&lt;/p&gt;
+&lt;p&gt;インストール後、ブラウザで対象のページを開いた状態でツールバーのアイコンから、多種多様な検証ツールを呼び出すことができます。CSS、JavaScript、Cookieの無効化、アンカーの表示、フォーム要素のチェックなど、本当にありとあらゆるツールが揃っています。&lt;/p&gt;
+&lt;p&gt;先に紹介した&lt;a href=&#34;#section1&#34;&gt;W3Cのチェッカー&lt;/a&gt;も、Toolsタブから簡単に利用できるようになっています。「Validate local HTML (CSS)」を使うと、表示中のページのソースコードを自動的にコピペして検証してくれるのでとても手軽です。&lt;/p&gt;
+&lt;h2&gt;PerfectPixel&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;./perfect_pixel.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi&#34;&gt;Chrome用ブラウザ拡張&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.welldonecode.com/perfectpixel/&#34;&gt;公式サイト&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;デザインにどれだけ忠実なコーディングができているかを確認するためのブラウザ拡張機能です。&lt;/p&gt;
+&lt;p&gt;コーディングの後、デザインデータとブラウザ画面を並べて見比べただけでは、細かいズレなどを見落としてしまいがちです。この拡張機能は、デザインの画像データを半透明の状態でブラウザに表示中のページに重ねて表示させ、デザインとコーディング成果物をトレースしてチェックすることができます。余白が違っていないか、文字サイズが合っているかなど、デザインとの差異が一目瞭然になります。&lt;/p&gt;
+&lt;p&gt;デザインは、PNGやJPEGなどの画像として用意します。ツールバーアイコンをクリックするとウィンドウが出るので、ドラッグアンドドロップでデザイン画像を追加します。複数画像を追加して切り替えることができ、追加済みの画像はドメインごとに記録されるので、次にページを開いたときも画像を追加し直す必要がありません。&lt;/p&gt;
+&lt;h2&gt;Tabキー&lt;/h2&gt;
+&lt;p&gt;ツールではないのですが、作成したページをマウスやタッチパッドを使わず、キーボードだけで閲覧してみてください。リンクやボタンなどのクリックさせる要素はTabキーで移動することになりますが、問題なく操作できるでしょうか。&lt;/p&gt;
+&lt;p&gt;キーボードだけでサイトを利用できるようにすることはアクセシビリティ対策の1つです。実際にキーボードで操作してみると、クリックできるはずの要素を &lt;code&gt;div&lt;/code&gt; タグで記述してしまったり、マウスオーバーにしか対応していないUIでは問題があることが分かると思います。&lt;/p&gt;
+&lt;h2&gt;Lighthouse&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;./lighthouse.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Chromeブラウザの開発者ツールに、「Lighthouse」というタブがあります。Googleの&lt;a href=&#34;https://developers.google.com/speed/pagespeed/insights/&#34;&gt;PageSpeed Insights&lt;/a&gt;と同等の測定を、開発中のサイトに対して行うことができます。&lt;/p&gt;
+&lt;p&gt;インストールされているブラウザの拡張機能が測定結果に影響しないように、シークレットモードで実施するほうが良いようです。&lt;/p&gt;
+&lt;p&gt;サイト公開後にPageSpeed対策をしようとすると難航しがちなので、開発中の段階でパフォーマンスの良いページを作るように意識するほうが得策だと思います。&lt;/p&gt;
+&lt;h2&gt;Web Disability Simulator&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;./web_disability_simulator.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla/&#34;&gt;Chrome用ブラウザ拡張&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Metamatrix/Web-Disability-Simulator&#34;&gt;公式サイト（GitHub）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;様々な特性を持つユーザーからサイトがどのように見えるかをシミュレーションするための、Chrome拡張機能です。アクセシビリティのチェックに使用します。&lt;/p&gt;
+&lt;p&gt;インストールし、ツールバーのアイコンをクリックするとメニューが表示されます。&lt;/p&gt;
+&lt;p&gt;4つのドロップダウンからシミュレーション対象を選ぶのですが、よく使うのは「Sight」リストでしょうか。リスト中の「～color blindness」がつくものは、タイプ別の色覚特性をシミュレーションするもので、中でも「Red-Green」、赤と緑が見えにくいタイプの色覚特性は男性の20人に1人が持つと言われているので、サイト訪問者の中にもそれなりの数が該当すると考えられます。シミュレーションしてみると、背景色と文字色の組み合わせによっては文字が見えにくかったり、情報の区別を色の違いのみに頼ったデザインにしていると区別が効かなくなる、などの不便に気が付きます。&lt;/p&gt;
+&lt;p&gt;「Mobility」メニューから、ポインタを自在に動かせないケースのシミュレーションができますが、こちらも使ってみると先に述べた&lt;a href=&#34;#section5&#34;&gt;キーボード操作の重要性&lt;/a&gt;が分かると思います。&lt;/p&gt;
+&lt;p&gt;見え方や操作性のアクセシビリティを改善することは、ユーザー全般にとって見やすい・使いやすいサイトづくりにつながるので、結果的にユーザビリティやUXが向上することになります。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>画像の代替テキスト</title>
+      <link>https://blog.hitomiseki.com/ja/alternative-text-for-images/</link>
+      <pubDate>Sun Jan 31 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <description>&lt;h2&gt;代替テキストの必要性&lt;/h2&gt;
+&lt;p&gt;HTML では基本的に、すべての情報をテキストで表現する必要があります。画像を配置するときは、画像の内容を表現する代替テキストを用意します。そうすることで、&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;エラーによって画像が表示されなかったとしても、情報を読み取ることができる&lt;/li&gt;
+&lt;li&gt;アクセシビリティ対策として、読み上げソフトでも画像の内容を理解できるようにする&lt;/li&gt;
+&lt;li&gt;SEO対策として、ボットにも理解できるようにする&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;などの利点があります。&lt;/p&gt;
+&lt;h2&gt;画像に短い文字が入っている場合は、&lt;code&gt;alt&lt;/code&gt; 属性&lt;/h2&gt;
+&lt;p&gt;代替テキストの一番基本的な方法です。たとえばロゴなど、画像に文字そのものが入っていて読むことができるものは、それを &lt;code&gt;img&lt;/code&gt; タグの &lt;code&gt;alt&lt;/code&gt; 属性に入れます。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;img src=&amp;quot;logo.svg&amp;quot; alt=&amp;quot;会社名&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;画像に含まれる文字情報が比較的短いものは、これで十分です。&lt;/p&gt;
+&lt;h2&gt;読み上げられる必要がないものは、空の &lt;code&gt;alt&lt;/code&gt; 属性値&lt;/h2&gt;
+&lt;p&gt;画像の &lt;code&gt;alt&lt;/code&gt; 属性には必ず何か値を入れないといけないと思われがちですが、正しくは「空でもいいが、設定しなければいけない」です。&lt;/p&gt;
+&lt;p&gt;空の &lt;code&gt;alt=&amp;quot;&amp;quot;&lt;/code&gt; が設定された画像は、読み上げソフトに「読み上げの必要がない画像」として認識されます。文字などの情報を含んでいない、イメージ画像や装飾目的の画像には空の &lt;code&gt;alt&lt;/code&gt; を設定します。 &lt;code&gt;alt&lt;/code&gt; が設定されていない画像は、画像のファイル名が読み上げられてしまいます。&lt;/p&gt;
+&lt;p&gt;個人的には、プロフィールなどのコンテンツで顔写真がある場合など、氏名は隣接するテキストに書かれていることが多く、「顔写真」や「プロフィール画像」などの説明を入れてもあまり意味をなさない情報だと思うので、空に設定することが多いです。通販サイトでの商品画像なども同様に考えます。&lt;/p&gt;
+&lt;h2&gt;長い文章やグラフなどには、 &lt;code&gt;visually-hidden&lt;/code&gt; クラス&lt;/h2&gt;
+&lt;p&gt;複雑な図などで文字情報が多く、 &lt;code&gt;alt&lt;/code&gt; のみでは説明が難しい場合は、&lt;a href=&#34;https://www.a11yproject.com/posts/2013-01-11-how-to-hide-content/&#34;&gt;読み上げソフトだけに認識される形で&lt;/a&gt;別途コンテンツを用意し、必要に応じてリストやテーブルなども使うようにすることもできます。たとえば下記のような図は、順序付きリストで表現することができます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./flow_ja.png&#34; alt=&#34;手順の流れを示すサンプル画像&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;img src=&amp;quot;steps.png&amp;quot; alt=&amp;quot;&amp;quot;&amp;gt;
+&amp;lt;ol class=&amp;quot;visually-hidden&amp;quot;&amp;gt;
+  &amp;lt;li&amp;gt;
+    ステップ１：&amp;lt;br&amp;gt;
+    フォームに入力する
+  &amp;lt;/li&amp;gt;
+  &amp;lt;li&amp;gt;
+    ステップ２：&amp;lt;br&amp;gt;
+    フォームを送信する
+  &amp;lt;/li&amp;gt;
+  &amp;lt;li&amp;gt;
+    ステップ３：&amp;lt;br&amp;gt;
+    確認メールを受信する
+  &amp;lt;/li&amp;gt;
+&amp;lt;/ol&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ただし、この手の画像は前後の本文に同等の内容が含まれていて、分かりやすさを補完するために画像が用意されていることも多いので、その場合は隠れ要素は不要で &lt;code&gt;alt&lt;/code&gt; 属性も空で問題ないと思います。&lt;/p&gt;
+&lt;h2&gt;&lt;code&gt;alt&lt;/code&gt; 属性の設定漏れを防ぐために&lt;/h2&gt;
+&lt;p&gt;いざコーディングが終わってみると、画像の &lt;code&gt;alt&lt;/code&gt; 属性はブラウザで表示するだけでは見て取れないので、設定漏れがないかどうかをチェックするにはツールを使うと便利です。&lt;/p&gt;
+&lt;h3&gt;ブラウザの拡張機能&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://wave.webaim.org/extension/&#34;&gt;WAVE&lt;/a&gt;という、アクセシビリティ機能をチェックするためのブラウザ拡張機能があります。Chrome と FireFox 用があり、 &lt;code&gt;alt&lt;/code&gt; 属性の有無を含めた、アクセシビリティに関する様々なチェックができます。&lt;/p&gt;
+&lt;p&gt;コーディング作業中に、 &lt;code&gt;alt&lt;/code&gt; 属性を設定したあとに画像が差し替えられて内容が食い違ってしまうようなミスも、このツールで &lt;code&gt;alt &lt;/code&gt; の内容を表示させることで気付くことができます。&lt;/p&gt;
+&lt;h3&gt;HTMLチェックツール&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://validator.w3.org/&#34;&gt;W3CのHTMLチェッカー&lt;/a&gt;を使うと、 &lt;code&gt;alt&lt;/code&gt; 属性の抜けた &lt;code&gt;img&lt;/code&gt; タグがあればエラーとして指摘されます。こちらでは全ての &lt;code&gt;alt&lt;/code&gt; 属性の内容をレビューすることはできませんが、そもそも設定し忘れているケースは拾うことができます。&lt;/p&gt;
+&lt;h2&gt;参考リンク&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://wave.webaim.org/extension/&#34;&gt;WAVE Web Accessibility Evaluation Tool&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://validator.w3.org/#validate_by_input&#34;&gt;W3C Markup Validation Service&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.a11yproject.com/posts/2013-01-11-how-to-hide-content/&#34;&gt;The A11Y Project: How to hide content&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Docker Compose を使った WordPress 環境の構築</title>
+      <link>https://blog.hitomiseki.com/ja/setting-up-docker-wordpress/</link>
+      <pubDate>Sun Jan 17 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <description>&lt;p&gt;わりと最近になってから &lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt; の存在を知り、ローカルの開発環境構築に欠かせない存在となりました。ここでは Docker インストール済みの環境に、実際に WordPress 環境を構築する方法について書いていきます。&lt;/p&gt;
+&lt;p&gt;Docker そのものについての詳しい解説は省略しています。&lt;a href=&#34;https://knowledge.sakura.ad.jp/13265/&#34;&gt;こちらのサイト&lt;/a&gt;などが分かりやすいと思います。&lt;/p&gt;
+&lt;p&gt;この記事で使用する設定ファイルは、&lt;a href=&#34;https://github.com/htmsk138/dockerwp-starter&#34;&gt;こちら&lt;/a&gt;で公開しています。テンプレートとしてご利用いただけます。&lt;/p&gt;
+&lt;h2&gt;基本の手順&lt;/h2&gt;
+&lt;p&gt;下記の手順で、新規の WordPress サイトを立ち上げることができます。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.docker.com/products/docker-desktop&#34;&gt;Docker&lt;/a&gt; をダウンロードし、インストールします&lt;/li&gt;
+&lt;li&gt;プロジェクト用のディレクトリを作成します。ここでは &lt;code&gt;dockerwp&lt;/code&gt; という名前で想定します&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dockerwp&lt;/code&gt; ディレクトリの直下に、下記の内容で &lt;code&gt;docker-compose.yml&lt;/code&gt; というファイルを作成します&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;services:
+
+  wordpress:
+    image: wordpress
+    container_name: dockerwp_wp
+    ports:
+      - 80:80
+    environment:
+      WORDPRESS_DB_HOST: dockerwp_db
+      WORDPRESS_DB_USER: admin
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: dockerwp_dev
+    volumes:
+      - ./wp:/var/www/html
+    depends_on:
+      - db
+    links:
+      - db
+
+  db:
+    image: mysql:5.7
+    container_name: dockerwp_db
+    environment:
+      MYSQL_DATABASE: dockerwp_dev
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: wordpress
+      MYSQL_RANDOM_ROOT_PASSWORD: &#39;1&#39;
+    volumes:
+      - ./db:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: dockerwp_phpmyadmin
+    depends_on:
+      - db
+    ports:
+      - 992:80
+    environment:
+      PMA_HOST: dockerwp_db
+      UPLOAD_LIMIT: 64M
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Docker を起動します&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dockerwp&lt;/code&gt; ディレクトリで、コマンド &lt;code&gt;docker-compose up -d&lt;/code&gt; を実行します（ &lt;code&gt;-d&lt;/code&gt; を省くと処理中のアウトプットが見れます）&lt;/li&gt;
+&lt;li&gt;しばらく待つと、 &lt;a href=&#34;http://localhost&#34;&gt;http://localhost&lt;/a&gt;から WordPress サイトの新規インストール画面が確認できます&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;サイトを停止するときは &lt;code&gt;docker-compose down&lt;/code&gt; を実行します。&lt;/p&gt;
+&lt;p&gt;上記の手順を実施したあとに &lt;code&gt;dockerwp&lt;/code&gt; の中を確認すると、 &lt;code&gt;wp&lt;/code&gt; ディレクトリに WordPress の構成ファイルが、 &lt;code&gt;db&lt;/code&gt; ディレクトリに MySQL の構成ファイルが入っているのが分かります。サイトに必要な情報がすべて &lt;code&gt;dockerwp&lt;/code&gt; ディレクトリの中に揃っている状態なので、他の環境でも Docker がインストールされていれば、ディレクトリごと共有することで同じようにサイトを確認することができます。&lt;/p&gt;
+&lt;h2&gt;アレンジ&lt;/h2&gt;
+&lt;h3&gt;データベース情報を変更する&lt;/h3&gt;
+&lt;p&gt;必要に応じて、&lt;code&gt;docker-compose.yml&lt;/code&gt; のデータベース情報を編集してください。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;WORDPRESS_DB_USER&lt;/code&gt; ... MySQL ユーザ名（ &lt;code&gt;MYSQL_USER&lt;/code&gt; と同じ値）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;WORDPRESS_DB_PASSWORD&lt;/code&gt; ... MySQLパスワード（ &lt;code&gt;MYSQL_PASSWORD&lt;/code&gt; と同じ値）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;WORDPRESS_DB_NAME&lt;/code&gt; ... データベース名（ &lt;code&gt;MYSQL_DATABASE&lt;/code&gt; と同じ値）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;WORDPRESS_DB_HOST&lt;/code&gt; には、 MySQL の &lt;code&gt;container_name&lt;/code&gt; を指定します。&lt;/p&gt;
+&lt;h3&gt;アップロード容量上限を変更する&lt;/h3&gt;
+&lt;p&gt;メディアファイルなどのアップロードサイズ上限は、通常であれば &lt;code&gt;.htaccess&lt;/code&gt; や &lt;code&gt;php.ini&lt;/code&gt; の編集で変更できるのですが、 Docker 環境ではうまくいかないようなので、次の手順で対応します。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;dockerwp&lt;/code&gt; ディレクトリ内に下記の内容で &lt;code&gt;uploads.ini&lt;/code&gt; を作成します。 &lt;code&gt;64M&lt;/code&gt; の部分は任意の容量に変えてください&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;file_uploads = On
+memory_limit = 64M
+upload_max_filesize = 64M
+post_max_size = 64M
+max_execution_time = 600
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;code&gt;docker-compose.yml&lt;/code&gt; を編集し、 &lt;code&gt;wordpress:&lt;/code&gt; の &lt;code&gt;volumes:&lt;/code&gt; セクションに下記の行を追加します&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;- ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;phpMyAdmin画面からのアップロード上限は、 &lt;code&gt;docker-compose.yml&lt;/code&gt; の末尾にある &lt;code&gt;UPLOAD_LIMIT&lt;/code&gt; にて設定します。&lt;/p&gt;
+&lt;h3&gt;既存のサイトを複製する&lt;/h3&gt;
+&lt;p&gt;公開済みのサイトをローカルにコピーしたい場合などは、下記の方法で可能です。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;dockerwp&lt;/code&gt; ディレクトリに WordPress 構成ファイル用のフォルダ（ &lt;code&gt;wp&lt;/code&gt; とします）を作成し、その中に元のサイトのサーバーにアップされているファイルをコピーします&lt;/li&gt;
+&lt;li&gt;元のサイトのデータベースをエクスポートし、 &lt;code&gt;dockerwp&lt;/code&gt; ディレクトリに置きます（ &lt;code&gt;export.sql&lt;/code&gt; とします）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker-compose.yml&lt;/code&gt; を編集し、 &lt;code&gt;db:&lt;/code&gt; の &lt;code&gt;volumes:&lt;/code&gt; セクションに下記の行を追加します&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;- ./export.sql:/docker-entrypoint-initdb.d/export.sql
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;code&gt;docker-compose up -d&lt;/code&gt; でサイトを立ち上げます&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;上記は、新規サイト用のファイルが &lt;code&gt;wp&lt;/code&gt; に自動生成される代わりに手順1のファイルを使用し、初回の立ち上げのみ &lt;code&gt;export.sql&lt;/code&gt; をデータベースにインポートする、という設定になります。&lt;/p&gt;
+&lt;p&gt;サイトURLをローカル用に変える手順は、&lt;a href=&#34;https://ja.wordpress.org/support/article/changing-the-site-url/&#34;&gt;通常の手順&lt;/a&gt;と変わりません。上記の手順2で、 &lt;code&gt;export.sql&lt;/code&gt; を編集してあらかじめ &lt;code&gt;siteurl&lt;/code&gt; と &lt;code&gt;home&lt;/code&gt; の値をローカル用のURLに変えておくと楽かもしれません。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;wp/wp-config.php&lt;/code&gt; に記載のデータベース情報は &lt;code&gt;docker-compose.yml&lt;/code&gt; の内容で上書きされるので、元のサイトとは異なるログイン情報やデータベース名を &lt;code&gt;docker-compose.yml&lt;/code&gt; で設定しておくことをおすすめします。&lt;/p&gt;
+&lt;h2&gt;参考リンク&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://knowledge.sakura.ad.jp/13265/&#34;&gt;さくらのナレッジ　Docker入門&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.docker.jp/&#34;&gt;Docker ドキュメント日本語化プロジェクト&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.wordpress.org/support/article/changing-the-site-url/&#34;&gt;サイトURLの変更（WordPress）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Windowsのコマンドラインツールにフォントを追加する</title>
+      <link>https://blog.hitomiseki.com/ja/adding-font-to-windows-command-line/</link>
+      <pubDate>Sun Jan 10 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <description>&lt;p&gt;コマンドプロンプトなど、Windowsのコマンドラインツールで日本語を表示しようとすると、デフォルトではMSゴシックしか選べません。さすがに見づらいので、他のフォントを追加して使えるようにする方法を探しました。&lt;/p&gt;
+&lt;h2&gt;手順&lt;/h2&gt;
+&lt;p&gt;Windows10で確認した手順です。コマンドプロンプトの他、WSLのターミナルやPowerShellにも、同じ方法が使えます。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;コマンドラインで使いたい等幅フォントを&lt;a href=&#34;https://support.microsoft.com/ja-jp/office/%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B-b7c5f17c-4426-4b53-967f-455339c564c1&#34;&gt;インストール&lt;/a&gt;する&lt;/li&gt;
+&lt;li&gt;Windowsキー＋Rで「ファイル名を指定して実行」を開き、 &lt;code&gt;regedit&lt;/code&gt; と入力して実行&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Console\TrueTypeFont&lt;/code&gt; に移動&lt;/li&gt;
+&lt;li&gt;右側のパネルの適当な場所でで右クリックをし -&amp;gt; New -&amp;gt; String Value&lt;/li&gt;
+&lt;li&gt;「000」「932.1」など、既存の値と被らない値を設定&lt;/li&gt;
+&lt;li&gt;OKをクリックし、パソコンを再起動&lt;/li&gt;
+&lt;li&gt;コマンドプロンプトを起動し、タイトルバーで右クリック、「プロパティ」を選択&lt;/li&gt;
+&lt;li&gt;「フォント」タブで目的のフォントを選択&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;使用できないフォントもある&lt;/h2&gt;
+&lt;p&gt;上記手順の最後で、登録したフォントがリストに出てこない場合は、そのフォントが何らかの理由でコマンドラインツールで使えないということのようです。私が試した中でも、Noto Sans Mono CJK JPは使えず、&lt;a href=&#34;https://github.com/edihbrandon/RictyDiminished&#34;&gt;Ricty Diminished&lt;/a&gt;は大丈夫でした。使えるフォントは等幅フォントのみなので、その点は気をつけてください。&lt;/p&gt;
+&lt;h2&gt;参考リンク&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.thewindowsclub.com/add-custom-fonts-to-command-prompt#:~:text=Open%20Command%20Prompt%20and%20right,section%20and%20click%20on%20OK.&#34;&gt;How to add Custom Fonts to Command Prompt in Windows 10&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.beachside.dev/entry/2017/11/16/192801&#34;&gt;コマンドプロンプト の フォント を Ricty Diminished に 変更する&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Git のコミットで変更されたファイルのみのアーカイブファイルを作成する</title>
+      <link>https://blog.hitomiseki.com/ja/archiving-modified-files-from-a-git-commit/</link>
+      <pubDate>Sun Jan 10 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <description>&lt;p&gt;Git でコミットした内容から、そのコミットで更新・追加されたファイルのみをまとめてZIPなどのアーカイブにする方法です。&lt;/p&gt;
+&lt;p&gt;以下の例はすべて、1つ前に行なったコミットを対象にしたコマンドですが、 &lt;code&gt;HEAD^&lt;/code&gt; の部分を2つのコミットIDに変更し、そのコミット間の差分から抽出することもできます。&lt;/p&gt;
+&lt;h2&gt;Git 経由&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;git archive --format=zip HEAD `git diff --name-only HEAD^` &amp;gt; archive.zip
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Zip 経由&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;zip archive.zip $(git diff --name-only HEAD^)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Tar 経由&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;tar -czvf archive.tgz $(git diff --name-only HEAD^)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Git コミットの日時を変更する</title>
+      <link>https://blog.hitomiseki.com/ja/changing-git-commit-date/</link>
+      <pubDate>Sun Jan 10 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <description>&lt;p&gt;注意：この記事は Git の履歴を変更する方法を含んでいます。各自の責任で慎重に行うようにしてください。&lt;/p&gt;
+&lt;h2&gt;Git のコミットデータには2種類の日時情報がある&lt;/h2&gt;
+&lt;p&gt;下記は、最後のコミットの日時を日本時間で2020年10月31日午前9時に変更するコマンドです。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git commit --amend --no-edit --date=&amp;quot;2020-10-31T00:00+09:00&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;git log&lt;/code&gt; で確認すると確かに上記で変更した日時になっているのですが、この変更したコミットを GitHub にプッシュしたところ、 GitHub 上では修正前の日時が表示されており、ローカルで表示される日時と噛み合わない状態でした。&lt;/p&gt;
+&lt;p&gt;調べてみると、 Git のコミット情報には author date と commit date という、2種類の日時データが記録されているらしく、上記のコマンドでは author date のみが変更されたということのようでした。&lt;/p&gt;
+&lt;p&gt;下記のコマンドを実行して author date と commit date を一致させ、プッシュし直しました。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git filter-branch --env-filter &#39;export GIT_COMMITTER_DATE=&amp;quot;$GIT_AUTHOR_DATE&amp;quot;&#39;
+git push -f
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;正しいコマンド&lt;/h2&gt;
+&lt;p&gt;片方の日時だけを変更したいケースもあまり無いと思うので、初めから下記のコマンドを使えば、両方の日時データが更新されるようです。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;GIT_COMMITTER_DATE=&amp;quot;2020-10-31T00:00+09:00&amp;quot; git commit --amend --no-edit --date &amp;quot;2020-10-31T00:00+09:00&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;参考リンク&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.community/t/commit-timestamps-in-github-dont-match-repo/127766&#34;&gt;Commit timestamps in GitHub don’t match repo (GitHub Support Community)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://hackernoon.com/change-the-date-of-a-git-commit-eeed8d2c5b9b&#34;&gt;Change the date of a git commit (Hacker Noon)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CSS で蛍光ペンのような線を引く</title>
+      <link>https://blog.hitomiseki.com/ja/css-text-highlight/</link>
+      <pubDate>Sun Jan 10 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <description>&lt;p&gt;テキストに蛍光ペンで線を引いたような装飾をします。&lt;/p&gt;
+&lt;p&gt;動作サンプルは&lt;a href=&#34;https://codepen.io/htmsk138/pen/oNzxOjo&#34;&gt;こちら&lt;/a&gt;です。以下、解説です。&lt;/p&gt;
+&lt;h2&gt;基本&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;p&amp;gt;
+  テキストを&amp;lt;span class=&amp;quot;highlighted yellow&amp;quot;&amp;gt;蛍光ペンで&amp;lt;/span&amp;gt;マークします。&amp;lt;br&amp;gt;
+  こちらは&amp;lt;span class=&amp;quot;highlighted pink&amp;quot;&amp;gt;ピンク色&amp;lt;/span&amp;gt;の例です。
+&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.highlighted {
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.highlighted.yellow {
+  background-image: linear-gradient(to top, yellow 60%, transparent 0);
+}
+
+.highlighted.pink {
+  background-image: linear-gradient(to top, pink 60%, transparent 0);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;linear-gradient()&lt;/code&gt; は本来、背景にグラデーション効果を出すための関数ですが、ここでは色の切り替わりを1点に集中させることで色を2分割させています。上記の定義は「下から上へ、起点から60%の位置で黄色（ピンク）から透明へ変化せよ」です。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;60%&lt;/code&gt; としている箇所を変更すると、線の太さを調整できます。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; などのブロックレベル要素ではなく、 &lt;code&gt;&amp;lt;span&amp;gt;&lt;/code&gt; などのインライン要素に使うようにすれば、複数行にわたるテキストにも線を引くことができます。&lt;/p&gt;
+&lt;h2&gt;アニメーション付き&lt;/h2&gt;
+&lt;p&gt;アニメーション効果を付ける場合は、下記のCSSを追記します。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.highlighted {
+  transition: background-size .5s;
+}
+
+.highlighted.animating {
+  background-size: 0 auto;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;マークアップにも &lt;code&gt;animating&lt;/code&gt; クラスを追加します。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;p&amp;gt;
+  &amp;lt;span class=&amp;quot;highlighted yellow animating&amp;quot;&amp;gt;アニメーション付きのマーカーです。&amp;lt;/span&amp;gt;
+&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;JSなどで任意のタイミングで &lt;code&gt;animating&lt;/code&gt; クラスを外せば、線が左から右へと伸びていきます。複数行のテキストにも使用できます。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bootstrap カルーセルのカスタマイズ</title>
+      <link>https://blog.hitomiseki.com/ja/customising-bootstrap-carousel/</link>
+      <pubDate>Sun Jan 10 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <description>&lt;p&gt;最近 Bootstrap のカルーセルを使う機会があったのですが、意外と基本的なカスタマイズ機能がなく、自前で調整する必要がありました。そのときに使用したJSコードを紹介します。&lt;/p&gt;
+&lt;p&gt;この記事のコードの動作サンプルは&lt;a href=&#34;https://codepen.io/htmsk138/pen/XWjqLBZ&#34;&gt;こちら&lt;/a&gt;です。&lt;/p&gt;
+&lt;h2&gt;各スライドの高さを揃える&lt;/h2&gt;
+&lt;p&gt;カルーセル全体の高さは一番高さのあるスライドに合わせられるものの、それぞれのスライドを同じ高さにして表示することができないようでした。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// カルーセルが複数あればそれぞれに対して実行
+$(&#39;.carousel&#39;).each(function() {
+  var maxHeight = 0;
+
+  // スライドのリストを取得
+  var items = $(this).find(&#39;.carousel-item&#39;);
+
+  // 各スライドがコンテンツに合わせた高さになるようにする
+  items.css(&#39;height&#39;, &#39;&#39;);
+
+  // スライドを順番に確認し、高さの最大値を控える
+  items.each(function() {
+    maxHeight = Math.max(maxHeight, $(this).height());
+  });
+
+  // 全てのスライド高さを最大値に指定
+  items.css(&#39;height&#39;, maxHeight + &#39;px&#39;);
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;一番最初と最後のスライドを表示中は、矢印ボタンを隠す&lt;/h2&gt;
+&lt;p&gt;カルーセルをループモードにしていないとき、端のスライドを表示中は片方の矢印ボタンを無効にすべきではないかと思うのですが、そういう仕様ではないようです。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// カルーセルが複数あればそれぞれに対して実行
+$(&#39;.carousel&#39;).each(function() {
+  // ループモードオフの場合のみ実行
+  if ($(this).data(&#39;wrap&#39;) === false) {
+    var first = $(this).find(&#39;.carousel-item&#39;).first();
+    var last = $(this).find(&#39;.carousel-item&#39;).last();
+    var prev = $(this).find(&#39;.carousel-control-prev&#39;);
+    var next = $(this).find(&#39;.carousel-control-next&#39;);
+
+    // まず最初に、先頭のスライドが表示されていたら左矢印を非表示にする
+    prev.toggle(!first.hasClass(&#39;active&#39;));
+
+    // スライド完了イベント（カルーセルがスライドされるたびに実行）
+    $(this).on(&#39;slid.bs.carousel&#39;, function() {
+      // 先頭のスライドが表示されていたら左矢印を非表示にする
+      prev.toggle(!first.hasClass(&#39;active&#39;));
+
+      // 末尾のスライドが表示されていたら右矢印を非表示にする
+      next.toggle(!last.hasClass(&#39;active&#39;));
+    });
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ダークモードの実装</title>
+      <link>https://blog.hitomiseki.com/ja/dark-theme/</link>
+      <pubDate>Sun Aug 23 2020 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <description>&lt;p&gt;サイトをダークモードで表示できるようにする方法です。デバイスの設定に沿って自動的にモードを切り替える方法と、ユーザーが任意に切り替えできるようにする方法の2通りを紹介します。&lt;/p&gt;
+&lt;h2&gt;CSS定義&lt;/h2&gt;
+&lt;p&gt;まず、サイトをダークモードで表示するためのCSSを定義します。 &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt; に &lt;code&gt;dark&lt;/code&gt; クラスを付与すると、 &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; 要素全体の色が反転するように定義しておきます。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;@media not print {
+  .dark body {
+    background: #000;
+    color: #fff;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;具体的な定義は、自由にカスタマイズしてください。この例では単純に、背景を黒、文字色を白に指定しています。&lt;/p&gt;
+&lt;p&gt;また、 &lt;code&gt;@media not print&lt;/code&gt; で囲むことで、印刷時にはダークモードが適用されないようにしています。&lt;/p&gt;
+&lt;p&gt;これで、サイトをダークモードで表示する準備ができました。次に、 &lt;code&gt;dark&lt;/code&gt; クラスを付けたり外したりすることで、ダークモードと通常モードの切り替えをするための実装をしていきます。&lt;/p&gt;
+&lt;h2&gt;自動で切り替える&lt;/h2&gt;
+&lt;p&gt;最近のパソコンやスマホには、OSのUIそのものをダークモードに設定する機能が付いていることが多くなってきました。ウェブサイトでもその設定を参照し、それに沿って自動的に表示を切り替えることができます。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; 直後に、下記のJavaScriptコードを置きます。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script&amp;gt;
+  // デバイスがダークモードに設定されているかどうか
+  if (window.matchMedia(&amp;quot;(prefers-color-scheme: dark)&amp;quot;).matches) {
+    // &amp;lt;html&amp;gt;タグにdarkクラスを付与
+    document.documentElement.classList.add(&amp;quot;dark&amp;quot;);
+  }
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;基本的にJavaScriptは &lt;code&gt;&amp;lt;/body&amp;gt;&lt;/code&gt; 直前に置くことが多いですが、この場合は &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; 直後に置くことで、ページロードを開始後一番早いタイミングでダークモードを設定することができ、一瞬だけ通常モードでページが表示されてしまうリスクを最小限に抑えます。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://codepen.io/htmsk138/pen/MWyeGQv&#34;&gt;サンプル&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;手動で切り替える&lt;/h2&gt;
+&lt;p&gt;デバイスの設定に関係なく、ユーザーが表示テーマを選択できるようにする方法です。&lt;/p&gt;
+&lt;p&gt;普段はダークモードを好んでいるユーザーでも、サイトによっては通常モードのほうが見やすいと感じることもあります。また、その逆もありえます。どんなニーズにも対応できるという意味ではユーザー寄りの実装といえる反面、常にダークモードを選択したいユーザーにとっては手間になるかもしれません。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dark&lt;/code&gt; クラスの切り替えに加えて、ページを遷移しても設定を維持する必要があるため、ブラウザの&lt;a href=&#34;https://developer.mozilla.org/ja/docs/Web/API/Window/localStorage&#34;&gt;localStorage&lt;/a&gt;を利用して設定を保存します。&lt;/p&gt;
+&lt;h3&gt;チェックボックスを使う方法&lt;/h3&gt;
+&lt;p&gt;「ダークモード」のチェックをオンにしている間だけ、サイトをダークモードで表示する方法です。&lt;/p&gt;
+&lt;p&gt;HTMLで次のようなチェックボックスを設置します。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;label for=&amp;quot;darkmode&amp;quot;&amp;gt;
+  &amp;lt;input type=&amp;quot;checkbox&amp;quot; id=&amp;quot;darkmode&amp;quot; onchange=&amp;quot;toggleTheme(this.checked)&amp;quot; /&amp;gt; ダークモード
+&amp;lt;/label&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;下記のJavaScriptコードを追加します。今回は &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; 直後である必要はありません。チェックボックスを操作するため、ページコンテンツがロードされたあとに実行されるようにします。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;/**
+ * ページロード完了後
+ */
+document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
+  // ローカル保存済みの設定の取得（未設定の場合もfalse）
+  var isDark = localStorage.isDark === &#39;true&#39;;
+
+  // 保存されていた設定に従い、チェックボックスの状態と、サイトのテーマを切り替える
+  document.getElementById(&#39;darkmode&#39;).checked = isDark;
+  toggleTheme(isDark);
+});
+
+/**
+ * サイトテーマの切り替え
+ * @param  {Boolean} isDark trueでダークモードへ、falseで通常モードへ切り替え
+ */
+function toggleTheme(isDark) {
+  // &amp;lt;html&amp;gt;タグにdarkクラスを付与または削除
+  document.documentElement.classList.toggle(&#39;dark&#39;, isDark);
+
+  // ローカルに設定を保存
+  localStorage.isDark = isDark;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://codepen.io/htmsk138/pen/LYNZVPw&#34;&gt;サンプル&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;ボタンを使う方法&lt;/h3&gt;
+&lt;p&gt;ボタンを押すたびに、ダークモードと通常モードを切り替える方法です。&lt;/p&gt;
+&lt;p&gt;HTMLでボタンを設置します。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;button id=&amp;quot;darkmode&amp;quot; onclick=&amp;quot;toggleTheme()&amp;quot;&amp;gt;テーマ切替&amp;lt;/button&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; 直後に次のコードを追加します。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script&amp;gt;
+  // ローカルにダークモード設定が保存されているか
+  if (&#39;true&#39; === localStorage.isDark) {
+    // &amp;lt;html&amp;gt;タグにdarkクラスを付与
+    document.documentElement.classList.add(&amp;quot;dark&amp;quot;);
+  }
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;次のJavaScriptコードを追加します。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;/**
+ * サイトテーマの切り替え。現在と逆のテーマに切り替える。
+ */
+function toggleTheme() {
+  // &amp;lt;html&amp;gt;タグにdarkクラスを付与または削除
+  document.documentElement.classList.toggle(&#39;dark&#39;);
+
+  // ローカルに設定を保存
+  localStorage.isDark = (&#39;true&#39; !== localStorage.isDark);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://codepen.io/htmsk138/pen/QWNEwXq&#34;&gt;サンプル&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;自動と手動の方法を組み合わせる&lt;/h2&gt;
+&lt;p&gt;初期値はデバイスの設定に従いつつ、ユーザーの操作でも切り替えができるようにします。自動と手動、双方のメリットが活かせる方法です。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; 直後の &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; タグ、またはページロード完了イベントに入れるコードを、次のようにします。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;if (&#39;true&#39; === localStorage.isDark || // ローカルにダークモード設定が保存されているか
+  (undefined === localStorage.isDark &amp;amp;&amp;amp; window.matchMedia(&amp;quot;(prefers-color-scheme: dark)&amp;quot;).matches)) { // ローカルに設定が保存されていなければ、デバイスの設定に従う
+  // &amp;lt;html&amp;gt;タグにdarkクラスを付与
+  document.documentElement.classList.add(&amp;quot;dark&amp;quot;);
+
+  // ローカルに設定を保存
+  localStorage.isDark = true;
+
+  // 下記は、チェックボックス使用時のみ
+  document.getElementById(&#39;darkmode&#39;).checked = true;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;残りの実装は、先に紹介した手動切り替えの例と同じになります。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://codepen.io/htmsk138/pen/LYNZmOX&#34;&gt;サンプル&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>WordPressで、特定の投稿タイプに使われているタームのリストを取得する</title>
+      <link>https://blog.hitomiseki.com/ja/wordpress-get-terms-for-a-post-type/</link>
+      <pubDate>Sat Aug 15 2020 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <description>&lt;p&gt;WordPressの &lt;code&gt;get_terms()&lt;/code&gt; 関数は、デフォルトでは指定されたタクソノミーに属するすべてのタームを返します。タクソノミーを1種類の投稿タイプでしか使っていないときはそれで十分なのですが、1つのタクソノミーを複数の投稿タイプで共用している場合に、特定の投稿タイプに使われているタームのみのリストを取得したいことがあります。&lt;/p&gt;
+&lt;h2&gt;方法1： &lt;code&gt;object_ids&lt;/code&gt; 引数を使う&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;// 投稿タイプのすべての公開済み投稿のIDリストを取得
+$post_ids = get_posts( array(
+    &#39;post_type&#39; =&amp;gt; &#39;some_post_type&#39;,
+    &#39;posts_per_page&#39; =&amp;gt; -1,
+    &#39;post_status&#39; =&amp;gt; &#39;publish&#39;,
+    &#39;fields&#39; =&amp;gt; &#39;ids&#39;
+) );
+
+// 上記IDのオブジェクトに使われているタームのみを取得
+$terms_for_type = get_terms( array(
+    &#39;taxonomy&#39; =&amp;gt; &#39;some_taxonomy&#39;,
+    &#39;object_ids&#39; =&amp;gt; $post_ids
+) );
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;some_post_type&lt;/code&gt; と &lt;code&gt;some_taxonomy&lt;/code&gt; の部分を、それぞれ投稿タイプとタクソノミーのスラッグに置き換えてください。&lt;/p&gt;
+&lt;p&gt;この方法では、指定した投稿タイプの記事数が極端に多い場合の負荷が気になるところです。そこで、もう1つの方法をご紹介します。&lt;/p&gt;
+&lt;h2&gt;方法2： &lt;code&gt;get_terms()&lt;/code&gt; 関数にフィルタを追加する&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;get_terms()&lt;/code&gt; に &lt;code&gt;post_type&lt;/code&gt; 引数があるといいなと思っていたところ、フィルタを作成して使えるようにしてしまう方法を見つけました。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://dfactory.eu/wp-how-to-get-terms-post-type/&#34;&gt;こちらのサイト&lt;/a&gt;で紹介されているコードを、テーマの functions.php 等に追加します。「Edit:
+A new, updated approach...」の後に記載されているほうのコードを使ってください。&lt;/p&gt;
+&lt;p&gt;上記コードの処理内容としては、ターム取得時のSQL文を書き換えて、指定された投稿タイプで絞り込みできるようにしたものです。 &lt;code&gt;post_type&lt;/code&gt; は、 &lt;code&gt;string&lt;/code&gt; での単数指定と &lt;code&gt;array&lt;/code&gt; での複数指定の両方に対応しています。&lt;/p&gt;
+&lt;p&gt;これで、下記のように投稿タイプを指定することができるようになります。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;// 投稿タイプを1つ指定
+$terms_for_type = get_terms( array(
+    &#39;taxonomy&#39; =&amp;gt; &#39;some_taxonomy&#39;,
+    &#39;post_type&#39; =&amp;gt; &#39;some_post_type&#39;
+) );
+
+// 投稿タイプを複数指定
+$terms_for_types = get_terms( array(
+    &#39;taxonomy&#39; =&amp;gt; &#39;some_taxonomy&#39;,
+    &#39;post_type&#39; =&amp;gt; array( 
+      &#39;some_post_type1&#39;,
+      &#39;some_post_type2&#39;
+    )
+) );
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;注意点として、 &lt;code&gt;get_terms()&lt;/code&gt; 呼び出し時に &lt;code&gt;fields&lt;/code&gt; 引数をデフォルトの &lt;code&gt;all&lt;/code&gt; 以外に設定してしまうと、正しいカウント数（返り値オブジェクトの &lt;code&gt;count&lt;/code&gt; プロパティ）が得られないそうです。&lt;/p&gt;
+&lt;p&gt;SQLに介入するのはベストプラクティスとは言えないかもしれませんが、方法1で不都合があるときは参考にしてみてください。&lt;/p&gt;
+&lt;h2&gt;参考リンク&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/get_terms&#34;&gt;関数リファレンス/get terms&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.wordpress.org/reference/classes/wp_term_query/__construct/&#34;&gt;WP_Term_Query::__construct&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dfactory.eu/wp-how-to-get-terms-post-type/&#34;&gt;WordPress: How to get_terms for post type&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>スムーススクロールの実装</title>
+      <link>https://blog.hitomiseki.com/ja/smooth-scroll/</link>
+      <pubDate>Sun Jun 21 2020 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <description>&lt;h2&gt;スムーススクロールとは&lt;/h2&gt;
+&lt;p&gt;スムーススクロール（スムーズスクロール）は、ページ内リンクをクリックしたときに目的のセクションまで画面をスクロールさせる演出です。次のようなメリットがあります。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;遷移後もURLが変更されない&lt;/li&gt;
+&lt;li&gt;違うページに移動したかのような錯覚を起こさない&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;懸念点&lt;/h2&gt;
+&lt;p&gt;デメリットとしては、&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;セクションのURLがわからなくなる&lt;/li&gt;
+&lt;li&gt;画面が激しく動くことで、酔う人がいる&lt;/li&gt;
+&lt;li&gt;アクセシビリティ上問題が多い&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;があります。&lt;/p&gt;
+&lt;h3&gt;セクションのURLがわからなくなる&lt;/h3&gt;
+&lt;p&gt;これは、メリットの1つとして挙げた「遷移後もURLが変更されない」と引き換えに発生する問題です。&lt;/p&gt;
+&lt;p&gt;本来、ページ内リンクをクリックすると、次のようなURLに移動することになります。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;https://website.com#section1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;#section1&lt;/code&gt; というハッシュが移動先のセクションを指しており、このURLに直接アクセスすると目的のセクションまでスクロールされた状態でブラウザに表示されます。コピペしてそのセクションのみを参照したいときなどに便利ですが、スムーススクロールの実装時に無効化してしまうと、利用できなくなります。&lt;/p&gt;
+&lt;p&gt;実装方法によっては、スクロール後も従来のハッシュ付きURLを残すこともできます。どちらを選ぶかはサイトの設計次第ではありますが、無効にするのはユーザーの選択肢を減らす形になるので、デメリットと考えています。&lt;/p&gt;
+&lt;h3&gt;画面が激しく動くことで、酔う人がいる&lt;/h3&gt;
+&lt;p&gt;パソコンやスマホのOSには、動きによる視覚効果を減らす設定項目があります。下記はMac OSの設定画面です。&lt;/p&gt;
+&lt;p&gt;これは、視差効果によって具合の悪くなってしまう体質だったり、単に苦手な人が存在するためです。そのような人たちにとっては、スムーススクロールはサイトの使い心地を下げることになります。&lt;/p&gt;
+&lt;h3&gt;アクセシビリティ上問題が多い&lt;/h3&gt;
+&lt;p&gt;キーボードだけでサイトを操作してみると分かりますが、ページ内リンクをクリック後、移動した先を表示するだけではなく、内部フォーカスも移動させないと、そのセクション内をTabキーなどで移動することができません。これは、スクリーンリーダーにも影響します。フォーカスがクリックしたリンクのままになっていると、リンクの次の要素から読み上げが継続されるので、目的のセクションまで移動したことになりません。スムーススクロールを実装する際は、このフォーカス問題を考慮する必要があります。&lt;/p&gt;
+&lt;p&gt;1つ前に挙げた視差効果の問題も、アクセシビリティ問題といえます。&lt;/p&gt;
+&lt;h2&gt;実装方法&lt;/h2&gt;
+&lt;h3&gt;jQuery&lt;/h3&gt;
+&lt;p&gt;jQueryでは、&lt;a href=&#34;https://css-tricks.com/snippets/jquery/smooth-scrolling/&#34;&gt;こちら&lt;/a&gt;で紹介されているコードを使わせてもらっています。少し長めのコードになりますが、上に挙げたフォーカス問題についてもクリアされています。&lt;/p&gt;
+&lt;h3&gt;jQuery以外の方法&lt;/h3&gt;
+&lt;p&gt;jQueryを使わない場合、いくつか方法があります。&lt;/p&gt;
+&lt;h4&gt;CSSを使用する&lt;/h4&gt;
+&lt;p&gt;実は、シンプルなCSS定義で実装できます。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;@media screen and (prefers-reduced-motion: reduce)&lt;/code&gt; によって、視差効果が無効化されている環境では適用されないようにしています。&lt;/p&gt;
+&lt;p&gt;残念なことに、&lt;a href=&#34;https://caniuse.com/#search=scroll-behavior&#34;&gt;Safariなどのブラウザでサポートされていない&lt;/a&gt;ため、出番がほとんどありません。&lt;a href=&#34;https://www.w3schools.com/howto/howto_css_smooth_scroll.asp&#34;&gt;W3Schools&lt;/a&gt;でも、「クロスブラウザを考慮するのであれば」と、結局JavaScriptでの実装例が紹介されています。&lt;/p&gt;
+&lt;h4&gt;&lt;code&gt;scrollIntoView()&lt;/code&gt; メソッドを使う&lt;/h4&gt;
+&lt;p&gt;JavaScriptの&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView&#34;&gt;Element.scrollIntoView()&lt;/a&gt;メソッドを使う方法です。&lt;/p&gt;
+&lt;p&gt;CSSの &lt;code&gt;scroll-behavior&lt;/code&gt; と同じくサポート外のブラウザがあるのですが、&lt;a href=&#34;https://github.com/iamdustan/smoothscroll&#34;&gt;ポリフィル&lt;/a&gt;と併用することで解決できます。&lt;/p&gt;
+&lt;p&gt;欠点として、スクロール速度の設定ができないため、ブラウザによってスクロール速度が異なってしまいます。基本的にどの環境でも同じように動作させたいことが多いので、やはりほとんど出番がありません。&lt;/p&gt;
+&lt;h4&gt;ライブラリを使う&lt;/h4&gt;
+&lt;p&gt;今のところの結論としては、&lt;a href=&#34;https://github.com/cferdinandi/smooth-scroll&#34;&gt;こちらのライブラリ&lt;/a&gt;を使うのが確実です。CSSの &lt;code&gt;scroll-behavior&lt;/code&gt; が出たことを理由にメンテナンスは終了していますが、問題なく動作し、細かいオプション指定も可能です。&lt;/p&gt;
+&lt;p&gt;オプションの &lt;code&gt;updateURL&lt;/code&gt; で、遷移後のハッシュ付きURLを有効にするかどうかを選べます。&lt;/p&gt;
+&lt;h2&gt;固定ヘッダー対応&lt;/h2&gt;
+&lt;p&gt;ヘッダーが固定表示されていると、アンカーリンクでジャンプした先の上部がヘッダーに隠れてしまうことがあるので、次のCSSで対策します。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;:target::before {
+  content: &#39;&#39;;
+  display: block;
+  height: 200px;
+  margin-top: -200px;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;:target&lt;/code&gt; はリンク先の要素を指すので、クラスがなくても自動的に適用されます。 &lt;code&gt;height&lt;/code&gt; の値をヘッダーの高さに応じて変更してください。 &lt;code&gt;margin-top&lt;/code&gt; は &lt;code&gt;height&lt;/code&gt; の値をマイナスにしたものを指定します。&lt;/p&gt;
+&lt;h2&gt;参考リンク&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://css-tricks.com/smooth-scrolling-accessibility/&#34;&gt;CSS Tricks: Smooth Scrolling and Accessibility&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.w3schools.com/howto/howto_css_smooth_scroll.asp&#34;&gt;W3Schools: How TO - Smooth Scroll&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView&#34;&gt;MDN: Element.scrollIntoView()&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/a/28824157&#34;&gt;StackOverflow: Fixed page header overlaps in-page anchors&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CSSとJavaScriptによるフェード効果</title>
+      <link>https://blog.hitomiseki.com/ja/css-fading/</link>
+      <pubDate>Sun Jun 14 2020 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <description>&lt;p&gt;jQueryを使わずに、CSSと素のJavaScriptで要素をフェードインやフェードアウトさせる方法です。&lt;/p&gt;
+&lt;h2&gt;基本のコード&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div class=&amp;quot;fade hidden&amp;quot;&amp;gt;フェードインするコンテンツ&amp;lt;/div&amp;gt;
+&amp;lt;div class=&amp;quot;fade&amp;quot;&amp;gt;フェードアウトするコンテンツ&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.fade {
+  transition: opacity .5s;
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;transition: opacity .5s;&lt;/code&gt; は、 「&lt;code&gt;opacity&lt;/code&gt; の値が変更されたときは0.5秒かけて徐々に変化せよ」という意味になります。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;hidden&lt;/code&gt; クラスをJavaScriptで付けたり外したりすることで、 &lt;code&gt;opacity&lt;/code&gt; （不透明度）が1から0、0から1に切り替わります。それを瞬間で変化するのではなく0.5秒かけて変化させることで、フェード効果を出します。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;opacity: 1;&lt;/code&gt; は、デフォルトが1のため、省略することもできます。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// フェードイン
+var fadeInElements = document.querySelectorAll(&#39;.fade.hidden&#39;);
+for (var i = 0; i &amp;lt; fadeInElements.length; i++) {
+  fadeInElements[i].classList.remove(&#39;hidden&#39;);
+}
+
+// フェードアウト
+var fadeOutElements = document.querySelectorAll(&#39;.fade:not(.hidden)&#39;);
+for (var i = 0; i &amp;lt; fadeOutElements.length; i++) {
+  fadeOutElements[i].classList.add(&#39;hidden&#39;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;toggle()&lt;/code&gt; メソッドを使うと、 &lt;code&gt;hidden&lt;/code&gt; クラスが付いていれば外し、付いていなければ加える、という切り替えができます。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var fadeingElements = document.querySelectorAll(&#39;.fade&#39;);
+for (var i = 0; i &amp;lt; fadeingElements.length; i++) {
+  fadeingElements[i].classList.toggle(&#39;hidden&#39;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;使用例&lt;/h2&gt;
+&lt;p&gt;以上のようなJSコードを、ページロードやクリックなどのイベントで呼び出すようにします。&lt;/p&gt;
+&lt;h3&gt;ページロード後にフェードインさせる&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
+  var fadeInElements = document.querySelectorAll(&#39;.fade.hidden&#39;);
+  for (var i = 0; i &amp;lt; fadeInElements.length; i++) {
+    fadeInElements[i].classList.remove(&#39;hidden&#39;);
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;ボタンクリックでフェードイン・フェードアウトを切り替える&lt;/h3&gt;
+&lt;p&gt;ボタンをクリックすると、すぐ後の要素がフェードイン・フェードアウトする例です。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;button onclick=&amp;quot;toggleFade(this)&amp;quot;&amp;gt;フェード切り替え&amp;lt;/button&amp;gt;
+&amp;lt;div class=&amp;quot;fade&amp;quot;&amp;gt;フェードするコンテンツ&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;function toggleFade(toggle) {
+  var target = toggle.nextElementSibling;
+  target.classList.toggle(&#39;hidden&#39;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;opacityだけではうまくいかないケース&lt;/h2&gt;
+&lt;p&gt;画面右下に固定表示される「ページトップに戻る」ボタンやスマホ向けのドロップダウンメニューなど、位置が固定された要素をフェードイン・フェードアウトで切り替える場合は、 &lt;code&gt;opacity&lt;/code&gt; のみでの制御だけではうまくいきません。&lt;/p&gt;
+&lt;h3&gt;問題点&lt;/h3&gt;
+&lt;p&gt;例えば、画面右下に固定されている「ページトップに戻る」ボタンを &lt;code&gt;opacity: 0;&lt;/code&gt; で非表示にすると、ボタン自体は透明になるだけで、本来の大きさでそこに残ります。外見上は存在しないボタンを誤ってクリックしてしまう可能性があります。&lt;/p&gt;
+&lt;h3&gt;解決策&lt;/h3&gt;
+&lt;p&gt;ボタンが非表示のときは幅をゼロにすることでボタンの面積をなくし、クリックできないようにする必要があります。&lt;/p&gt;
+&lt;p&gt;下記の例ではフェード対象の要素（ここではボタン）が &lt;code&gt;fade&lt;/code&gt; クラスを持っていると想定し、フェードに関わるコードのみを記載します。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.fade {
+  opacity: 1;
+  transition: opacity .5s, width 0s;
+  width: 100px;
+}
+
+.fade.hidden {
+  opacity: 0;
+  transition: opacity .5s, width 0s .5s;
+  width: 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;先ほどの例と違う点は、&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;width&lt;/code&gt; の指定&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;width&lt;/code&gt; を含んだ &lt;code&gt;transition&lt;/code&gt; の指定&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;transition&lt;/code&gt; の定義が &lt;code&gt;hidden&lt;/code&gt; とそうでないときとで異なる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;です。一つずつ解説します。&lt;/p&gt;
+&lt;h4&gt;&lt;code&gt;width&lt;/code&gt; の指定&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;hidden&lt;/code&gt; 時に &lt;code&gt;0&lt;/code&gt; にします。また、 &lt;code&gt;hidden&lt;/code&gt; でないときの値も絶対値で指定する必要があります。この例では &lt;code&gt;width: 100px;&lt;/code&gt; の部分です。使える単位は &lt;code&gt;px&lt;/code&gt; &lt;code&gt;vw&lt;/code&gt; &lt;code&gt;vh&lt;/code&gt; 等で、 &lt;code&gt;%&lt;/code&gt; や &lt;code&gt;auto&lt;/code&gt; は使えません。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;opacity: 1;&lt;/code&gt; を省略できたのは、 &lt;code&gt;opacity&lt;/code&gt; に関してはデフォルトである1が絶対値なので、指定しなくても問題がないためです。 &lt;code&gt;width&lt;/code&gt; や &lt;code&gt;height&lt;/code&gt; はデフォルトが &lt;code&gt;auto&lt;/code&gt; のため、明確に指定する必要があります。&lt;/p&gt;
+&lt;p&gt;幅ではなく高さを使ってもいいのですが、 &lt;code&gt;height&lt;/code&gt; は &lt;code&gt;transition&lt;/code&gt; が効かないので、代わりに &lt;code&gt;max-height&lt;/code&gt; を使うことになります。&lt;/p&gt;
+&lt;h4&gt;&lt;code&gt;width&lt;/code&gt; を含んだ &lt;code&gt;transition&lt;/code&gt; の指定&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;opacity .5s, width 0s;&lt;/code&gt; は、「&lt;code&gt;opacity&lt;/code&gt; は0.5秒かけて、 &lt;code&gt;width&lt;/code&gt; は0秒かけて変化せよ」です。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;opacity .5s, width 0s .5s&lt;/code&gt; は、「&lt;code&gt;opacity&lt;/code&gt; は0.5秒かけて、 &lt;code&gt;width&lt;/code&gt; は0.5秒待ってから0秒かけて変化せよ」です。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;width&lt;/code&gt; が伸び縮みするアニメーションはここでは必要ないので、0秒を指定しています。であれば &lt;code&gt;transition&lt;/code&gt; 指定は要らないのでは？と思いがちですが、「0.5秒待ってから」を指定するために含めています。&lt;/p&gt;
+&lt;h4&gt;&lt;code&gt;transition&lt;/code&gt; の定義が &lt;code&gt;hidden&lt;/code&gt; とそうでないときとで異なる&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;hidden&lt;/code&gt; のときだけ &lt;code&gt;width&lt;/code&gt; の変化が「0.5秒待ってから」なのは、 &lt;code&gt;opacity&lt;/code&gt; によるフェードアウトが終わるのを待つためです。幅をゼロにした時点で要素は見えなくなるので、見えなくなった要素をフェードアウトしても意味がなくなってしまいます。&lt;/p&gt;
+&lt;p&gt;逆に、フェードインするときは先に幅を戻しておかないと、フェード効果が見えなくなります。そのため &lt;code&gt;hidden&lt;/code&gt; なしのほうは遅延の指定をしていません。&lt;/p&gt;
+&lt;h2&gt;その他の方法との比較&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://velocityjs.org/&#34;&gt;Velocity JS&lt;/a&gt;などのライブラリを使えばjQueryなしでも簡単にアニメーション効果を実装することができますが、&lt;a href=&#34;https://developers.google.com/web/fundamentals/design-and-ux/animations/css-vs-javascript&#34;&gt;Google&lt;/a&gt;や&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/Performance/CSS_JavaScript_animation_performance&#34;&gt;Mozilla&lt;/a&gt;によれば、パフォーマンス面ではシンプルなものであればCSSを使うことが推奨されているようです。&lt;/p&gt;
+&lt;p&gt;フェードはよく使われる効果なので、他にアニメーションの実装がなくても必要になることが多いです。すでにjQueryを使っているサイトでは&lt;a href=&#34;https://api.jquery.com/category/effects/fading/&#34;&gt;フェード系のメソッド&lt;/a&gt;を使い、それ以外ではCSSを使うようにしています。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>jQueryは必要なのか</title>
+      <link>https://blog.hitomiseki.com/ja/thankyou-jquery/</link>
+      <pubDate>Sun Jun 14 2020 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <description>&lt;p&gt;2013年にウェブ制作の仕事を始めてから長らくの間、jQueryなしの素のJavaScriptを書いたことがありませんでした。すでにjQueryが普及していた環境で、そもそもjQueryとそうでないJSコードの差についてすらよく分かっていなかった気がします。ここ数年でようやく、jQueryをなるべく使わない実装を心がけるようになりました。&lt;/p&gt;
+&lt;h2&gt;jQueryに代わる新しいライブラリ？Vanilla JSとは&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://vanilla-js.com/&#34;&gt;公式サイト&lt;/a&gt;を真面目に読みに行ったのはいい思い出。速い、軽い、互換性バッチリ！と謳われているのはただのジョークで、jQueryも何も使わない素のJavaScriptのことをVanilla JSと呼ぶようです。そりゃ軽いはずです。何も追加でロードしないので、0KBです。&lt;/p&gt;
+&lt;h2&gt;jQueryの役割と現状&lt;/h2&gt;
+&lt;p&gt;jQueryを使うと、要素の選択や操作、アニメーション、AJAXなどの実装が簡素化されます。jQueryが普及した頃は、JavaScriptの対応状況がブラウザによってまちまちで、このような実装をどのブラウザでも同じように動作させるのは一苦労でした。それを解決したのがjQueryということで、その時点では欠かせない存在だったと思います。&lt;/p&gt;
+&lt;p&gt;それから何年も経って時代が変わり、かつてまちまちだったブラウザ間の対応状況も、ほとんど支障がないくらいになりました。そうなると、わざわざページサイズを増やしてまでjQueryをロードする必要があるのか？という話になります。&lt;/p&gt;
+&lt;h2&gt;今でもjQueryを使うべきケース&lt;/h2&gt;
+&lt;p&gt;基本的には、現在はjQueryに頼らなくてもそれほど支障がありません。それでも、jQueryを使ったほうがいいケースもあります。&lt;/p&gt;
+&lt;h3&gt;既存のサイトで、jQueryが使われている&lt;/h3&gt;
+&lt;p&gt;この場合は追加の容量が増える心配もないので、jQueryを使います。追加したコードだけVanilla JSで書いても、一貫性や統一感が損なわれてしまいます。&lt;/p&gt;
+&lt;h3&gt;複雑なサイトで、大量のJSコードを書く必要がある&lt;/h3&gt;
+&lt;p&gt;シンプルな記述で済むメリットが多い場合は、jQueryを採用したほうが効率的なのかもしれません。特にアニメーション系のコードは、Vanilla JSとCSSの組み合わせで大半はなんとかなるものの、jQueryのほうが楽に済むケースも多いです。&lt;/p&gt;
+&lt;h2&gt;パフォーマンス面での違い&lt;/h2&gt;
+&lt;p&gt;Vanilla JSのほうがjQueryより処理が速いという情報も見かけます。&lt;/p&gt;
+&lt;h2&gt;Vanilla JSを学ぶ&lt;/h2&gt;
+&lt;p&gt;jQueryからVanilal JSに移行したい人におすすめのサイトです。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://youmightnotneedjquery.com/&#34;&gt;You might not need jQuery&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/nefe/You-Dont-Need-jQuery&#34;&gt;You (Might) Don&#39;t Need jQuery&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;よく似たタイトルのサイトですが、別物のようです。どちらも英語のサイトですが、コードを見比べるだけでも十分役に立ちます。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>画像のレスポンシブ対応</title>
+      <link>https://blog.hitomiseki.com/ja/responsive-image-markup/</link>
+      <pubDate>Sun May 24 2020 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <description>&lt;p&gt;ひと昔前まで、ウェブに画像を表示するにはこの一行で十分でした。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;img src=&amp;quot;image.jpg&amp;quot; alt=&amp;quot;画像の説明が入ります&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;それが、レスポンシブデザインや高解像度ディスプレイの普及に伴って、今や&lt;a href=&#34;https://css-tricks.com/a-guide-to-the-responsive-images-syntax-in-html/&#34;&gt;ここまで複雑なことに&lt;/a&gt;なっているようです。&lt;/p&gt;
+&lt;p&gt;ここまで凝らなくても現実的には、パソコン版とスマホ版で画像を分けたり、Retinaなどの2倍の解像度ディスプレイ用の画像を用意するくらいで十分なことが多いのではないでしょうか。&lt;/p&gt;
+&lt;h2&gt;現実的なマークアップ&lt;/h2&gt;
+&lt;p&gt;私がよく使うのは、この書き方です。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;picture&amp;gt;
+  &amp;lt;source srcset=&amp;quot;sp-image.jpg, sp-image@2x.jpg 2x&amp;quot; media=&amp;quot;(max-width: 767px)&amp;quot;&amp;gt;
+  &amp;lt;img src=&amp;quot;pc-image.jpg&amp;quot; srcset=&amp;quot;pc-image@2x.jpg 2x&amp;quot; alt=&amp;quot;画像の説明が入ります&amp;quot; class=&amp;quot;image&amp;quot; /&amp;gt;
+&amp;lt;/picture&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;指定している画像はそれぞれ、&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;sp-image.jp&lt;/code&gt; ... スマホ用画像（横幅767ピクセル以下の画面で使用）、普通の解像度用&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sp-image@2x.jp&lt;/code&gt; ... スマホ用画像、2倍の解像度用&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pc-image.jp&lt;/code&gt; ... パソコン用画像（横幅768ピクセル以上の画面で使用）、普通の解像度用&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pc-image@2x.jpg&lt;/code&gt; ... パソコン用画像、2倍の解像度用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;の役割になっており、この記述で次のことが達成できます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;スマホとパソコンで縦横比の違う画像を表示したい&lt;/li&gt;
+&lt;li&gt;Retinaディスプレイでもぼやけないようにしたい&lt;/li&gt;
+&lt;li&gt;状況に応じて必要な画像1つだけをロードしたい&lt;/li&gt;
+&lt;li&gt;代替テキストは1箇所にまとめたい&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;class&lt;/code&gt; や &lt;code&gt;alt&lt;/code&gt; などの属性は、 &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; タグの方に付けます。画像にリンクを張りたい場合は、 &lt;code&gt;&amp;lt;picture&amp;gt;&lt;/code&gt; 要素全体を &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; タグで囲みます。&lt;/p&gt;
+&lt;h3&gt;解像度対応を省略する場合&lt;/h3&gt;
+&lt;p&gt;ぼやけてもそれほど気にならない画像など、解像度対応をしない場合は次のように書きます。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;picture&amp;gt;
+  &amp;lt;source srcset=&amp;quot;sp-image.jpg&amp;quot; media=&amp;quot;(max-width: 767px)&amp;quot;&amp;gt;
+  &amp;lt;img src=&amp;quot;pc-image.jpg&amp;quot; alt=&amp;quot;画像の説明が入ります&amp;quot; class=&amp;quot;image&amp;quot; /&amp;gt;
+&amp;lt;/picture&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;スマホとパソコンで同じ画像を使う場合&lt;/h3&gt;
+&lt;p&gt;スマホとパソコンで画像を分ける必要がなければ、 &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; のみを使います。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;img src=&amp;quot;image.jpg&amp;quot; srcset=&amp;quot;image@2x.jpg 2x&amp;quot; alt=&amp;quot;画像の説明が入ります&amp;quot; class=&amp;quot;image&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;参考リンク&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.mozilla.org/ja/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images&#34;&gt;MDN: レスポンシブ画像&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://css-tricks.com/a-guide-to-the-responsive-images-syntax-in-html/&#34;&gt;A Guide to the Responsive Images Syntax in HTML&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<!doctype html><html lang="ja"><head><script>window.matchMedia("(prefers-color-scheme: dark)").matches&&document.documentElement.classList.add("dark"),document.referrer.indexOf(window.location.hostname)<0&&"/"===window.location.pathname&&-1<(navigator.language||navigator.userLanguage).indexOf("ja")&&(window.location.href="/ja")</script><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><title>画像のレスポンシブ対応 | Hitomilog</title><meta name="description" content="Hitomi Seki&#39;s blog"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="alternate" type="application/rss+xml" href="https://blog.hitomiseki.com/ja/feed.xml"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/css/main.min.css"><link rel="stylesheet" href="/assets/css/solarized.min.css"></head><body><header><h1>画像のレスポンシブ対応</h1><p><time datetime="2020-05-24">2020年5月24日</time>更新</p><p>タグ： <a href="/ja/tags/css/">CSS</a>, <a href="/ja/tags/html/">HTML</a>, <a href="/ja/tags/responsive/">レスポンシブ</a></p></header><hr><main><article><p>ひと昔前まで、ウェブに画像を表示するにはこの一行で十分でした。</p><pre><code class="language-html">&lt;img src=&quot;image.jpg&quot; alt=&quot;画像の説明が入ります&quot;&gt;
+</code></pre><p>それが、レスポンシブデザインや高解像度ディスプレイの普及に伴って、今や<a href="https://css-tricks.com/a-guide-to-the-responsive-images-syntax-in-html/">ここまで複雑なことに</a>なっているようです。</p><p>ここまで凝らなくても現実的には、パソコン版とスマホ版で画像を分けたり、Retinaなどの2倍の解像度ディスプレイ用の画像を用意するくらいで十分なことが多いのではないでしょうか。</p><h2>現実的なマークアップ</h2><p>私がよく使うのは、この書き方です。</p><pre><code class="language-html">&lt;picture&gt;
+  &lt;source srcset=&quot;sp-image.jpg, sp-image@2x.jpg 2x&quot; media=&quot;(max-width: 767px)&quot;&gt;
+  &lt;img src=&quot;pc-image.jpg&quot; srcset=&quot;pc-image@2x.jpg 2x&quot; alt=&quot;画像の説明が入ります&quot; class=&quot;image&quot; /&gt;
+&lt;/picture&gt;
+</code></pre><p>指定している画像はそれぞれ、</p><ul><li><code>sp-image.jp</code> ... スマホ用画像（横幅767ピクセル以下の画面で使用）、普通の解像度用</li><li><code>sp-image@2x.jp</code> ... スマホ用画像、2倍の解像度用</li><li><code>pc-image.jp</code> ... パソコン用画像（横幅768ピクセル以上の画面で使用）、普通の解像度用</li><li><code>pc-image@2x.jpg</code> ... パソコン用画像、2倍の解像度用</li></ul><p>の役割になっており、この記述で次のことが達成できます。</p><ul><li>スマホとパソコンで縦横比の違う画像を表示したい</li><li>Retinaディスプレイでもぼやけないようにしたい</li><li>状況に応じて必要な画像1つだけをロードしたい</li><li>代替テキストは1箇所にまとめたい</li></ul><p><code>class</code> や <code>alt</code> などの属性は、 <code>&lt;img&gt;</code> タグの方に付けます。画像にリンクを張りたい場合は、 <code>&lt;picture&gt;</code> 要素全体を <code>&lt;a&gt;</code> タグで囲みます。</p><h3>解像度対応を省略する場合</h3><p>ぼやけてもそれほど気にならない画像など、解像度対応をしない場合は次のように書きます。</p><pre><code class="language-html">&lt;picture&gt;
+  &lt;source srcset=&quot;sp-image.jpg&quot; media=&quot;(max-width: 767px)&quot;&gt;
+  &lt;img src=&quot;pc-image.jpg&quot; alt=&quot;画像の説明が入ります&quot; class=&quot;image&quot; /&gt;
+&lt;/picture&gt;
+</code></pre><h3>スマホとパソコンで同じ画像を使う場合</h3><p>スマホとパソコンで画像を分ける必要がなければ、 <code>&lt;img&gt;</code> のみを使います。</p><pre><code class="language-html">&lt;img src=&quot;image.jpg&quot; srcset=&quot;image@2x.jpg 2x&quot; alt=&quot;画像の説明が入ります&quot; class=&quot;image&quot; /&gt;
+</code></pre><h2>参考リンク</h2><ul><li><a href="https://developer.mozilla.org/ja/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images">MDN: レスポンシブ画像</a></li><li><a href="https://css-tricks.com/a-guide-to-the-responsive-images-syntax-in-html/">A Guide to the Responsive Images Syntax in HTML</a></li></ul></article><hr><section><h1>コメント</h1><div id="disqus_thread"></div><script>var disqus_config=function(){this.language="ja"};!function(){var t=document,e=t.createElement("script");e.src="https://hitomilog.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><script id="dsq-count-scr" src="//hitomilog.disqus.com/count.js" async></script></section></main><hr><footer><p><a href="/ja/">トップページへ</a></p><p>Built with <a href="https://www.11ty.dev/">Eleventy</a>, coloured with <a href="https://ethanschoonover.com/solarized/">Solarized</a> palette.</p><p>&copy; 2020 <a href="https://hitomiseki.com">Hitomi Seki</a></p></footer><script src="/assets/js/anchors.min.js" defer="defer"></script><script src="/assets/js/toc.min.js" defer="defer"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-16106862-4"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-16106862-4")</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.hitomiseki.com/ja/responsive-image-markup/"
+  },
+  "headline": "画像のレスポンシブ対応",
+  "author": {
+    "@type": "Person",
+    "name": "Hitomi Seki"
+  },
+  "datePublished": "Sun May 24 2020 09:00:00 GMT+0900 (Japan Standard Time)",
+  "dateModified": "Sun May 24 2020 09:00:00 GMT+0900 (Japan Standard Time)"
+}</script></body></html>

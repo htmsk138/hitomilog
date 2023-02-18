@@ -1,0 +1,42 @@
+<!doctype html><html lang="ja"><head><script>window.matchMedia("(prefers-color-scheme: dark)").matches&&document.documentElement.classList.add("dark"),document.referrer.indexOf(window.location.hostname)<0&&"/"===window.location.pathname&&-1<(navigator.language||navigator.userLanguage).indexOf("ja")&&(window.location.href="/ja")</script><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><title>CSS で蛍光ペンのような線を引く | Hitomilog</title><meta name="description" content="Hitomi Seki&#39;s blog"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="alternate" type="application/rss+xml" href="https://blog.hitomiseki.com/ja/feed.xml"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/css/main.min.css"><link rel="stylesheet" href="/assets/css/solarized.min.css"></head><body><header><h1>CSS で蛍光ペンのような線を引く</h1><p><time datetime="2021-01-10">2021年1月10日</time>更新</p><p>タグ： <a href="/ja/tags/css/">CSS</a></p></header><hr><main><article><p>テキストに蛍光ペンで線を引いたような装飾をします。</p><p>動作サンプルは<a href="https://codepen.io/htmsk138/pen/oNzxOjo">こちら</a>です。以下、解説です。</p><h2>基本</h2><pre><code class="language-html">&lt;p&gt;
+  テキストを&lt;span class=&quot;highlighted yellow&quot;&gt;蛍光ペンで&lt;/span&gt;マークします。&lt;br&gt;
+  こちらは&lt;span class=&quot;highlighted pink&quot;&gt;ピンク色&lt;/span&gt;の例です。
+&lt;/p&gt;
+</code></pre><pre><code class="language-css">.highlighted {
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.highlighted.yellow {
+  background-image: linear-gradient(to top, yellow 60%, transparent 0);
+}
+
+.highlighted.pink {
+  background-image: linear-gradient(to top, pink 60%, transparent 0);
+}
+</code></pre><p><code>linear-gradient()</code> は本来、背景にグラデーション効果を出すための関数ですが、ここでは色の切り替わりを1点に集中させることで色を2分割させています。上記の定義は「下から上へ、起点から60%の位置で黄色（ピンク）から透明へ変化せよ」です。</p><p><code>60%</code> としている箇所を変更すると、線の太さを調整できます。</p><p><code>&lt;p&gt;</code> などのブロックレベル要素ではなく、 <code>&lt;span&gt;</code> などのインライン要素に使うようにすれば、複数行にわたるテキストにも線を引くことができます。</p><h2>アニメーション付き</h2><p>アニメーション効果を付ける場合は、下記のCSSを追記します。</p><pre><code class="language-css">.highlighted {
+  transition: background-size .5s;
+}
+
+.highlighted.animating {
+  background-size: 0 auto;
+}
+</code></pre><p>マークアップにも <code>animating</code> クラスを追加します。</p><pre><code class="language-html">&lt;p&gt;
+  &lt;span class=&quot;highlighted yellow animating&quot;&gt;アニメーション付きのマーカーです。&lt;/span&gt;
+&lt;/p&gt;
+</code></pre><p>JSなどで任意のタイミングで <code>animating</code> クラスを外せば、線が左から右へと伸びていきます。複数行のテキストにも使用できます。</p></article><hr><section><h1>コメント</h1><div id="disqus_thread"></div><script>var disqus_config=function(){this.language="ja"};!function(){var t=document,e=t.createElement("script");e.src="https://hitomilog.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><script id="dsq-count-scr" src="//hitomilog.disqus.com/count.js" async></script></section></main><hr><footer><p><a href="/ja/">トップページへ</a></p><p>Built with <a href="https://www.11ty.dev/">Eleventy</a>, coloured with <a href="https://ethanschoonover.com/solarized/">Solarized</a> palette.</p><p>&copy; 2020 <a href="https://hitomiseki.com">Hitomi Seki</a></p></footer><script src="/assets/js/anchors.min.js" defer="defer"></script><script src="/assets/js/toc.min.js" defer="defer"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-16106862-4"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-16106862-4")</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.hitomiseki.com/ja/css-text-highlight/"
+  },
+  "headline": "CSS で蛍光ペンのような線を引く",
+  "author": {
+    "@type": "Person",
+    "name": "Hitomi Seki"
+  },
+  "datePublished": "Sun Jan 10 2021 09:00:00 GMT+0900 (Japan Standard Time)",
+  "dateModified": "Sun Jan 10 2021 09:00:00 GMT+0900 (Japan Standard Time)"
+}</script></body></html>

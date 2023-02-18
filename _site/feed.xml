@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Hitomilog</title>
+    <link>https://blog.hitomiseki.com</link>
+    <description>Hitomi Seki&#39;s blog</description>
+    
+    
+    <item>
+      <title>HTML Validation Tools</title>
+      <link>https://blog.hitomiseki.com/html-validation-tools/</link>
+      <pubDate>Sun Mar 21 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <description>&lt;p&gt;HTML errors are hard to detect by looking at browser window. For such cases, there are useful validation tools.&lt;/p&gt;
+&lt;p&gt;Paying attention to the invisible factors helps improve SEO and accessibility.&lt;/p&gt;
+&lt;h2&gt;The W3C validator&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://validator.w3.org/&#34;&gt;HTML validator&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jigsaw.w3.org/css-validator/&#34;&gt;CSS validator&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;W3C provides HTML and CSS validators. HTML validator helps you find unclosed tags, invalid nesting and missing or duplicate attributes, and CSS validator detects basic mistakes such as misspelling and unclosed parentheses or braces.&lt;/p&gt;
+&lt;p&gt;If the site is already live, you can input its URL to validate. If not, you can either upload the HTML file from &amp;quot;Validate by File Upload&amp;quot; tab or copy and paste your code to &amp;quot;Validate by direct input&amp;quot; tab.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;#section3&#34;&gt;Web Developer&lt;/a&gt; browser extension comes in handy to use these validators.&lt;/p&gt;
+&lt;h2&gt;WAVE&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;wave.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh&#34;&gt;Chrome browser extension&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/wave-accessibility-tool/&#34;&gt;FireFox browser extension&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://wave.webaim.org/&#34;&gt;Official website&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;WAVE is a browser extension that validates if the accessibility features are properly implemented.&lt;/p&gt;
+&lt;p&gt;Once installed, it displays information including page structure and &lt;code&gt;alt&lt;/code&gt; attribute of images by clicking the icon on the browser toolbar. And it warns you about issues like colour contrast and inappropriate alternative texts for images.&lt;/p&gt;
+&lt;p&gt;To hide the results, click the icon again or reload the page.&lt;/p&gt;
+&lt;h2&gt;Web Developer&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;./web_developer.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm&#34;&gt;Chrome browser extension&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://addons.mozilla.org/en-GB/firefox/addon/web-developer/&#34;&gt;FireFox browser extension&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://chrispederick.com/work/web-developer/&#34;&gt;Official website&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This extension collects various web validation tools in one place.&lt;/p&gt;
+&lt;p&gt;Once installed, you can call all kinds of validation tools from the toolbar icon. The list includes disabling CSS, JavaScript or Cookie, displaying anchors, form elements validation and many more.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;#section1&#34;&gt;W3C validators&lt;/a&gt;, which was introduced earlier, is also included in this extension&#39;s palette. It can even copy and paste the local source code to the validator automatically.&lt;/p&gt;
+&lt;h2&gt;PerfectPixel&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;./perfect_pixel.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi&#34;&gt;Chrome browser extension&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.welldonecode.com/perfectpixel/&#34;&gt;Official website&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;PerfectPixel is a tool to check if the coded page aligns well with its design comp.&lt;/p&gt;
+&lt;p&gt;After coding the page, you could miss small differences if you only compared the visual with the design side by side. This extension displays the opaque image over the browser window so that you can trace them to find issues. You can see the problems with margins or font sizes clearly.&lt;/p&gt;
+&lt;p&gt;You need to export the design data as an image file like PNG or JPEG first. Click the toolbar icon to add the image. You can add multiple images, and it remembers the added images for each domains.&lt;/p&gt;
+&lt;h2&gt;Tab key&lt;/h2&gt;
+&lt;p&gt;This is not a tool, but a way to check an important accessibility feature: the keyboard compatibility. Browse the page you coded without pointing devices and only with keyboard. Can you navigate through links and buttons with tab key without issues?&lt;/p&gt;
+&lt;p&gt;This is an easy way to detect if you have coded clickable elements with &lt;code&gt;div&lt;/code&gt; tag or hoverable elements without click event.&lt;/p&gt;
+&lt;h2&gt;Lighthouse&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;./lighthouse.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Chrome DevTools has a tab named Lighthouse. It runs the same analysis as &lt;a href=&#34;https://developers.google.com/speed/pagespeed/insights/&#34;&gt;PageSpeed Insights&lt;/a&gt;, even on a page in development.&lt;/p&gt;
+&lt;p&gt;It&#39;s better to run it in private mode so that other extensions don&#39;t affect the result.&lt;/p&gt;
+&lt;p&gt;Improving PageSpeed result after the site went live can be a nightmare. I think it&#39;s best if developers cared about it during the development.&lt;/p&gt;
+&lt;h2&gt;Web Disability Simulator&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;./web_disability_simulator.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla/&#34;&gt;Chrome browser extension&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Metamatrix/Web-Disability-Simulator&#34;&gt;Official website (GitHub)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This extension lets you simulate how the page looks like to users with disabilities and improve its accessibility.&lt;/p&gt;
+&lt;p&gt;After installation, open the menu from toolbar icon.&lt;/p&gt;
+&lt;p&gt;The feature I find most useful is &amp;quot;Sight&amp;quot;. It&#39;s said that 1 in 20 men has red-green colour blindness, so you can assume a considerable number of users could be affected if there was an issue. The simulator makes you realise if the text colour fades in the background, or you can&#39;t distinguish between multiple information if their classification relied on only colours.&lt;/p&gt;
+&lt;p&gt;&amp;quot;Mobility&amp;quot; option proves the importance of &lt;a href=&#34;#section5&#34;&gt;keyboard compatibility&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Removing visual barriers and ensuring usability benefit not only people with disabilities but all users, because it improves general user experiences.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Alternative Text For Images</title>
+      <link>https://blog.hitomiseki.com/alternative-text-for-images/</link>
+      <pubDate>Sat Feb 06 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <description>&lt;h2&gt;Why it&#39;s important&lt;/h2&gt;
+&lt;p&gt;In an HTML document, all information should be provided by some text. When placing an image, by adding an alternative text you can:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Make sure to deliver the same information even if an error occurred during image load&lt;/li&gt;
+&lt;li&gt;Improve accessibility by enabling screen readers to read the image&lt;/li&gt;
+&lt;li&gt;Improve SEO by enabling search engine bots to understand the image&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;If the text contained in image is short, use &lt;code&gt;alt&lt;/code&gt; attribute&lt;/h2&gt;
+&lt;p&gt;The most common method of providing alternative text is to use &lt;code&gt;alt&lt;/code&gt; attribute on the &lt;code&gt;img&lt;/code&gt; tag. If the image contains actual text and if it&#39;s short, this is an appropriate choice.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;img src=&amp;quot;logo.svg&amp;quot; alt=&amp;quot;Company Name&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;If the image is not to be read, add empty &lt;code&gt;alt&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Though the &lt;code&gt;alt&lt;/code&gt; attribute is often thought as it needs to be filled, the correct rule is &amp;quot;the attribute must be set, but it can be empty&amp;quot;.&lt;/p&gt;
+&lt;p&gt;If the image has an empty &lt;code&gt;alt&lt;/code&gt;, screen readers skip reading it. Decorative images should have empty &lt;code&gt;alt&lt;/code&gt;, because if you omit the attribute itself, screen readers may read its file path. Imagine how awful it could be!&lt;/p&gt;
+&lt;p&gt;For instance, I personally use empty &lt;code&gt;alt&lt;/code&gt; for a person&#39;s profile picture as it often has the person&#39;s name near the image, and it seems meaningless to set &amp;quot;Profile picture&amp;quot; as the value. The same applies to the product pictures on e-commerces, unless it provides additional and unique information.&lt;/p&gt;
+&lt;h2&gt;For long sentence and charts, use &lt;code&gt;visually-hidden&lt;/code&gt; CSS class&lt;/h2&gt;
+&lt;p&gt;If the image contains complicated information like charts and a flat text within &lt;code&gt;alt&lt;/code&gt; attribute isn&#39;t enough to explain it, you can provide an alternative HTML element with &lt;a href=&#34;https://www.a11yproject.com/posts/2013-01-11-how-to-hide-content/&#34;&gt;&lt;code&gt;visually-hidden&lt;/code&gt;&lt;/a&gt; CSS class added to it so that the element is only available to screen readers while being hidden from the view. For example, the picture below can be presented by an ordered list alternatively.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./flow_en.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;img src=&amp;quot;steps.png&amp;quot; alt=&amp;quot;&amp;quot;&amp;gt;
+&amp;lt;ol class=&amp;quot;visually-hidden&amp;quot;&amp;gt;
+  &amp;lt;li&amp;gt;
+    Step 1:&amp;lt;br&amp;gt;
+    Fill form
+  &amp;lt;/li&amp;gt;
+  &amp;lt;li&amp;gt;
+    Step 2:&amp;lt;br&amp;gt;
+    Submit form
+  &amp;lt;/li&amp;gt;
+  &amp;lt;li&amp;gt;
+    Step 3:&amp;lt;br&amp;gt;
+    Receive email
+  &amp;lt;/li&amp;gt;
+&amp;lt;/ol&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If a paragraph close to the image have the equal or similar information to the image content, then I don&#39;t think this method is necessary. Decide the most appropriate method considering the whole page structure.&lt;/p&gt;
+&lt;h2&gt;Preventing missing &lt;code&gt;alt&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;When the page is all marked up, you can&#39;t spot missing &lt;code&gt;alt&lt;/code&gt; attributes in the browser view. There are useful tools for the purpose.&lt;/p&gt;
+&lt;h3&gt;Browser extension&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://wave.webaim.org/extension/&#34;&gt;WAVE&lt;/a&gt; is a browser extension offered for both Chrome and FireFox. It can validate various accessibility features as well as detecting missing &lt;code&gt;alt&lt;/code&gt; attributes.&lt;/p&gt;
+&lt;p&gt;This tool displays all &lt;code&gt;alt&lt;/code&gt; values set for images for you to see if the text matches the image content.&lt;/p&gt;
+&lt;h3&gt;HTML validation tool&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://validator.w3.org/&#34;&gt;W3C&#39;s HTML validator&lt;/a&gt; warns you if an &lt;code&gt;img&lt;/code&gt; tag misses &lt;code&gt;alt&lt;/code&gt; attribute. It doesn&#39;t display &lt;code&gt;alt&lt;/code&gt; values like WAVE does though, you can still detect cases where you forgot to set the attribute itself.&lt;/p&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://wave.webaim.org/extension/&#34;&gt;WAVE Web Accessibility Evaluation Tool&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://validator.w3.org/#validate_by_input&#34;&gt;W3C Markup Validation Service&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.a11yproject.com/posts/2013-01-11-how-to-hide-content/&#34;&gt;The A11Y Project: How to hide content&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Adding Font To Windows Command-line Tools</title>
+      <link>https://blog.hitomiseki.com/adding-font-to-windows-command-line/</link>
+      <pubDate>Sun Jan 10 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <description>&lt;p&gt;On Windows, by default, the only font that can display Japanese language on command-line tools is MS Gothic, which is very hard to look. Here is how to add your favourite font for command-line tools.&lt;/p&gt;
+&lt;h2&gt;Steps&lt;/h2&gt;
+&lt;p&gt;This procedure applies for Windows 10. It works for Command Prompt, WSL distro&#39;s terminal and PowerShell.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Install a monospace font you&#39;d like to use on consoles&lt;/li&gt;
+&lt;li&gt;Open run box by Windows key + R, type &lt;code&gt;regedit&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Navigate to &lt;code&gt;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Console\TrueTypeFont&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;On right side panel, right click -&amp;gt; New -&amp;gt; String Value&lt;/li&gt;
+&lt;li&gt;Type unique value like &#39;000&#39; or &#39;932.1&#39;, etc.&lt;/li&gt;
+&lt;li&gt;Click OK and restart system&lt;/li&gt;
+&lt;li&gt;Open Command Prompt (or start WSL distro), right click on title bar and choose Properties&lt;/li&gt;
+&lt;li&gt;In the Font tab, the font you registered should appear in the fonts list&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Some fonts are not supported&lt;/h2&gt;
+&lt;p&gt;The font name wouldn&#39;t appear if it&#39;s not supported by the console usage for some reason. I failed with Noto Sans Mono CJK JP but succeeded with &lt;a href=&#34;https://github.com/edihbrandon/RictyDiminished&#34;&gt;Ricty Diminished&lt;/a&gt;. Make sure to use a monospace font.&lt;/p&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.thewindowsclub.com/add-custom-fonts-to-command-prompt#:~:text=Open%20Command%20Prompt%20and%20right,section%20and%20click%20on%20OK.&#34;&gt;How to add Custom Fonts to Command Prompt in Windows 10&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.beachside.dev/entry/2017/11/16/192801&#34;&gt;コマンドプロンプト の フォント を Ricty Diminished に 変更する&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Archiving Modified Files From A Git Commit</title>
+      <link>https://blog.hitomiseki.com/archiving-modified-files-from-a-git-commit/</link>
+      <pubDate>Sun Jan 10 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <description>&lt;p&gt;This article shows how to extract and archive only files modified or added in a Git commit.&lt;/p&gt;
+&lt;p&gt;All the examples below are to extract files from the previous commit, but if you change the &lt;code&gt;HEAD^&lt;/code&gt; part to two commit hashes separated by a space, then it will extract changes between those commits.&lt;/p&gt;
+&lt;h2&gt;Using Git&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;git archive --format=zip HEAD `git diff --name-only HEAD^` &amp;gt; archive.zip
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Using Zip&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;zip archive.zip $(git diff --name-only HEAD^)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Using Tar&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;tar -czvf archive.tgz $(git diff --name-only HEAD^)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Changing Git Commit Date</title>
+      <link>https://blog.hitomiseki.com/changing-git-commit-date/</link>
+      <pubDate>Sun Jan 10 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <description>&lt;p&gt;Note: changing Git history could be dangerous. Please proceed on your own responsibility.&lt;/p&gt;
+&lt;h2&gt;Author date and commit date&lt;/h2&gt;
+&lt;p&gt;Some StackOverflow threads told me to use this command to change last commit&#39;s date.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git commit --amend --no-edit --date=&amp;quot;2020-10-31T00:00+09:00&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This tells Git to change last commit&#39;s date to 31st October, 2020 at 0:00 in Japan Standard Time (GTM+9:00), without editing commit message.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git log&lt;/code&gt; after this shows the modified date, but after pushing to remote, a GitHub repository in my case, I realised the date shown on GitHub and my local log don&#39;t match.&lt;/p&gt;
+&lt;p&gt;It turned out &lt;a href=&#34;https://github.community/t/commit-timestamps-in-github-dont-match-repo/127766&#34;&gt;there are two different date records&lt;/a&gt; for Git history: author date and commit date. Above command only modifies the author date but not commit date. So I had to run below command to make both dates match.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git filter-branch --env-filter &#39;export GIT_COMMITTER_DATE=&amp;quot;$GIT_AUTHOR_DATE&amp;quot;&#39;
+git push -f
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;The right way&lt;/h2&gt;
+&lt;p&gt;To avoid this confusion, what I had to run in the first place was this.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;GIT_COMMITTER_DATE=&amp;quot;2020-10-31T00:00+09:00&amp;quot; git commit --amend --no-edit --date &amp;quot;2020-10-31T00:00+09:00&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.community/t/commit-timestamps-in-github-dont-match-repo/127766&#34;&gt;Commit timestamps in GitHub don’t match repo (GitHub Support Community)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://hackernoon.com/change-the-date-of-a-git-commit-eeed8d2c5b9b&#34;&gt;Change the date of a git commit (Hacker Noon)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How To Implement Dark Theme</title>
+      <link>https://blog.hitomiseki.com/dark-theme/</link>
+      <pubDate>Sun Aug 23 2020 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <description>&lt;p&gt;This article introduces how to implement dark theme to a website.&lt;/p&gt;
+&lt;h2&gt;CSS definition&lt;/h2&gt;
+&lt;p&gt;Define CSS as &amp;quot;darken the whole &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; element while &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt; has &lt;code&gt;dark&lt;/code&gt; class&amp;quot;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;@media not print {
+  .dark body {
+    background: #000;
+    color: #fff;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Feel free to customise the styling. This example defines background as black and text colour as white.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;@media not print&lt;/code&gt; prevents the page to be printed in dark mode.&lt;/p&gt;
+&lt;p&gt;We are now ready to display the site in dark mode. Next we need the code to switch between dark and normal mode by toggling the &lt;code&gt;dark&lt;/code&gt; class.&lt;/p&gt;
+&lt;h2&gt;Automatic way&lt;/h2&gt;
+&lt;p&gt;Recent computers and smartphones often have the feature to apply dark mode to their OS&#39;s UI. Web pages can refer to that settings and change their display theme, too.&lt;/p&gt;
+&lt;p&gt;Add the following code right after &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script&amp;gt;
+  // Check if device is set to dark mode
+  if (window.matchMedia(&amp;quot;(prefers-color-scheme: dark)&amp;quot;).matches) {
+    // Add &#39;dark&#39; class to &amp;lt;html&amp;gt;
+    document.documentElement.classList.add(&amp;quot;dark&amp;quot;);
+  }
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Normally, JavaScript codes go right before &lt;code&gt;&amp;lt;/body&amp;gt;&lt;/code&gt; closing tag, but in this case, by placing the code right after &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; minimises the risk of the page flashing non-dark mode before switching to dark mode.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://codepen.io/htmsk138/pen/MWyeGQv&#34;&gt;Sample&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Manual way&lt;/h2&gt;
+&lt;p&gt;This method lets users choose the site theme.&lt;/p&gt;
+&lt;p&gt;Even users who prefer dark mode on their OS, they don&#39;t necessarily feel comfortable with dark mode on every website, and vice versa. For that, you could say it is more user-friendly way than the other, but users who always prefer dark mode might find it annoying.&lt;/p&gt;
+&lt;p&gt;In addition to toggling &lt;code&gt;dark&lt;/code&gt; class, it also requires to remember user&#39;s choice across pages, so we use &lt;a href=&#34;https://developer.mozilla.org/ja/docs/Web/API/Window/localStorage&#34;&gt;localStorage&lt;/a&gt; for this purpose.&lt;/p&gt;
+&lt;h3&gt;Switching by checkbox&lt;/h3&gt;
+&lt;p&gt;This method enables dark theme only while the checkbox is on.&lt;/p&gt;
+&lt;p&gt;Implement a checkbox like below.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;label for=&amp;quot;darkmode&amp;quot;&amp;gt;
+  &amp;lt;input type=&amp;quot;checkbox&amp;quot; id=&amp;quot;darkmode&amp;quot; onchange=&amp;quot;toggleTheme(this.checked)&amp;quot; /&amp;gt; Dark mode
+&amp;lt;/label&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Add the following JavaScript code. This time it doesn&#39;t have to be right after &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;. It needs to be executed after the page contents are loaded in order to control the checkbox state.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;/**
+ * After page load
+ */
+document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
+  // Get local settings (false if not exists)
+  var isDark = localStorage.isDark === &#39;true&#39;;
+
+  // Change checkbox state and site theme based on the existing settings
+  document.getElementById(&#39;darkmode&#39;).checked = isDark;
+  toggleTheme(isDark);
+});
+
+/**
+ * Switch site theme.
+ * @param  {Boolean} isDark true = dark mode, false = normal mode.
+ */
+function toggleTheme(isDark) {
+  // Add or remove &#39;dark&#39; class
+  document.documentElement.classList.toggle(&#39;dark&#39;, isDark);
+
+  // Save settings locally
+  localStorage.isDark = isDark;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://codepen.io/htmsk138/pen/LYNZVPw&#34;&gt;Sample&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Switching by button&lt;/h3&gt;
+&lt;p&gt;A button also can be used.&lt;/p&gt;
+&lt;p&gt;Implement the button.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;button id=&amp;quot;darkmode&amp;quot; onclick=&amp;quot;toggleTheme()&amp;quot;&amp;gt;Change theme&amp;lt;/button&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Add the following code right after &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script&amp;gt;
+  // Check if dark mode setting exists
+  if (&#39;true&#39; === localStorage.isDark) {
+    // Add &#39;dark&#39; class
+    document.documentElement.classList.add(&amp;quot;dark&amp;quot;);
+  }
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Add following JavaScript code.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;/**
+ * Switch site theme to the opposite of current.
+ */
+function toggleTheme() {
+  // Add or remove &#39;dark&#39; class
+  document.documentElement.classList.toggle(&#39;dark&#39;);
+
+  // Save settings locally
+  localStorage.isDark = (&#39;true&#39; !== localStorage.isDark);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://codepen.io/htmsk138/pen/QWNEwXq&#34;&gt;Sample&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Mix automatic and manual methods&lt;/h2&gt;
+&lt;p&gt;This method uses the device settings as default and enables user switching at the same time. It can inherit benefits from both automatic and manual ways.&lt;/p&gt;
+&lt;p&gt;Make the code inside &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; tag right after &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; or the page load event, as below.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;if (&#39;true&#39; === localStorage.isDark || // Check if dark mode setting exists
+  (undefined === localStorage.isDark &amp;amp;&amp;amp; window.matchMedia(&amp;quot;(prefers-color-scheme: dark)&amp;quot;).matches)) { // If no setting exists, follow device setting
+  // Add &#39;dark&#39; class
+  document.documentElement.classList.add(&amp;quot;dark&amp;quot;);
+
+  // Save settings locally
+  localStorage.isDark = true;
+
+  // This is required only when using checkbox
+  document.getElementById(&#39;darkmode&#39;).checked = true;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The rest of the codes are same as introduced earlier in this article.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://codepen.io/htmsk138/pen/LYNZmOX&#34;&gt;Sample&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>HTML Coding Workflow</title>
+      <link>https://blog.hitomiseki.com/html-coding-workflow/</link>
+      <pubDate>Sun May 24 2020 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <description>&lt;p&gt;Here&#39;s how I write HTML/CSS. Read it with basic coding knowledge in mind.&lt;/p&gt;
+&lt;h2&gt;The steps&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;My editor is &lt;a href=&#34;https://www.sublimetext.com/3&#34;&gt;Sublime Text 3&lt;/a&gt;. I love &lt;a href=&#34;https://packagecontrol.io/packages/Solarized%20Color%20Scheme&#34;&gt;Solarized colour scheme&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Install following packages:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://packagecontrol.io/packages/eCSStractor&#34;&gt;eCSStractor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://packagecontrol.io/packages/Emmet&#34;&gt;Emmet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Start writing HTML using &lt;a href=&#34;https://emmet.io/&#34;&gt;Emmet&lt;/a&gt; syntax.&lt;/li&gt;
+&lt;li&gt;Select the HTML you wrote and call &lt;a href=&#34;https://packagecontrol.io/packages/eCSStractor&#34;&gt;eCSStractor&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Paste the css definitions to CSS file.&lt;/li&gt;
+&lt;li&gt;Open HTML in Chrome.&lt;/li&gt;
+&lt;li&gt;Open Chrome Developer Tools and switch to Sources tab.&lt;/li&gt;
+&lt;li&gt;Choose Filesystem on sidebar and load the current working directory to make files editable on Chrome&#39;s inspector.&lt;/li&gt;
+&lt;li&gt;Move to Elements tab, choose the element where you want to edit the CSS for and edit it. It automatically saves the change to the file as long as you make sure the green indicator is on!
+&lt;img src=&#34;./green.png&#34; alt=&#34;Screenshot&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Install &lt;a href=&#34;https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi&#34;&gt;PerfectPixel&lt;/a&gt; Chrome extension.&lt;/li&gt;
+&lt;li&gt;Export your design data to an image file (PNG, JPG etc.)&lt;/li&gt;
+&lt;li&gt;Load the design image to PerfectPixel.&lt;/li&gt;
+&lt;li&gt;Compare with your HTML and fix to match the design. Keep using the inspector!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Other useful Sublime Text packages I use&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://packagecontrol.io/packages/NeoVintageous&#34;&gt;NeoVintageous&lt;/a&gt; (I&#39;m a former Vim user who cannot go back)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://packagecontrol.io/packages/AdvancedNewFile&#34;&gt;AdvancedNewFile&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://packagecontrol.io/packages/AutoFileName&#34;&gt;AutoFileName&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://packagecontrol.io/packages/BetterFindBuffer&#34;&gt;BetterFindBuffer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://packagecontrol.io/packages/eCSStractor&#34;&gt;eCSStractor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://packagecontrol.io/packages/Emmet&#34;&gt;Emmet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://packagecontrol.io/packages/DocBlockr&#34;&gt;DocBlockr&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://packagecontrol.io/packages/Git&#34;&gt;Git&lt;/a&gt; (though I use Git mainly on Terminal window)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://packagecontrol.io/packages/GitGutter&#34;&gt;GitGutter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://packagecontrol.io/packages/HTML%20Boilerplate&#34;&gt;HTML Boilerplate&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://packagecontrol.io/packages/HTML-CSS-JS%20Prettify&#34;&gt;HTML-CSS-JS Prettify&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://packagecontrol.io/packages/HTMLAttributes&#34;&gt;HTMLAttributes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://packagecontrol.io/packages/MarkdownPreview&#34;&gt;MarkdownPreview&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://packagecontrol.io/packages/Minify&#34;&gt;Minify&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://packagecontrol.io/packages/Placeholders&#34;&gt;Placeholders&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://packagecontrol.io/packages/SublimeCodeIntel&#34;&gt;SublimeCodeIntel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://packagecontrol.io/packages/Terminal&#34;&gt;Terminal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://packagecontrol.io/packages/WordPress&#34;&gt;WordPress&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Feel free to share tips to make it more efficient!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Japanese Google Fonts</title>
+      <link>https://blog.hitomiseki.com/google-fonts-japanese/</link>
+      <pubDate>Mon May 04 2020 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <description>&lt;h2&gt;Web and Japanese typefaces&lt;/h2&gt;
+&lt;p&gt;When building a Japanese website, &lt;code&gt;font-family&lt;/code&gt; property in CSS tends to be long like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Helvetica Neue&amp;quot;, &amp;quot;Yu Gothic&amp;quot;, YuGothic, &amp;quot;ヒラギノ角ゴ ProN W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic ProN&amp;quot;, &amp;quot;Hiragino Sans&amp;quot;, Arial, &amp;quot;メイリオ&amp;quot;, Meiryo, sans-serif;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is because there is no common typeface across operating systems. To be precise, Mac and Windows implemented a common font some years ago, but somehow they decided to call it by slightly different names internally. See the names &#39;Yu Gothic&#39; and &#39;YuGothic&#39; in the above example? And the font doesn&#39;t display beautifully on Windows browsers anyway.&lt;/p&gt;
+&lt;h2&gt;Problem with using web fonts&lt;/h2&gt;
+&lt;p&gt;You might think, why not use a web font? Yes, you could do it, only if you can prepare a font file with decent file size. Japanese language has, like other east Asian languages, a huge number of characters. You don&#39;t want to load another few megabytes to shorten a CSS definition.&lt;/p&gt;
+&lt;h2&gt;Google Fonts changed the situation&lt;/h2&gt;
+&lt;p&gt;Recently (in 2019?) Google Fonts started listing &lt;a href=&#34;https://fonts.google.com/?subset=japanese&#34;&gt;Japanese fonts&lt;/a&gt; and this is changing the situation. Now you can use &lt;a href=&#34;https://fonts.google.com/specimen/Noto+Sans+JP&#34;&gt;Noto Sans JP&lt;/a&gt; simply like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;font-family: &#39;Noto Sans JP&#39;, sans-serif;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;What it differs from normal web font solution is, Google Fonts generates subsets of the specified font automatically by detecting the characters used on the page. Thanks to this feature, Japanese websites now can display the same typeface across platforms without loading significantly large data.&lt;/p&gt;
+&lt;p&gt;I have the impression Noto font is being accepted broadly in Japan due to its beautiful yet simple design. If you ever need to build a Japanese website and are not sure which font to use, consider using one of &lt;a href=&#34;https://fonts.google.com/?subset=japanese&#34;&gt;these fonts&lt;/a&gt;. Nothing is as awkward as Japanese language being displayed in a non-Japanese font.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

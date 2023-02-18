@@ -1,0 +1,83 @@
+<!doctype html><html lang="en"><head><script>window.matchMedia("(prefers-color-scheme: dark)").matches&&document.documentElement.classList.add("dark"),document.referrer.indexOf(window.location.hostname)<0&&"/"===window.location.pathname&&-1<(navigator.language||navigator.userLanguage).indexOf("ja")&&(window.location.href="/ja")</script><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><title>How To Implement Dark Theme | Hitomilog</title><meta name="description" content="Hitomi Seki&#39;s blog"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="alternate" type="application/rss+xml" href="https://blog.hitomiseki.com/feed.xml"><link rel="stylesheet" href="/assets/css/main.min.css"><link rel="stylesheet" href="/assets/css/solarized.min.css"></head><body><header><h1>How To Implement Dark Theme</h1><p>Last updated on <time datetime="2020-08-23">23 August 2020</time></p><p>Tagged in <a href="/tags/css/">CSS</a>, <a href="/tags/javascript/">JavaScript</a></p></header><hr><main><article><p>This article introduces how to implement dark theme to a website.</p><h2>CSS definition</h2><p>Define CSS as &quot;darken the whole <code>&lt;body&gt;</code> element while <code>&lt;html&gt;</code> has <code>dark</code> class&quot;.</p><pre><code class="language-css">@media not print {
+  .dark body {
+    background: #000;
+    color: #fff;
+  }
+}
+</code></pre><p>Feel free to customise the styling. This example defines background as black and text colour as white.</p><p><code>@media not print</code> prevents the page to be printed in dark mode.</p><p>We are now ready to display the site in dark mode. Next we need the code to switch between dark and normal mode by toggling the <code>dark</code> class.</p><h2>Automatic way</h2><p>Recent computers and smartphones often have the feature to apply dark mode to their OS's UI. Web pages can refer to that settings and change their display theme, too.</p><p>Add the following code right after <code>&lt;head&gt;</code>.</p><pre><code class="language-html">&lt;script&gt;
+  // Check if device is set to dark mode
+  if (window.matchMedia(&quot;(prefers-color-scheme: dark)&quot;).matches) {
+    // Add 'dark' class to &lt;html&gt;
+    document.documentElement.classList.add(&quot;dark&quot;);
+  }
+&lt;/script&gt;
+</code></pre><p>Normally, JavaScript codes go right before <code>&lt;/body&gt;</code> closing tag, but in this case, by placing the code right after <code>&lt;head&gt;</code> minimises the risk of the page flashing non-dark mode before switching to dark mode.</p><p><a href="https://codepen.io/htmsk138/pen/MWyeGQv">Sample</a></p><h2>Manual way</h2><p>This method lets users choose the site theme.</p><p>Even users who prefer dark mode on their OS, they don't necessarily feel comfortable with dark mode on every website, and vice versa. For that, you could say it is more user-friendly way than the other, but users who always prefer dark mode might find it annoying.</p><p>In addition to toggling <code>dark</code> class, it also requires to remember user's choice across pages, so we use <a href="https://developer.mozilla.org/ja/docs/Web/API/Window/localStorage">localStorage</a> for this purpose.</p><h3>Switching by checkbox</h3><p>This method enables dark theme only while the checkbox is on.</p><p>Implement a checkbox like below.</p><pre><code class="language-html">&lt;label for=&quot;darkmode&quot;&gt;
+  &lt;input type=&quot;checkbox&quot; id=&quot;darkmode&quot; onchange=&quot;toggleTheme(this.checked)&quot; /&gt; Dark mode
+&lt;/label&gt;
+</code></pre><p>Add the following JavaScript code. This time it doesn't have to be right after <code>&lt;head&gt;</code>. It needs to be executed after the page contents are loaded in order to control the checkbox state.</p><pre><code class="language-javascript">/**
+ * After page load
+ */
+document.addEventListener('DOMContentLoaded', function() {
+  // Get local settings (false if not exists)
+  var isDark = localStorage.isDark === 'true';
+
+  // Change checkbox state and site theme based on the existing settings
+  document.getElementById('darkmode').checked = isDark;
+  toggleTheme(isDark);
+});
+
+/**
+ * Switch site theme.
+ * @param  {Boolean} isDark true = dark mode, false = normal mode.
+ */
+function toggleTheme(isDark) {
+  // Add or remove 'dark' class
+  document.documentElement.classList.toggle('dark', isDark);
+
+  // Save settings locally
+  localStorage.isDark = isDark;
+}
+</code></pre><p><a href="https://codepen.io/htmsk138/pen/LYNZVPw">Sample</a></p><h3>Switching by button</h3><p>A button also can be used.</p><p>Implement the button.</p><pre><code class="language-html">&lt;button id=&quot;darkmode&quot; onclick=&quot;toggleTheme()&quot;&gt;Change theme&lt;/button&gt;
+</code></pre><p>Add the following code right after <code>&lt;head&gt;</code>.</p><pre><code class="language-html">&lt;script&gt;
+  // Check if dark mode setting exists
+  if ('true' === localStorage.isDark) {
+    // Add 'dark' class
+    document.documentElement.classList.add(&quot;dark&quot;);
+  }
+&lt;/script&gt;
+</code></pre><p>Add following JavaScript code.</p><pre><code class="language-javascript">/**
+ * Switch site theme to the opposite of current.
+ */
+function toggleTheme() {
+  // Add or remove 'dark' class
+  document.documentElement.classList.toggle('dark');
+
+  // Save settings locally
+  localStorage.isDark = ('true' !== localStorage.isDark);
+}
+</code></pre><p><a href="https://codepen.io/htmsk138/pen/QWNEwXq">Sample</a></p><h2>Mix automatic and manual methods</h2><p>This method uses the device settings as default and enables user switching at the same time. It can inherit benefits from both automatic and manual ways.</p><p>Make the code inside <code>&lt;script&gt;</code> tag right after <code>&lt;head&gt;</code> or the page load event, as below.</p><pre><code class="language-javascript">if ('true' === localStorage.isDark || // Check if dark mode setting exists
+  (undefined === localStorage.isDark &amp;&amp; window.matchMedia(&quot;(prefers-color-scheme: dark)&quot;).matches)) { // If no setting exists, follow device setting
+  // Add 'dark' class
+  document.documentElement.classList.add(&quot;dark&quot;);
+
+  // Save settings locally
+  localStorage.isDark = true;
+
+  // This is required only when using checkbox
+  document.getElementById('darkmode').checked = true;
+}
+</code></pre><p>The rest of the codes are same as introduced earlier in this article.</p><p><a href="https://codepen.io/htmsk138/pen/LYNZmOX">Sample</a></p></article><hr><section><h1>Comments</h1><div id="disqus_thread"></div><script>var disqus_config=function(){this.language="en"};!function(){var t=document,e=t.createElement("script");e.src="https://hitomilog.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><script id="dsq-count-scr" src="//hitomilog.disqus.com/count.js" async></script></section></main><hr><footer><p><a href="/">Back to home</a></p><p>Built with <a href="https://www.11ty.dev/">Eleventy</a>, coloured with <a href="https://ethanschoonover.com/solarized/">Solarized</a> palette.</p><p>&copy; 2020 <a href="https://hitomiseki.com">Hitomi Seki</a></p></footer><script src="/assets/js/anchors.min.js" defer="defer"></script><script src="/assets/js/toc.min.js" defer="defer"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-16106862-4"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-16106862-4")</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.hitomiseki.com/dark-theme/"
+  },
+  "headline": "How To Implement Dark Theme",
+  "author": {
+    "@type": "Person",
+    "name": "Hitomi Seki"
+  },
+  "datePublished": "Sun Aug 23 2020 09:00:00 GMT+0900 (Japan Standard Time)",
+  "dateModified": "Sun Aug 23 2020 09:00:00 GMT+0900 (Japan Standard Time)"
+}</script></body></html>

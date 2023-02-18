@@ -1,0 +1,31 @@
+<!doctype html><html lang="ja"><head><script>window.matchMedia("(prefers-color-scheme: dark)").matches&&document.documentElement.classList.add("dark"),document.referrer.indexOf(window.location.hostname)<0&&"/"===window.location.pathname&&-1<(navigator.language||navigator.userLanguage).indexOf("ja")&&(window.location.href="/ja")</script><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><title>画像の代替テキスト | Hitomilog</title><meta name="description" content="Hitomi Seki&#39;s blog"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="alternate" type="application/rss+xml" href="https://blog.hitomiseki.com/ja/feed.xml"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/css/main.min.css"><link rel="stylesheet" href="/assets/css/solarized.min.css"></head><body><header><h1>画像の代替テキスト</h1><p><time datetime="2021-01-31">2021年1月31日</time>更新</p><p>タグ： <a href="/ja/tags/html/">HTML</a></p></header><hr><main><article><h2>代替テキストの必要性</h2><p>HTML では基本的に、すべての情報をテキストで表現する必要があります。画像を配置するときは、画像の内容を表現する代替テキストを用意します。そうすることで、</p><ul><li>エラーによって画像が表示されなかったとしても、情報を読み取ることができる</li><li>アクセシビリティ対策として、読み上げソフトでも画像の内容を理解できるようにする</li><li>SEO対策として、ボットにも理解できるようにする</li></ul><p>などの利点があります。</p><h2>画像に短い文字が入っている場合は、<code>alt</code> 属性</h2><p>代替テキストの一番基本的な方法です。たとえばロゴなど、画像に文字そのものが入っていて読むことができるものは、それを <code>img</code> タグの <code>alt</code> 属性に入れます。</p><pre><code class="language-html">&lt;img src=&quot;logo.svg&quot; alt=&quot;会社名&quot;&gt;
+</code></pre><p>画像に含まれる文字情報が比較的短いものは、これで十分です。</p><h2>読み上げられる必要がないものは、空の <code>alt</code> 属性値</h2><p>画像の <code>alt</code> 属性には必ず何か値を入れないといけないと思われがちですが、正しくは「空でもいいが、設定しなければいけない」です。</p><p>空の <code>alt=&quot;&quot;</code> が設定された画像は、読み上げソフトに「読み上げの必要がない画像」として認識されます。文字などの情報を含んでいない、イメージ画像や装飾目的の画像には空の <code>alt</code> を設定します。 <code>alt</code> が設定されていない画像は、画像のファイル名が読み上げられてしまいます。</p><p>個人的には、プロフィールなどのコンテンツで顔写真がある場合など、氏名は隣接するテキストに書かれていることが多く、「顔写真」や「プロフィール画像」などの説明を入れてもあまり意味をなさない情報だと思うので、空に設定することが多いです。通販サイトでの商品画像なども同様に考えます。</p><h2>長い文章やグラフなどには、 <code>visually-hidden</code> クラス</h2><p>複雑な図などで文字情報が多く、 <code>alt</code> のみでは説明が難しい場合は、<a href="https://www.a11yproject.com/posts/2013-01-11-how-to-hide-content/">読み上げソフトだけに認識される形で</a>別途コンテンツを用意し、必要に応じてリストやテーブルなども使うようにすることもできます。たとえば下記のような図は、順序付きリストで表現することができます。</p><p><img src="./flow_ja.png" alt="手順の流れを示すサンプル画像"></p><pre><code class="language-html">&lt;img src=&quot;steps.png&quot; alt=&quot;&quot;&gt;
+&lt;ol class=&quot;visually-hidden&quot;&gt;
+  &lt;li&gt;
+    ステップ１：&lt;br&gt;
+    フォームに入力する
+  &lt;/li&gt;
+  &lt;li&gt;
+    ステップ２：&lt;br&gt;
+    フォームを送信する
+  &lt;/li&gt;
+  &lt;li&gt;
+    ステップ３：&lt;br&gt;
+    確認メールを受信する
+  &lt;/li&gt;
+&lt;/ol&gt;
+</code></pre><p>ただし、この手の画像は前後の本文に同等の内容が含まれていて、分かりやすさを補完するために画像が用意されていることも多いので、その場合は隠れ要素は不要で <code>alt</code> 属性も空で問題ないと思います。</p><h2><code>alt</code> 属性の設定漏れを防ぐために</h2><p>いざコーディングが終わってみると、画像の <code>alt</code> 属性はブラウザで表示するだけでは見て取れないので、設定漏れがないかどうかをチェックするにはツールを使うと便利です。</p><h3>ブラウザの拡張機能</h3><p><a href="https://wave.webaim.org/extension/">WAVE</a>という、アクセシビリティ機能をチェックするためのブラウザ拡張機能があります。Chrome と FireFox 用があり、 <code>alt</code> 属性の有無を含めた、アクセシビリティに関する様々なチェックができます。</p><p>コーディング作業中に、 <code>alt</code> 属性を設定したあとに画像が差し替えられて内容が食い違ってしまうようなミスも、このツールで <code>alt</code> の内容を表示させることで気付くことができます。</p><h3>HTMLチェックツール</h3><p><a href="https://validator.w3.org/">W3CのHTMLチェッカー</a>を使うと、 <code>alt</code> 属性の抜けた <code>img</code> タグがあればエラーとして指摘されます。こちらでは全ての <code>alt</code> 属性の内容をレビューすることはできませんが、そもそも設定し忘れているケースは拾うことができます。</p><h2>参考リンク</h2><ul><li><a href="https://wave.webaim.org/extension/">WAVE Web Accessibility Evaluation Tool</a></li><li><a href="https://validator.w3.org/#validate_by_input">W3C Markup Validation Service</a></li><li><a href="https://www.a11yproject.com/posts/2013-01-11-how-to-hide-content/">The A11Y Project: How to hide content</a></li></ul></article><hr><section><h1>コメント</h1><div id="disqus_thread"></div><script>var disqus_config=function(){this.language="ja"};!function(){var t=document,e=t.createElement("script");e.src="https://hitomilog.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><script id="dsq-count-scr" src="//hitomilog.disqus.com/count.js" async></script></section></main><hr><footer><p><a href="/ja/">トップページへ</a></p><p>Built with <a href="https://www.11ty.dev/">Eleventy</a>, coloured with <a href="https://ethanschoonover.com/solarized/">Solarized</a> palette.</p><p>&copy; 2020 <a href="https://hitomiseki.com">Hitomi Seki</a></p></footer><script src="/assets/js/anchors.min.js" defer="defer"></script><script src="/assets/js/toc.min.js" defer="defer"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-16106862-4"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-16106862-4")</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.hitomiseki.com/ja/alternative-text-for-images/"
+  },
+  "headline": "画像の代替テキスト",
+  "author": {
+    "@type": "Person",
+    "name": "Hitomi Seki"
+  },
+  "datePublished": "Sun Jan 31 2021 09:00:00 GMT+0900 (Japan Standard Time)",
+  "dateModified": "Sun Jan 31 2021 09:00:00 GMT+0900 (Japan Standard Time)"
+}</script></body></html>

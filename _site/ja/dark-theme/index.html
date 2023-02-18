@@ -1,0 +1,83 @@
+<!doctype html><html lang="ja"><head><script>window.matchMedia("(prefers-color-scheme: dark)").matches&&document.documentElement.classList.add("dark"),document.referrer.indexOf(window.location.hostname)<0&&"/"===window.location.pathname&&-1<(navigator.language||navigator.userLanguage).indexOf("ja")&&(window.location.href="/ja")</script><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><title>ダークモードの実装 | Hitomilog</title><meta name="description" content="Hitomi Seki&#39;s blog"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="alternate" type="application/rss+xml" href="https://blog.hitomiseki.com/ja/feed.xml"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/css/main.min.css"><link rel="stylesheet" href="/assets/css/solarized.min.css"></head><body><header><h1>ダークモードの実装</h1><p><time datetime="2020-08-23">2020年8月23日</time>更新</p><p>タグ： <a href="/ja/tags/css/">CSS</a>, <a href="/ja/tags/javascript/">JavaScript</a></p></header><hr><main><article><p>サイトをダークモードで表示できるようにする方法です。デバイスの設定に沿って自動的にモードを切り替える方法と、ユーザーが任意に切り替えできるようにする方法の2通りを紹介します。</p><h2>CSS定義</h2><p>まず、サイトをダークモードで表示するためのCSSを定義します。 <code>&lt;html&gt;</code> に <code>dark</code> クラスを付与すると、 <code>&lt;body&gt;</code> 要素全体の色が反転するように定義しておきます。</p><pre><code class="language-css">@media not print {
+  .dark body {
+    background: #000;
+    color: #fff;
+  }
+}
+</code></pre><p>具体的な定義は、自由にカスタマイズしてください。この例では単純に、背景を黒、文字色を白に指定しています。</p><p>また、 <code>@media not print</code> で囲むことで、印刷時にはダークモードが適用されないようにしています。</p><p>これで、サイトをダークモードで表示する準備ができました。次に、 <code>dark</code> クラスを付けたり外したりすることで、ダークモードと通常モードの切り替えをするための実装をしていきます。</p><h2>自動で切り替える</h2><p>最近のパソコンやスマホには、OSのUIそのものをダークモードに設定する機能が付いていることが多くなってきました。ウェブサイトでもその設定を参照し、それに沿って自動的に表示を切り替えることができます。</p><p><code>&lt;head&gt;</code> 直後に、下記のJavaScriptコードを置きます。</p><pre><code class="language-html">&lt;script&gt;
+  // デバイスがダークモードに設定されているかどうか
+  if (window.matchMedia(&quot;(prefers-color-scheme: dark)&quot;).matches) {
+    // &lt;html&gt;タグにdarkクラスを付与
+    document.documentElement.classList.add(&quot;dark&quot;);
+  }
+&lt;/script&gt;
+</code></pre><p>基本的にJavaScriptは <code>&lt;/body&gt;</code> 直前に置くことが多いですが、この場合は <code>&lt;head&gt;</code> 直後に置くことで、ページロードを開始後一番早いタイミングでダークモードを設定することができ、一瞬だけ通常モードでページが表示されてしまうリスクを最小限に抑えます。</p><p><a href="https://codepen.io/htmsk138/pen/MWyeGQv">サンプル</a></p><h2>手動で切り替える</h2><p>デバイスの設定に関係なく、ユーザーが表示テーマを選択できるようにする方法です。</p><p>普段はダークモードを好んでいるユーザーでも、サイトによっては通常モードのほうが見やすいと感じることもあります。また、その逆もありえます。どんなニーズにも対応できるという意味ではユーザー寄りの実装といえる反面、常にダークモードを選択したいユーザーにとっては手間になるかもしれません。</p><p><code>dark</code> クラスの切り替えに加えて、ページを遷移しても設定を維持する必要があるため、ブラウザの<a href="https://developer.mozilla.org/ja/docs/Web/API/Window/localStorage">localStorage</a>を利用して設定を保存します。</p><h3>チェックボックスを使う方法</h3><p>「ダークモード」のチェックをオンにしている間だけ、サイトをダークモードで表示する方法です。</p><p>HTMLで次のようなチェックボックスを設置します。</p><pre><code class="language-html">&lt;label for=&quot;darkmode&quot;&gt;
+  &lt;input type=&quot;checkbox&quot; id=&quot;darkmode&quot; onchange=&quot;toggleTheme(this.checked)&quot; /&gt; ダークモード
+&lt;/label&gt;
+</code></pre><p>下記のJavaScriptコードを追加します。今回は <code>&lt;head&gt;</code> 直後である必要はありません。チェックボックスを操作するため、ページコンテンツがロードされたあとに実行されるようにします。</p><pre><code class="language-javascript">/**
+ * ページロード完了後
+ */
+document.addEventListener('DOMContentLoaded', function() {
+  // ローカル保存済みの設定の取得（未設定の場合もfalse）
+  var isDark = localStorage.isDark === 'true';
+
+  // 保存されていた設定に従い、チェックボックスの状態と、サイトのテーマを切り替える
+  document.getElementById('darkmode').checked = isDark;
+  toggleTheme(isDark);
+});
+
+/**
+ * サイトテーマの切り替え
+ * @param  {Boolean} isDark trueでダークモードへ、falseで通常モードへ切り替え
+ */
+function toggleTheme(isDark) {
+  // &lt;html&gt;タグにdarkクラスを付与または削除
+  document.documentElement.classList.toggle('dark', isDark);
+
+  // ローカルに設定を保存
+  localStorage.isDark = isDark;
+}
+</code></pre><p><a href="https://codepen.io/htmsk138/pen/LYNZVPw">サンプル</a></p><h3>ボタンを使う方法</h3><p>ボタンを押すたびに、ダークモードと通常モードを切り替える方法です。</p><p>HTMLでボタンを設置します。</p><pre><code class="language-html">&lt;button id=&quot;darkmode&quot; onclick=&quot;toggleTheme()&quot;&gt;テーマ切替&lt;/button&gt;
+</code></pre><p><code>&lt;head&gt;</code> 直後に次のコードを追加します。</p><pre><code class="language-html">&lt;script&gt;
+  // ローカルにダークモード設定が保存されているか
+  if ('true' === localStorage.isDark) {
+    // &lt;html&gt;タグにdarkクラスを付与
+    document.documentElement.classList.add(&quot;dark&quot;);
+  }
+&lt;/script&gt;
+</code></pre><p>次のJavaScriptコードを追加します。</p><pre><code class="language-javascript">/**
+ * サイトテーマの切り替え。現在と逆のテーマに切り替える。
+ */
+function toggleTheme() {
+  // &lt;html&gt;タグにdarkクラスを付与または削除
+  document.documentElement.classList.toggle('dark');
+
+  // ローカルに設定を保存
+  localStorage.isDark = ('true' !== localStorage.isDark);
+}
+</code></pre><p><a href="https://codepen.io/htmsk138/pen/QWNEwXq">サンプル</a></p><h2>自動と手動の方法を組み合わせる</h2><p>初期値はデバイスの設定に従いつつ、ユーザーの操作でも切り替えができるようにします。自動と手動、双方のメリットが活かせる方法です。</p><p><code>&lt;head&gt;</code> 直後の <code>&lt;script&gt;</code> タグ、またはページロード完了イベントに入れるコードを、次のようにします。</p><pre><code class="language-javascript">if ('true' === localStorage.isDark || // ローカルにダークモード設定が保存されているか
+  (undefined === localStorage.isDark &amp;&amp; window.matchMedia(&quot;(prefers-color-scheme: dark)&quot;).matches)) { // ローカルに設定が保存されていなければ、デバイスの設定に従う
+  // &lt;html&gt;タグにdarkクラスを付与
+  document.documentElement.classList.add(&quot;dark&quot;);
+
+  // ローカルに設定を保存
+  localStorage.isDark = true;
+
+  // 下記は、チェックボックス使用時のみ
+  document.getElementById('darkmode').checked = true;
+}
+</code></pre><p>残りの実装は、先に紹介した手動切り替えの例と同じになります。</p><p><a href="https://codepen.io/htmsk138/pen/LYNZmOX">サンプル</a></p></article><hr><section><h1>コメント</h1><div id="disqus_thread"></div><script>var disqus_config=function(){this.language="ja"};!function(){var t=document,e=t.createElement("script");e.src="https://hitomilog.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><script id="dsq-count-scr" src="//hitomilog.disqus.com/count.js" async></script></section></main><hr><footer><p><a href="/ja/">トップページへ</a></p><p>Built with <a href="https://www.11ty.dev/">Eleventy</a>, coloured with <a href="https://ethanschoonover.com/solarized/">Solarized</a> palette.</p><p>&copy; 2020 <a href="https://hitomiseki.com">Hitomi Seki</a></p></footer><script src="/assets/js/anchors.min.js" defer="defer"></script><script src="/assets/js/toc.min.js" defer="defer"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-16106862-4"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-16106862-4")</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.hitomiseki.com/ja/dark-theme/"
+  },
+  "headline": "ダークモードの実装",
+  "author": {
+    "@type": "Person",
+    "name": "Hitomi Seki"
+  },
+  "datePublished": "Sun Aug 23 2020 09:00:00 GMT+0900 (Japan Standard Time)",
+  "dateModified": "Sun Aug 23 2020 09:00:00 GMT+0900 (Japan Standard Time)"
+}</script></body></html>

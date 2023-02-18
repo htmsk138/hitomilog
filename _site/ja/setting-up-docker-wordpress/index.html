@@ -1,0 +1,62 @@
+<!doctype html><html lang="ja"><head><script>window.matchMedia("(prefers-color-scheme: dark)").matches&&document.documentElement.classList.add("dark"),document.referrer.indexOf(window.location.hostname)<0&&"/"===window.location.pathname&&-1<(navigator.language||navigator.userLanguage).indexOf("ja")&&(window.location.href="/ja")</script><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><title>Docker Compose を使った WordPress 環境の構築 | Hitomilog</title><meta name="description" content="Hitomi Seki&#39;s blog"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="alternate" type="application/rss+xml" href="https://blog.hitomiseki.com/ja/feed.xml"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/css/main.min.css"><link rel="stylesheet" href="/assets/css/solarized.min.css"></head><body><header><h1>Docker Compose を使った WordPress 環境の構築</h1><p><time datetime="2021-01-17">2021年1月17日</time>更新</p><p>タグ： <a href="/ja/tags/docker/">Docker</a>, <a href="/ja/tags/wordpress/">WordPress</a></p></header><hr><main><article><p>わりと最近になってから <a href="https://www.docker.com/">Docker</a> の存在を知り、ローカルの開発環境構築に欠かせない存在となりました。ここでは Docker インストール済みの環境に、実際に WordPress 環境を構築する方法について書いていきます。</p><p>Docker そのものについての詳しい解説は省略しています。<a href="https://knowledge.sakura.ad.jp/13265/">こちらのサイト</a>などが分かりやすいと思います。</p><p>この記事で使用する設定ファイルは、<a href="https://github.com/htmsk138/dockerwp-starter">こちら</a>で公開しています。テンプレートとしてご利用いただけます。</p><h2>基本の手順</h2><p>下記の手順で、新規の WordPress サイトを立ち上げることができます。</p><ol><li><a href="https://www.docker.com/products/docker-desktop">Docker</a> をダウンロードし、インストールします</li><li>プロジェクト用のディレクトリを作成します。ここでは <code>dockerwp</code> という名前で想定します</li><li><code>dockerwp</code> ディレクトリの直下に、下記の内容で <code>docker-compose.yml</code> というファイルを作成します</li></ol><pre><code>services:
+
+  wordpress:
+    image: wordpress
+    container_name: dockerwp_wp
+    ports:
+      - 80:80
+    environment:
+      WORDPRESS_DB_HOST: dockerwp_db
+      WORDPRESS_DB_USER: admin
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: dockerwp_dev
+    volumes:
+      - ./wp:/var/www/html
+    depends_on:
+      - db
+    links:
+      - db
+
+  db:
+    image: mysql:5.7
+    container_name: dockerwp_db
+    environment:
+      MYSQL_DATABASE: dockerwp_dev
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: wordpress
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - ./db:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: dockerwp_phpmyadmin
+    depends_on:
+      - db
+    ports:
+      - 992:80
+    environment:
+      PMA_HOST: dockerwp_db
+      UPLOAD_LIMIT: 64M
+</code></pre><ol start="4"><li>Docker を起動します</li><li><code>dockerwp</code> ディレクトリで、コマンド <code>docker-compose up -d</code> を実行します（ <code>-d</code> を省くと処理中のアウトプットが見れます）</li><li>しばらく待つと、 <a href="http://localhost">http://localhost</a>から WordPress サイトの新規インストール画面が確認できます</li></ol><p>サイトを停止するときは <code>docker-compose down</code> を実行します。</p><p>上記の手順を実施したあとに <code>dockerwp</code> の中を確認すると、 <code>wp</code> ディレクトリに WordPress の構成ファイルが、 <code>db</code> ディレクトリに MySQL の構成ファイルが入っているのが分かります。サイトに必要な情報がすべて <code>dockerwp</code> ディレクトリの中に揃っている状態なので、他の環境でも Docker がインストールされていれば、ディレクトリごと共有することで同じようにサイトを確認することができます。</p><h2>アレンジ</h2><h3>データベース情報を変更する</h3><p>必要に応じて、<code>docker-compose.yml</code> のデータベース情報を編集してください。</p><ul><li><code>WORDPRESS_DB_USER</code> ... MySQL ユーザ名（ <code>MYSQL_USER</code> と同じ値）</li><li><code>WORDPRESS_DB_PASSWORD</code> ... MySQLパスワード（ <code>MYSQL_PASSWORD</code> と同じ値）</li><li><code>WORDPRESS_DB_NAME</code> ... データベース名（ <code>MYSQL_DATABASE</code> と同じ値）</li></ul><p><code>WORDPRESS_DB_HOST</code> には、 MySQL の <code>container_name</code> を指定します。</p><h3>アップロード容量上限を変更する</h3><p>メディアファイルなどのアップロードサイズ上限は、通常であれば <code>.htaccess</code> や <code>php.ini</code> の編集で変更できるのですが、 Docker 環境ではうまくいかないようなので、次の手順で対応します。</p><ol><li><code>dockerwp</code> ディレクトリ内に下記の内容で <code>uploads.ini</code> を作成します。 <code>64M</code> の部分は任意の容量に変えてください</li></ol><pre><code>file_uploads = On
+memory_limit = 64M
+upload_max_filesize = 64M
+post_max_size = 64M
+max_execution_time = 600
+</code></pre><ol start="2"><li><code>docker-compose.yml</code> を編集し、 <code>wordpress:</code> の <code>volumes:</code> セクションに下記の行を追加します</li></ol><pre><code>- ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+</code></pre><p>phpMyAdmin画面からのアップロード上限は、 <code>docker-compose.yml</code> の末尾にある <code>UPLOAD_LIMIT</code> にて設定します。</p><h3>既存のサイトを複製する</h3><p>公開済みのサイトをローカルにコピーしたい場合などは、下記の方法で可能です。</p><ol><li><code>dockerwp</code> ディレクトリに WordPress 構成ファイル用のフォルダ（ <code>wp</code> とします）を作成し、その中に元のサイトのサーバーにアップされているファイルをコピーします</li><li>元のサイトのデータベースをエクスポートし、 <code>dockerwp</code> ディレクトリに置きます（ <code>export.sql</code> とします）</li><li><code>docker-compose.yml</code> を編集し、 <code>db:</code> の <code>volumes:</code> セクションに下記の行を追加します</li></ol><pre><code>- ./export.sql:/docker-entrypoint-initdb.d/export.sql
+</code></pre><ol start="4"><li><code>docker-compose up -d</code> でサイトを立ち上げます</li></ol><p>上記は、新規サイト用のファイルが <code>wp</code> に自動生成される代わりに手順1のファイルを使用し、初回の立ち上げのみ <code>export.sql</code> をデータベースにインポートする、という設定になります。</p><p>サイトURLをローカル用に変える手順は、<a href="https://ja.wordpress.org/support/article/changing-the-site-url/">通常の手順</a>と変わりません。上記の手順2で、 <code>export.sql</code> を編集してあらかじめ <code>siteurl</code> と <code>home</code> の値をローカル用のURLに変えておくと楽かもしれません。</p><p><code>wp/wp-config.php</code> に記載のデータベース情報は <code>docker-compose.yml</code> の内容で上書きされるので、元のサイトとは異なるログイン情報やデータベース名を <code>docker-compose.yml</code> で設定しておくことをおすすめします。</p><h2>参考リンク</h2><ul><li><a href="https://knowledge.sakura.ad.jp/13265/">さくらのナレッジ　Docker入門</a></li><li><a href="https://docs.docker.jp/">Docker ドキュメント日本語化プロジェクト</a></li><li><a href="https://ja.wordpress.org/support/article/changing-the-site-url/">サイトURLの変更（WordPress）</a></li></ul></article><hr><section><h1>コメント</h1><div id="disqus_thread"></div><script>var disqus_config=function(){this.language="ja"};!function(){var t=document,e=t.createElement("script");e.src="https://hitomilog.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><script id="dsq-count-scr" src="//hitomilog.disqus.com/count.js" async></script></section></main><hr><footer><p><a href="/ja/">トップページへ</a></p><p>Built with <a href="https://www.11ty.dev/">Eleventy</a>, coloured with <a href="https://ethanschoonover.com/solarized/">Solarized</a> palette.</p><p>&copy; 2020 <a href="https://hitomiseki.com">Hitomi Seki</a></p></footer><script src="/assets/js/anchors.min.js" defer="defer"></script><script src="/assets/js/toc.min.js" defer="defer"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-16106862-4"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-16106862-4")</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.hitomiseki.com/ja/setting-up-docker-wordpress/"
+  },
+  "headline": "Docker Compose を使った WordPress 環境の構築",
+  "author": {
+    "@type": "Person",
+    "name": "Hitomi Seki"
+  },
+  "datePublished": "Sun Jan 17 2021 09:00:00 GMT+0900 (Japan Standard Time)",
+  "dateModified": "Sun Jan 17 2021 09:00:00 GMT+0900 (Japan Standard Time)"
+}</script></body></html>

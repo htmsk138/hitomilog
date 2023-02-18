@@ -1,0 +1,42 @@
+<!doctype html><html lang="ja"><head><script>window.matchMedia("(prefers-color-scheme: dark)").matches&&document.documentElement.classList.add("dark"),document.referrer.indexOf(window.location.hostname)<0&&"/"===window.location.pathname&&-1<(navigator.language||navigator.userLanguage).indexOf("ja")&&(window.location.href="/ja")</script><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><title>WordPressで、特定の投稿タイプに使われているタームのリストを取得する | Hitomilog</title><meta name="description" content="Hitomi Seki&#39;s blog"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="alternate" type="application/rss+xml" href="https://blog.hitomiseki.com/ja/feed.xml"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/css/main.min.css"><link rel="stylesheet" href="/assets/css/solarized.min.css"></head><body><header><h1>WordPressで、特定の投稿タイプに使われているタームのリストを取得する</h1><p><time datetime="2020-08-15">2020年8月15日</time>更新</p><p>タグ： <a href="/ja/tags/php/">PHP</a>, <a href="/ja/tags/wordpress/">WordPress</a></p></header><hr><main><article><p>WordPressの <code>get_terms()</code> 関数は、デフォルトでは指定されたタクソノミーに属するすべてのタームを返します。タクソノミーを1種類の投稿タイプでしか使っていないときはそれで十分なのですが、1つのタクソノミーを複数の投稿タイプで共用している場合に、特定の投稿タイプに使われているタームのみのリストを取得したいことがあります。</p><h2>方法1： <code>object_ids</code> 引数を使う</h2><pre><code class="language-php">// 投稿タイプのすべての公開済み投稿のIDリストを取得
+$post_ids = get_posts( array(
+    'post_type' =&gt; 'some_post_type',
+    'posts_per_page' =&gt; -1,
+    'post_status' =&gt; 'publish',
+    'fields' =&gt; 'ids'
+) );
+
+// 上記IDのオブジェクトに使われているタームのみを取得
+$terms_for_type = get_terms( array(
+    'taxonomy' =&gt; 'some_taxonomy',
+    'object_ids' =&gt; $post_ids
+) );
+</code></pre><p><code>some_post_type</code> と <code>some_taxonomy</code> の部分を、それぞれ投稿タイプとタクソノミーのスラッグに置き換えてください。</p><p>この方法では、指定した投稿タイプの記事数が極端に多い場合の負荷が気になるところです。そこで、もう1つの方法をご紹介します。</p><h2>方法2： <code>get_terms()</code> 関数にフィルタを追加する</h2><p><code>get_terms()</code> に <code>post_type</code> 引数があるといいなと思っていたところ、フィルタを作成して使えるようにしてしまう方法を見つけました。</p><p><a href="https://dfactory.eu/wp-how-to-get-terms-post-type/">こちらのサイト</a>で紹介されているコードを、テーマの functions.php 等に追加します。「Edit: A new, updated approach...」の後に記載されているほうのコードを使ってください。</p><p>上記コードの処理内容としては、ターム取得時のSQL文を書き換えて、指定された投稿タイプで絞り込みできるようにしたものです。 <code>post_type</code> は、 <code>string</code> での単数指定と <code>array</code> での複数指定の両方に対応しています。</p><p>これで、下記のように投稿タイプを指定することができるようになります。</p><pre><code class="language-php">// 投稿タイプを1つ指定
+$terms_for_type = get_terms( array(
+    'taxonomy' =&gt; 'some_taxonomy',
+    'post_type' =&gt; 'some_post_type'
+) );
+
+// 投稿タイプを複数指定
+$terms_for_types = get_terms( array(
+    'taxonomy' =&gt; 'some_taxonomy',
+    'post_type' =&gt; array( 
+      'some_post_type1',
+      'some_post_type2'
+    )
+) );
+</code></pre><p>注意点として、 <code>get_terms()</code> 呼び出し時に <code>fields</code> 引数をデフォルトの <code>all</code> 以外に設定してしまうと、正しいカウント数（返り値オブジェクトの <code>count</code> プロパティ）が得られないそうです。</p><p>SQLに介入するのはベストプラクティスとは言えないかもしれませんが、方法1で不都合があるときは参考にしてみてください。</p><h2>参考リンク</h2><ul><li><a href="https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/get_terms">関数リファレンス/get terms</a></li><li><a href="https://developer.wordpress.org/reference/classes/wp_term_query/__construct/">WP_Term_Query::__construct</a></li><li><a href="https://dfactory.eu/wp-how-to-get-terms-post-type/">WordPress: How to get_terms for post type</a></li></ul></article><hr><section><h1>コメント</h1><div id="disqus_thread"></div><script>var disqus_config=function(){this.language="ja"};!function(){var t=document,e=t.createElement("script");e.src="https://hitomilog.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><script id="dsq-count-scr" src="//hitomilog.disqus.com/count.js" async></script></section></main><hr><footer><p><a href="/ja/">トップページへ</a></p><p>Built with <a href="https://www.11ty.dev/">Eleventy</a>, coloured with <a href="https://ethanschoonover.com/solarized/">Solarized</a> palette.</p><p>&copy; 2020 <a href="https://hitomiseki.com">Hitomi Seki</a></p></footer><script src="/assets/js/anchors.min.js" defer="defer"></script><script src="/assets/js/toc.min.js" defer="defer"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-16106862-4"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-16106862-4")</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.hitomiseki.com/ja/wordpress-get-terms-for-a-post-type/"
+  },
+  "headline": "WordPressで、特定の投稿タイプに使われているタームのリストを取得する",
+  "author": {
+    "@type": "Person",
+    "name": "Hitomi Seki"
+  },
+  "datePublished": "Sat Aug 15 2020 09:00:00 GMT+0900 (Japan Standard Time)",
+  "dateModified": "Sat Aug 15 2020 09:00:00 GMT+0900 (Japan Standard Time)"
+}</script></body></html>
