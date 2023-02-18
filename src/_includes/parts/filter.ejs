@@ -1,0 +1,31 @@
+<p>
+  <details>
+    <summary>
+      <%- i18n[lang].filterFormTitle %>
+    </summary>
+      <form onreset="resetFilters()">
+        <fieldset>
+          <legend><%- i18n[lang].filterOperatorTitle %></legend>
+          <label><input type="radio" name="operator" value="and" checked>AND</label>
+          <label><input type="radio" name="operator" value="or">OR</label>
+        </fieldset>
+        <fieldset>
+          <legend><%- i18n[lang].filterListTitle %></legend>
+          <% Object.keys(tagsList).forEach(tagKey => { let tag = tagsList[tagKey]; %>
+          <label>
+            <input type="checkbox" name="filter" value="<%= tagKey %>">
+            <%= tag[lang] %>
+          </label>
+          <% }); %>
+          <br>
+          <input type="reset" value="Clear">
+        </fieldset>
+      </form>
+  </details>
+</p>
+
+<% if ('production' === app.env) { %>
+<script src="/assets/js/filter.min.js" defer></script>
+<% } else { %>
+<script src="/assets/js/filter.js" defer></script>
+<% } %>
