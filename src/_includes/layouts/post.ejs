@@ -6,6 +6,10 @@
       <% var lastUpdated = 'undefined' !== typeof(updated) ? updated : page.date; %>
       <%- `${i18n[lang].updatedStart}${include('/parts/date', { date: lastUpdated })}${i18n[lang].updatedEnd}` %>
     </p>
+    <p>
+      <%- i18n[lang].tagged %>
+      <% include /parts/tagged %>
+    </p>
   </header>
   <hr>
   <main>
