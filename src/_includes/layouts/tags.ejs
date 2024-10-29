@@ -1,11 +1,11 @@
-<% include /parts/head %>
+<%- include('/parts/head') %>
 <body>
   <main>
     <h1><%= i18n[lang].tagTitlePrefix + tagsList[tag][lang] %></h1>
     <%- include('/parts/archive', { tag: tag }) %>
   </main>
   <hr>
-  <% include /parts/footer %>
+  <%- include('/parts/footer') %>
 </body>
 
 </html>

@@ -1,8 +1,11 @@
 const htmlmin = require("html-minifier");
+const upgradeHelper = require("@11ty/eleventy-upgrade-help");
 
 const isProduction = 'production' === process.env.ELEVENTY_ENV;
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(upgradeHelper);
+
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
     if(isProduction && outputPath.endsWith(".html")) {
       return htmlmin.minify(content, {
