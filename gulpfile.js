@@ -43,11 +43,15 @@ function minifyCss(cb) {
  */
 function copyPostImages(cb) {
   gulp
-    .src('src/posts/**/*.{png,jpg,gif,svg}')
+    .src('src/posts/**/*.{png,jpg,gif,svg}', {
+      encoding: false
+    })
     .pipe(gulp.dest('_site'));
 
   gulp
-    .src('src/ja/posts/**/*.{png,jpg,gif,svg}')
+    .src('src/ja/posts/**/*.{png,jpg,gif,svg}', {
+      encoding: false
+    })
     .pipe(gulp.dest('_site/ja'));
 
   cb();
