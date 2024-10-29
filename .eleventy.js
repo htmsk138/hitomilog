@@ -1,11 +1,8 @@
-const inclusiveLangPlugin = require("@11ty/eleventy-plugin-inclusive-language");
 const htmlmin = require("html-minifier");
 
 const isProduction = 'production' === process.env.ELEVENTY_ENV;
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(inclusiveLangPlugin);
-
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
     if(isProduction && outputPath.endsWith(".html")) {
       return htmlmin.minify(content, {
@@ -18,7 +15,7 @@ module.exports = function (eleventyConfig) {
 
     return content;
   });
- 
+
   if (!isProduction) {
     eleventyConfig.addPassthroughCopy('src/assets');
   }
