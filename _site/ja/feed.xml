@@ -9,7 +9,7 @@
     <item>
       <title>HTML検証ツールいろいろ</title>
       <link>https://blog.hitomiseki.com/ja/html-validation-tools/</link>
-      <pubDate>Sat Feb 06 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <pubDate>Sat, 06 Feb 2021 00:00:00 GMT</pubDate>
       <description>&lt;p&gt;HTMLは作成後、ブラウザで確認したときにパッと見では問題なく表示できていても、記述ミスが隠れていることがあります。そういった見た目には分かりにくい不具合を検出するには、ツールが必要になります。&lt;/p&gt;
 &lt;p&gt;目に見えない部分にもこだわることで、SEOやアクセシビリティの対策にもつながります。&lt;/p&gt;
 &lt;h2&gt;W3Cチェッカー&lt;/h2&gt;
@@ -74,7 +74,7 @@
     <item>
       <title>画像の代替テキスト</title>
       <link>https://blog.hitomiseki.com/ja/alternative-text-for-images/</link>
-      <pubDate>Sun Jan 31 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <pubDate>Sun, 31 Jan 2021 00:00:00 GMT</pubDate>
       <description>&lt;h2&gt;代替テキストの必要性&lt;/h2&gt;
 &lt;p&gt;HTML では基本的に、すべての情報をテキストで表現する必要があります。画像を配置するときは、画像の内容を表現する代替テキストを用意します。そうすることで、&lt;/p&gt;
 &lt;ul&gt;
@@ -131,7 +131,7 @@
     <item>
       <title>Docker Compose を使った WordPress 環境の構築</title>
       <link>https://blog.hitomiseki.com/ja/setting-up-docker-wordpress/</link>
-      <pubDate>Sun Jan 17 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <pubDate>Sun, 17 Jan 2021 00:00:00 GMT</pubDate>
       <description>&lt;p&gt;わりと最近になってから &lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt; の存在を知り、ローカルの開発環境構築に欠かせない存在となりました。ここでは Docker インストール済みの環境に、実際に WordPress 環境を構築する方法について書いていきます。&lt;/p&gt;
 &lt;p&gt;Docker そのものについての詳しい解説は省略しています。&lt;a href=&#34;https://knowledge.sakura.ad.jp/13265/&#34;&gt;こちらのサイト&lt;/a&gt;などが分かりやすいと思います。&lt;/p&gt;
 &lt;p&gt;この記事で使用する設定ファイルは、&lt;a href=&#34;https://github.com/htmsk138/dockerwp-starter&#34;&gt;こちら&lt;/a&gt;で公開しています。テンプレートとしてご利用いただけます。&lt;/p&gt;
@@ -243,7 +243,7 @@ max_execution_time = 600
     <item>
       <title>Windowsのコマンドラインツールにフォントを追加する</title>
       <link>https://blog.hitomiseki.com/ja/adding-font-to-windows-command-line/</link>
-      <pubDate>Sun Jan 10 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <pubDate>Sun, 10 Jan 2021 00:00:00 GMT</pubDate>
       <description>&lt;p&gt;コマンドプロンプトなど、Windowsのコマンドラインツールで日本語を表示しようとすると、デフォルトではMSゴシックしか選べません。さすがに見づらいので、他のフォントを追加して使えるようにする方法を探しました。&lt;/p&gt;
 &lt;h2&gt;手順&lt;/h2&gt;
 &lt;p&gt;Windows10で確認した手順です。コマンドプロンプトの他、WSLのターミナルやPowerShellにも、同じ方法が使えます。&lt;/p&gt;
@@ -270,7 +270,7 @@ max_execution_time = 600
     <item>
       <title>Git のコミットで変更されたファイルのみのアーカイブファイルを作成する</title>
       <link>https://blog.hitomiseki.com/ja/archiving-modified-files-from-a-git-commit/</link>
-      <pubDate>Sun Jan 10 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <pubDate>Sun, 10 Jan 2021 00:00:00 GMT</pubDate>
       <description>&lt;p&gt;Git でコミットした内容から、そのコミットで更新・追加されたファイルのみをまとめてZIPなどのアーカイブにする方法です。&lt;/p&gt;
 &lt;p&gt;以下の例はすべて、1つ前に行なったコミットを対象にしたコマンドですが、 &lt;code&gt;HEAD^&lt;/code&gt; の部分を2つのコミットIDに変更し、そのコミット間の差分から抽出することもできます。&lt;/p&gt;
 &lt;h2&gt;Git 経由&lt;/h2&gt;
@@ -288,7 +288,7 @@ max_execution_time = 600
     <item>
       <title>Git コミットの日時を変更する</title>
       <link>https://blog.hitomiseki.com/ja/changing-git-commit-date/</link>
-      <pubDate>Sun Jan 10 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <pubDate>Sun, 10 Jan 2021 00:00:00 GMT</pubDate>
       <description>&lt;p&gt;注意：この記事は Git の履歴を変更する方法を含んでいます。各自の責任で慎重に行うようにしてください。&lt;/p&gt;
 &lt;h2&gt;Git のコミットデータには2種類の日時情報がある&lt;/h2&gt;
 &lt;p&gt;下記は、最後のコミットの日時を日本時間で2020年10月31日午前9時に変更するコマンドです。&lt;/p&gt;
@@ -315,7 +315,7 @@ git push -f
     <item>
       <title>CSS で蛍光ペンのような線を引く</title>
       <link>https://blog.hitomiseki.com/ja/css-text-highlight/</link>
-      <pubDate>Sun Jan 10 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <pubDate>Sun, 10 Jan 2021 00:00:00 GMT</pubDate>
       <description>&lt;p&gt;テキストに蛍光ペンで線を引いたような装飾をします。&lt;/p&gt;
 &lt;p&gt;動作サンプルは&lt;a href=&#34;https://codepen.io/htmsk138/pen/oNzxOjo&#34;&gt;こちら&lt;/a&gt;です。以下、解説です。&lt;/p&gt;
 &lt;h2&gt;基本&lt;/h2&gt;
@@ -363,7 +363,7 @@ git push -f
     <item>
       <title>Bootstrap カルーセルのカスタマイズ</title>
       <link>https://blog.hitomiseki.com/ja/customising-bootstrap-carousel/</link>
-      <pubDate>Sun Jan 10 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <pubDate>Sun, 10 Jan 2021 00:00:00 GMT</pubDate>
       <description>&lt;p&gt;最近 Bootstrap のカルーセルを使う機会があったのですが、意外と基本的なカスタマイズ機能がなく、自前で調整する必要がありました。そのときに使用したJSコードを紹介します。&lt;/p&gt;
 &lt;p&gt;この記事のコードの動作サンプルは&lt;a href=&#34;https://codepen.io/htmsk138/pen/XWjqLBZ&#34;&gt;こちら&lt;/a&gt;です。&lt;/p&gt;
 &lt;h2&gt;各スライドの高さを揃える&lt;/h2&gt;
@@ -418,7 +418,7 @@ $(&#39;.carousel&#39;).each(function() {
     <item>
       <title>ダークモードの実装</title>
       <link>https://blog.hitomiseki.com/ja/dark-theme/</link>
-      <pubDate>Sun Aug 23 2020 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <pubDate>Sun, 23 Aug 2020 00:00:00 GMT</pubDate>
       <description>&lt;p&gt;サイトをダークモードで表示できるようにする方法です。デバイスの設定に沿って自動的にモードを切り替える方法と、ユーザーが任意に切り替えできるようにする方法の2通りを紹介します。&lt;/p&gt;
 &lt;h2&gt;CSS定義&lt;/h2&gt;
 &lt;p&gt;まず、サイトをダークモードで表示するためのCSSを定義します。 &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt; に &lt;code&gt;dark&lt;/code&gt; クラスを付与すると、 &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; 要素全体の色が反転するように定義しておきます。&lt;/p&gt;
@@ -532,7 +532,7 @@ function toggleTheme() {
     <item>
       <title>WordPressで、特定の投稿タイプに使われているタームのリストを取得する</title>
       <link>https://blog.hitomiseki.com/ja/wordpress-get-terms-for-a-post-type/</link>
-      <pubDate>Sat Aug 15 2020 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <pubDate>Sat, 15 Aug 2020 00:00:00 GMT</pubDate>
       <description>&lt;p&gt;WordPressの &lt;code&gt;get_terms()&lt;/code&gt; 関数は、デフォルトでは指定されたタクソノミーに属するすべてのタームを返します。タクソノミーを1種類の投稿タイプでしか使っていないときはそれで十分なのですが、1つのタクソノミーを複数の投稿タイプで共用している場合に、特定の投稿タイプに使われているタームのみのリストを取得したいことがあります。&lt;/p&gt;
 &lt;h2&gt;方法1： &lt;code&gt;object_ids&lt;/code&gt; 引数を使う&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;// 投稿タイプのすべての公開済み投稿のIDリストを取得
@@ -586,7 +586,7 @@ $terms_for_types = get_terms( array(
     <item>
       <title>スムーススクロールの実装</title>
       <link>https://blog.hitomiseki.com/ja/smooth-scroll/</link>
-      <pubDate>Sun Jun 21 2020 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <pubDate>Sun, 21 Jun 2020 00:00:00 GMT</pubDate>
       <description>&lt;h2&gt;スムーススクロールとは&lt;/h2&gt;
 &lt;p&gt;スムーススクロール（スムーズスクロール）は、ページ内リンクをクリックしたときに目的のセクションまで画面をスクロールさせる演出です。次のようなメリットがあります。&lt;/p&gt;
 &lt;ul&gt;
@@ -662,7 +662,7 @@ $terms_for_types = get_terms( array(
     <item>
       <title>CSSとJavaScriptによるフェード効果</title>
       <link>https://blog.hitomiseki.com/ja/css-fading/</link>
-      <pubDate>Sun Jun 14 2020 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <pubDate>Sun, 14 Jun 2020 00:00:00 GMT</pubDate>
       <description>&lt;p&gt;jQueryを使わずに、CSSと素のJavaScriptで要素をフェードインやフェードアウトさせる方法です。&lt;/p&gt;
 &lt;h2&gt;基本のコード&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div class=&amp;quot;fade hidden&amp;quot;&amp;gt;フェードインするコンテンツ&amp;lt;/div&amp;gt;
@@ -764,7 +764,7 @@ for (var i = 0; i &amp;lt; fadeingElements.length; i++) {
     <item>
       <title>jQueryは必要なのか</title>
       <link>https://blog.hitomiseki.com/ja/thankyou-jquery/</link>
-      <pubDate>Sun Jun 14 2020 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <pubDate>Sun, 14 Jun 2020 00:00:00 GMT</pubDate>
       <description>&lt;p&gt;2013年にウェブ制作の仕事を始めてから長らくの間、jQueryなしの素のJavaScriptを書いたことがありませんでした。すでにjQueryが普及していた環境で、そもそもjQueryとそうでないJSコードの差についてすらよく分かっていなかった気がします。ここ数年でようやく、jQueryをなるべく使わない実装を心がけるようになりました。&lt;/p&gt;
 &lt;h2&gt;jQueryに代わる新しいライブラリ？Vanilla JSとは&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;http://vanilla-js.com/&#34;&gt;公式サイト&lt;/a&gt;を真面目に読みに行ったのはいい思い出。速い、軽い、互換性バッチリ！と謳われているのはただのジョークで、jQueryも何も使わない素のJavaScriptのことをVanilla JSと呼ぶようです。そりゃ軽いはずです。何も追加でロードしないので、0KBです。&lt;/p&gt;
@@ -792,7 +792,7 @@ for (var i = 0; i &amp;lt; fadeingElements.length; i++) {
     <item>
       <title>画像のレスポンシブ対応</title>
       <link>https://blog.hitomiseki.com/ja/responsive-image-markup/</link>
-      <pubDate>Sun May 24 2020 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <pubDate>Sun, 24 May 2020 00:00:00 GMT</pubDate>
       <description>&lt;p&gt;ひと昔前まで、ウェブに画像を表示するにはこの一行で十分でした。&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;img src=&amp;quot;image.jpg&amp;quot; alt=&amp;quot;画像の説明が入ります&amp;quot;&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;

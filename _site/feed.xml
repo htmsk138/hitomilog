@@ -9,7 +9,7 @@
     <item>
       <title>HTML Validation Tools</title>
       <link>https://blog.hitomiseki.com/html-validation-tools/</link>
-      <pubDate>Sun Mar 21 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <pubDate>Sun, 21 Mar 2021 00:00:00 GMT</pubDate>
       <description>&lt;p&gt;HTML errors are hard to detect by looking at browser window. For such cases, there are useful validation tools.&lt;/p&gt;
 &lt;p&gt;Paying attention to the invisible factors helps improve SEO and accessibility.&lt;/p&gt;
 &lt;h2&gt;The W3C validator&lt;/h2&gt;
@@ -74,7 +74,7 @@
     <item>
       <title>Alternative Text For Images</title>
       <link>https://blog.hitomiseki.com/alternative-text-for-images/</link>
-      <pubDate>Sat Feb 06 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <pubDate>Sat, 06 Feb 2021 00:00:00 GMT</pubDate>
       <description>&lt;h2&gt;Why it&#39;s important&lt;/h2&gt;
 &lt;p&gt;In an HTML document, all information should be provided by some text. When placing an image, by adding an alternative text you can:&lt;/p&gt;
 &lt;ul&gt;
@@ -129,7 +129,7 @@
     <item>
       <title>Adding Font To Windows Command-line Tools</title>
       <link>https://blog.hitomiseki.com/adding-font-to-windows-command-line/</link>
-      <pubDate>Sun Jan 10 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <pubDate>Sun, 10 Jan 2021 00:00:00 GMT</pubDate>
       <description>&lt;p&gt;On Windows, by default, the only font that can display Japanese language on command-line tools is MS Gothic, which is very hard to look. Here is how to add your favourite font for command-line tools.&lt;/p&gt;
 &lt;h2&gt;Steps&lt;/h2&gt;
 &lt;p&gt;This procedure applies for Windows 10. It works for Command Prompt, WSL distro&#39;s terminal and PowerShell.&lt;/p&gt;
@@ -156,7 +156,7 @@
     <item>
       <title>Archiving Modified Files From A Git Commit</title>
       <link>https://blog.hitomiseki.com/archiving-modified-files-from-a-git-commit/</link>
-      <pubDate>Sun Jan 10 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <pubDate>Sun, 10 Jan 2021 00:00:00 GMT</pubDate>
       <description>&lt;p&gt;This article shows how to extract and archive only files modified or added in a Git commit.&lt;/p&gt;
 &lt;p&gt;All the examples below are to extract files from the previous commit, but if you change the &lt;code&gt;HEAD^&lt;/code&gt; part to two commit hashes separated by a space, then it will extract changes between those commits.&lt;/p&gt;
 &lt;h2&gt;Using Git&lt;/h2&gt;
@@ -174,7 +174,7 @@
     <item>
       <title>Changing Git Commit Date</title>
       <link>https://blog.hitomiseki.com/changing-git-commit-date/</link>
-      <pubDate>Sun Jan 10 2021 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <pubDate>Sun, 10 Jan 2021 00:00:00 GMT</pubDate>
       <description>&lt;p&gt;Note: changing Git history could be dangerous. Please proceed on your own responsibility.&lt;/p&gt;
 &lt;h2&gt;Author date and commit date&lt;/h2&gt;
 &lt;p&gt;Some StackOverflow threads told me to use this command to change last commit&#39;s date.&lt;/p&gt;
@@ -201,7 +201,7 @@ git push -f
     <item>
       <title>How To Implement Dark Theme</title>
       <link>https://blog.hitomiseki.com/dark-theme/</link>
-      <pubDate>Sun Aug 23 2020 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <pubDate>Sun, 23 Aug 2020 00:00:00 GMT</pubDate>
       <description>&lt;p&gt;This article introduces how to implement dark theme to a website.&lt;/p&gt;
 &lt;h2&gt;CSS definition&lt;/h2&gt;
 &lt;p&gt;Define CSS as &amp;quot;darken the whole &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; element while &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt; has &lt;code&gt;dark&lt;/code&gt; class&amp;quot;.&lt;/p&gt;
@@ -315,7 +315,7 @@ function toggleTheme() {
     <item>
       <title>HTML Coding Workflow</title>
       <link>https://blog.hitomiseki.com/html-coding-workflow/</link>
-      <pubDate>Sun May 24 2020 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <pubDate>Sun, 24 May 2020 00:00:00 GMT</pubDate>
       <description>&lt;p&gt;Here&#39;s how I write HTML/CSS. Read it with basic coding knowledge in mind.&lt;/p&gt;
 &lt;h2&gt;The steps&lt;/h2&gt;
 &lt;ol&gt;
@@ -367,7 +367,7 @@ function toggleTheme() {
     <item>
       <title>Japanese Google Fonts</title>
       <link>https://blog.hitomiseki.com/google-fonts-japanese/</link>
-      <pubDate>Mon May 04 2020 09:00:00 GMT+0900 (Japan Standard Time)</pubDate>
+      <pubDate>Mon, 04 May 2020 00:00:00 GMT</pubDate>
       <description>&lt;h2&gt;Web and Japanese typefaces&lt;/h2&gt;
 &lt;p&gt;When building a Japanese website, &lt;code&gt;font-family&lt;/code&gt; property in CSS tends to be long like this:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Helvetica Neue&amp;quot;, &amp;quot;Yu Gothic&amp;quot;, YuGothic, &amp;quot;ヒラギノ角ゴ ProN W3&amp;quot;, &amp;quot;Hiragino Kaku Gothic ProN&amp;quot;, &amp;quot;Hiragino Sans&amp;quot;, Arial, &amp;quot;メイリオ&amp;quot;, Meiryo, sans-serif;
