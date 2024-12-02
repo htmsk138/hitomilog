@@ -4,7 +4,7 @@ module.exports = {
 	],
   eleventyComputed: {
     permalink: data => {
-      return data.i18n[data.lang].homeUrl + data.page.fileSlug + '/index.html';
+      return data.page.filePathStem.replace("/posts", "") + '.html';
     }
   }
 };
