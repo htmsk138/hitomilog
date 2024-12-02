@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+  /**
+   * Insert style for heading links
+   */
+  var anchorStyle = document.createElement('style');
+  anchorStyle.innerText = ":is(h2, h3, h4, h5, h6) a::before { content: '#'; margin-left: .2em; }";
+  document.body.appendChild(anchorStyle);
+
   /**
    * Auto-add id and anchor link to headings
    */
@@ -31,8 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
       var link = document.createElement('a');
       link.href = `#${headingId}`;
       link.title = 'ja' == document.documentElement.lang ? 'このセクションへのリンク' : 'Link to this section';
-      link.innerHTML = "#";
-      link.style.marginLeft = ".2em";
       headingElements[i].appendChild(link);
     }
   }

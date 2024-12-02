@@ -48,7 +48,7 @@ function addListItem(parent, heading) {
   var item = document.createElement('li');
   var link = document.createElement('a');
   link.href = window.location.href.split('#')[0] + '#' + heading.id;
-  link.innerHTML = heading.innerText.replace(/#$/, "");
+  link.innerHTML = heading.innerText;
   item.appendChild(link);
   parent.appendChild(item);
   return item;
