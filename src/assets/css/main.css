@@ -72,18 +72,6 @@ pre code::before {
 }
 
 /**
- * Heading anchors
- */
-h2 a::before,
-h3 a::before,
-h4 a::before,
-h5 a::before,
-h6 a::before {
-  content: '#';
-  margin-left: .2em;
-}
-
-/**
  * Japanese
  */
 html[lang="ja"] body {

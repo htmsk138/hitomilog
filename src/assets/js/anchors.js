@@ -31,6 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
       var link = document.createElement('a');
       link.href = `#${headingId}`;
       link.title = 'ja' == document.documentElement.lang ? 'このセクションへのリンク' : 'Link to this section';
+      link.innerHTML = "#";
+      link.style.marginLeft = ".2em";
       headingElements[i].appendChild(link);
     }
   }

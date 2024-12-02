@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
   /**
    * Auto-add table of contents for the post.
    */
-  var listTag = 'ol'
+  var listTag = 'ul';
   var headings = document.querySelectorAll('h2, h3, h4');
 
   if (headings.length) {
@@ -48,7 +48,7 @@ function addListItem(parent, heading) {
   var item = document.createElement('li');
   var link = document.createElement('a');
   link.href = window.location.href.split('#')[0] + '#' + heading.id;
-  link.innerHTML = heading.innerHTML;
+  link.innerHTML = heading.innerText.replace(/#$/, "");
   item.appendChild(link);
   parent.appendChild(item);
   return item;
