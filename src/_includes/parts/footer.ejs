@@ -1,5 +1,5 @@
 <footer>
-  <% if ('/' !== page.url && '/ja/' !== page.url) { %>
+  <% if (i18n[lang].homeUrl !== page.url) { %>
   <p>
 	  <a href="<%= i18n[lang].homeUrl %>"><%= i18n[lang].backToHome %></a>
   </p>
